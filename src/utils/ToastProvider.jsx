@@ -22,8 +22,8 @@ export const ToastProvider = ({ children }) => {
 
     const typeStyles = {
         success: {
-            bg: "bg-green-100 border-green-300 text-green-800",
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />,
+            bg: "bg-blue-100 border-blue-300 text-green-800",
+            icon: <CheckCircle className="w-5 h-5 text-blue-600" />,
         },
         error: {
             bg: "bg-red-100 border-red-300 text-red-800",

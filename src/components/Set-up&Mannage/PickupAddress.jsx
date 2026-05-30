@@ -134,7 +134,7 @@ const PickupAddress = () => {
             openModal();
             setTitle("Add New Address");
           }}
-          className="bg-[#0CBB7D] text-white text-[10px] sm:text-[12px] hover:opacity-90 transition-all rounded-lg font-[600] px-3 py-2 order-2 sm:order-3"
+          className="bg-[#0192ED] text-white text-[10px] sm:text-[12px] hover:opacity-90 transition-all rounded-lg font-[600] px-3 py-2 order-2 sm:order-3"
         >
           + Add New Address
         </button>
@@ -144,7 +144,7 @@ const PickupAddress = () => {
           <FiSearch
             className="absolute left-3 top-1/2 -translate-y-1/2 
              text-gray-400 
-             group-focus-within:text-[#0CBB7D] 
+             group-focus-within:text-[#0192ED] 
              transition-colors duration-200"
             size={14}
           />
@@ -157,7 +157,7 @@ const PickupAddress = () => {
              border border-gray-300 
              rounded-lg 
              outline-none 
-             focus:border-[#0CBB7D] 
+             focus:border-[#0192ED] 
              transition-all duration-200"
           />
         </div>
@@ -167,7 +167,7 @@ const PickupAddress = () => {
       <div className="hidden sm:block">
         <div className="relative overflow-x-auto bg-white overflow-y-auto h-[calc(100dvh-120px)] shadow-sm">
           <table className="min-w-full text-left">
-            <thead className="bg-[#0CBB7D] text-white sticky top-0 z-20">
+            <thead className="bg-[#0192ED] text-white sticky top-0 z-20">
               <tr className="text-[12px] font-[600]">
                 <th className="px-3 py-2 text-left">Name</th>
                 <th className="px-3 py-2 text-left">Phone</th>
@@ -188,9 +188,9 @@ const PickupAddress = () => {
                       <span className="truncate">{address.pickupAddress.address}</span>
                       <button
                         onClick={() => handleCopy(address.pickupAddress.address, address._id)}
-                        className="ml-2 p-1 text-gray-400 hover:text-[#0CBB7D] transition-colors opacity-0 group-hover:opacity-100"
+                        className="ml-2 p-1 text-gray-400 hover:text-[#0192ED] transition-colors opacity-0 group-hover:opacity-100"
                       >
-                        {copiedId === address._id ? <FiCheck size={12} className="text-green-500" /> : <FiCopy size={12} />}
+                        {copiedId === address._id ? <FiCheck size={12} className="text-blue-500" /> : <FiCopy size={12} />}
                       </button>
                     </div>
                   </td>
@@ -202,7 +202,7 @@ const PickupAddress = () => {
                         checked={primaryAddressId === address._id}
                         onChange={() => handlePrimaryChange(address._id)}
                       />
-                      <div className="w-10 h-5 bg-gray-300 rounded-full peer peer-focus:outline-none peer-checked:bg-[#0CBB7D] transition-colors duration-300"></div>
+                      <div className="w-10 h-5 bg-gray-300 rounded-full peer peer-focus:outline-none peer-checked:bg-[#0192ED] transition-colors duration-300"></div>
                       <div className="absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform duration-300 transform peer-checked:translate-x-5"></div>
                     </label>
                   </td>
@@ -210,7 +210,7 @@ const PickupAddress = () => {
                   <td className="px-3 py-2">
                     <div className="flex items-center gap-2 justify-center">
                       <button
-                        className="p-2 rounded-full text-green-600 bg-green-100 hover:bg-green-200 transition"
+                        className="p-2 rounded-full text-blue-600 bg-blue-100 hover:bg-blue-100 transition"
                         onClick={() => {
                           openModal({ ...address.pickupAddress, _id: address._id });
                           setTitle("Edit Address");
@@ -254,13 +254,13 @@ const PickupAddress = () => {
                         checked={primaryAddressId === address._id}
                         onChange={() => handlePrimaryChange(address._id)}
                       />
-                      <div className="w-7 h-3.5 bg-gray-200 rounded-full peer peer-focus:outline-none peer-checked:bg-[#0CBB7D] transition-colors duration-300"></div>
+                      <div className="w-7 h-3.5 bg-gray-200 rounded-full peer peer-focus:outline-none peer-checked:bg-[#0192ED] transition-colors duration-300"></div>
                       <div className="absolute left-0.5 top-0.5 bg-white w-2.5 h-2.5 rounded-full transition-transform duration-300 transform peer-checked:translate-x-3.5"></div>
                     </label>
                   </div>
                   <div className="flex gap-1.5">
                     <button
-                      className="p-1.5 rounded-full text-green-600 bg-green-50 hover:bg-green-100 transition"
+                      className="p-1.5 rounded-full text-blue-600 bg-blue-50 hover:bg-blue-50 transition"
                       onClick={() => {
                         openModal({ ...address.pickupAddress, _id: address._id });
                         setTitle("Edit Address");
@@ -299,15 +299,15 @@ const PickupAddress = () => {
               </div>
 
               {/* Address with Copy */}
-              <div className="bg-green-50 p-1.5 rounded-md mt-1 flex justify-between items-start gap-2">
+              <div className="bg-blue-50 p-1.5 rounded-md mt-1 flex justify-between items-start gap-2">
                 <span className="text-gray-700 font-[500] leading-tight text-[10px] line-clamp-2 flex-1">
                   {address.pickupAddress.address}
                 </span>
                 <button
                   onClick={() => handleCopy(address.pickupAddress.address, address._id)}
-                  className="p-1 text-gray-400 hover:text-[#0CBB7D] shrink-0"
+                  className="p-1 text-gray-400 hover:text-[#0192ED] shrink-0"
                 >
-                  {copiedId === address._id ? <FiCheck size={12} className="text-green-500" /> : <FiCopy size={12} />}
+                  {copiedId === address._id ? <FiCheck size={12} className="text-blue-500" /> : <FiCopy size={12} />}
                 </button>
               </div>
 

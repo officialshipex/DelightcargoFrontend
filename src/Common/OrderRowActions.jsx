@@ -44,7 +44,7 @@ const OrderRowActions = ({
     const getStatusAction = (order) => ({
         new: {
             label: "Ship Now",
-            className: "sm:bg-[#0CBB7D] bg-white text-[#0CBB7D] sm:text-white sm:border-0 border border-[#0CBB7D]",
+            className: "sm:bg-[#0192ED] bg-white text-[#0192ED] sm:text-white sm:border-0 border border-[#0192ED]",
             onClick: () =>
                 navigate(order.orderType === "B2B"
                     ? `/dashboard/order/b2b/courierSelection/${order._id}`
@@ -53,19 +53,19 @@ const OrderRowActions = ({
         },
         // Booked: {
         //     label: "Schedule Pickup",
-        //     className: "sm:bg-[#0CBB7D] bg-white text-[#0CBB7D] sm:text-white sm:border-0 border border-[#0CBB7D]",
+        //     className: "sm:bg-[#0192ED] bg-white text-[#0192ED] sm:text-white sm:border-0 border border-[#0192ED]",
         //     onClick: () =>
         //         handleScheduledPickup(order),
         // },
         // "Ready To Ship": {
         //     label: "Download Manifest",
-        //     className: "sm:bg-[#0CBB7D] bg-white text-[#0CBB7D] sm:text-white sm:border-0 border border-[#0CBB7D]",
+        //     className: "sm:bg-[#0192ED] bg-white text-[#0192ED] sm:text-white sm:border-0 border border-[#0192ED]",
         //     onClick: () =>
         //         handleManifest(order._id),
         // },
         Cancelled: {
             label: "Clone Order",
-            className: "sm:bg-[#0CBB7D] bg-white text-[#0CBB7D] sm:text-white sm:border-0 border border-[#0CBB7D]",
+            className: "sm:bg-[#0192ED] bg-white text-[#0192ED] sm:text-white sm:border-0 border border-[#0192ED]",
             onClick: () =>
                 handleClone ? handleClone(order._id, navigate) : null
         },
@@ -120,13 +120,13 @@ const OrderRowActions = ({
                 <div className="relative inline-block" ref={el => { if (dropdownRefs.current) dropdownRefs.current[index] = el }}>
                     <button
                         ref={el => { if (toggleButtonRefs.current) toggleButtonRefs.current[index] = el }}
-                        className={`text-gray-700 rounded-lg text-[10px] p-2 bg-gray-100 transition-colors ${isOpen ? 'bg-green-100 text-[#0CBB7D]' : ''}`}
+                        className={`text-gray-700 rounded-lg text-[10px] p-2 bg-gray-100 transition-colors ${isOpen ? 'bg-blue-100 text-[#0192ED]' : ''}`}
                         onClick={(e) => {
                             e.stopPropagation();
                             toggleDropdown(index);
                         }}
                     >
-                        <FiMoreHorizontal size={16} className={isOpen ? "text-[#0CBB7D]" : "text-gray-700"} />
+                        <FiMoreHorizontal size={16} className={isOpen ? "text-[#0192ED]" : "text-gray-700"} />
                     </button>
 
                     {isOpen && position && createPortal(
@@ -155,7 +155,7 @@ const OrderRowActions = ({
                                             }}
                                             className={`px-3 py-2 transition-colors ${
                                                 aiVerifyEnabled 
-                                                    ? "text-[#0CBB7D] hover:bg-green-50 cursor-pointer" 
+                                                    ? "text-[#0192ED] hover:bg-blue-50 cursor-pointer" 
                                                     : "text-gray-400 cursor-not-allowed"
                                             }`}
                                         >
@@ -166,7 +166,7 @@ const OrderRowActions = ({
                                     {/* Label logic */}
                                     {showDownloadLabel && (
                                         order.provider === "Amazon Shipping" ? (
-                                            <li className="hover:bg-green-50 transition-colors">
+                                            <li className="hover:bg-blue-50 transition-colors">
                                                 <a
                                                     href={order.label}
                                                     download
@@ -185,7 +185,7 @@ const OrderRowActions = ({
                                                     if (handleLabel) handleLabel(order._id);
                                                     setDropdownOpen(null);
                                                 }}
-                                                className="px-3 py-2 text-gray-700 hover:bg-green-50 cursor-pointer transition-colors"
+                                                className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
                                             >
                                                 Download Label
                                             </li>
@@ -199,7 +199,7 @@ const OrderRowActions = ({
                                             if (handleInvoice) handleInvoice(order._id);
                                             setDropdownOpen(null);
                                         }}
-                                        className="px-3 py-2 text-gray-700 hover:bg-green-50 cursor-pointer transition-colors"
+                                        className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
                                     >
                                         Download Invoice
                                     </li>
@@ -212,7 +212,7 @@ const OrderRowActions = ({
                                                 if (handleManifest) handleManifest(order._id);
                                                 setDropdownOpen(null);
                                             }}
-                                            className="px-3 py-2 text-gray-700 hover:bg-green-50 cursor-pointer transition-colors"
+                                            className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
                                         >
                                             Download Manifest
                                         </li>
@@ -227,7 +227,7 @@ const OrderRowActions = ({
                                                 handleClone(order._id, navigate, userId);
                                                 setDropdownOpen(null);
                                             }}
-                                            className="px-3 py-2 text-gray-700 hover:bg-green-50 cursor-pointer transition-colors"
+                                            className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
                                         >
                                             Clone Order
                                         </li>
@@ -241,7 +241,7 @@ const OrderRowActions = ({
                                                 handleUpdateOrder(order);
                                                 setDropdownOpen(null);
                                             }}
-                                            className="px-3 py-2 text-gray-700 hover:bg-green-50 cursor-pointer transition-colors"
+                                            className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
                                         >
                                             Update Order
                                         </li>

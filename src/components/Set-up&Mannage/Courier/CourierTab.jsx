@@ -51,8 +51,8 @@ const CourierTab = () => {
                             key={tab.path}
                             to={tab.path}
                             className={`px-3 py-2 rounded-lg border text-[12px] font-[600] transition-all duration-200 ${location.pathname === tab.path
-                                ? 'bg-[#0CBB7D] text-white'
-                                : 'text-gray-700 hover:bg-green-200 bg-white'
+                                ? 'bg-[#0192ED] text-white'
+                                : 'text-gray-700 hover:bg-blue-100 bg-white'
                                 }`}
                         >
                             {tab.label}
@@ -64,7 +64,7 @@ const CourierTab = () => {
                 {location.pathname === '/dashboard/Setup&Manage/Courier/courier_selection' && (
                     <div className="relative w-64 group">
                         <FiSearch
-                            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#0CBB7D] transition-colors duration-200"
+                            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#0192ED] transition-colors duration-200"
                             size={14}
                         />
                         <input
@@ -72,7 +72,7 @@ const CourierTab = () => {
                             placeholder="Search by courier service..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-9 pr-3 py-2 text-[12px] border border-gray-300 rounded-lg outline-none focus:border-[#0CBB7D] transition-all duration-200"
+                            className="w-full pl-9 pr-3 py-2 text-[12px] border border-gray-300 rounded-lg outline-none focus:border-[#0192ED] transition-all duration-200"
                         />
                     </div>
                 )}
@@ -102,8 +102,8 @@ const CourierTab = () => {
                                 key={tab.path}
                                 onClick={() => handleSelect(tab.path)}
                                 className={`px-3 py-2 text-[12px] cursor-pointer font-[600] transition-all ${location.pathname === tab.path
-                                    ? "bg-green-100 text-[#0CBB7D]"
-                                    : "text-gray-700 hover:bg-green-50"
+                                    ? "bg-blue-100 text-[#0192ED]"
+                                    : "text-gray-700 hover:bg-blue-50"
                                     }`}
                             >
                                 {tab.label}
@@ -116,7 +116,7 @@ const CourierTab = () => {
                 {location.pathname === '/dashboard/Setup&Manage/Courier/courier_selection' && (
                     <div className="relative w-full group">
                         <FiSearch
-                            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#0CBB7D] transition-colors duration-200"
+                            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#0192ED] transition-colors duration-200"
                             size={14}
                         />
                         <input
@@ -124,7 +124,7 @@ const CourierTab = () => {
                             placeholder="Search by courier service"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full pl-9 pr-3 py-2 text-[10px] border border-gray-300 rounded-lg outline-none focus:border-[#0CBB7D] transition-all duration-200"
+                            className="w-full pl-9 pr-3 py-2 text-[10px] border border-gray-300 rounded-lg outline-none focus:border-[#0192ED] transition-all duration-200"
                         />
                     </div>
                 )}

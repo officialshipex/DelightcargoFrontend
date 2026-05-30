@@ -144,7 +144,7 @@ const DateFilter = ({ onDateChange, clearTrigger, noInitialFilter }) => {
             <div className="relative sm:w-[200px] w-full" ref={dateRef}>
                 {/* Button */}
                 <button
-                    className={`w-full bg-white py-2 px-3 sm:text-[12px] text-[10px] font-[600] border rounded-lg focus:outline-none text-left flex items-center justify-between text-gray-400 ${showDropdown ? "border-[#0CBB7D]" : "border-gray-300"}`}
+                    className={`w-full bg-white py-2 px-3 sm:text-[12px] text-[10px] font-[600] border rounded-lg focus:outline-none text-left flex items-center justify-between text-gray-400 ${showDropdown ? "border-[#0192ED]" : "border-gray-300"}`}
                     onClick={() => {
                         if (showCustom) {
                             setShowDropdown(false);
@@ -165,7 +165,7 @@ const DateFilter = ({ onDateChange, clearTrigger, noInitialFilter }) => {
 
                     </span>
                     <Calendar
-                        className={`w-4 h-4 ml-2 transition-colors ${showDropdown || showCustom ? "text-[#0CBB7D]" : "text-gray-400"}`}
+                        className={`w-4 h-4 ml-2 transition-colors ${showDropdown || showCustom ? "text-[#0192ED]" : "text-gray-400"}`}
                     />
                 </button>
 
@@ -176,7 +176,7 @@ const DateFilter = ({ onDateChange, clearTrigger, noInitialFilter }) => {
                             {dateOptions.map((option, idx) => (
                                 <li
                                     key={idx}
-                                    className="cursor-pointer hover:bg-green-100 px-3 py-2 sm:text-[12px] text-[10px] font-[600] text-gray-500"
+                                    className="cursor-pointer hover:bg-blue-50 px-3 py-2 sm:text-[12px] text-[10px] font-[600] text-gray-500"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         handleDateOptionClick(option);
@@ -202,7 +202,7 @@ const DateFilter = ({ onDateChange, clearTrigger, noInitialFilter }) => {
                             ranges={tempDateRange}
                             moveRangeOnFirstSelection={false}
                             showMonthAndYearPickers={false}
-                            rangeColors={["#0CBB7D"]}
+                            rangeColors={["#0192ED"]}
                             months={1}
                             direction="horizontal"
                             showDateDisplay={false}
@@ -211,7 +211,7 @@ const DateFilter = ({ onDateChange, clearTrigger, noInitialFilter }) => {
 
                         <div className="flex justify-end gap-2 mt-2">
                             <button
-                                className="bg-[#0CBB7D] text-white px-3 py-1 text-xs rounded"
+                                className="bg-[#0192ED] text-white px-3 py-1 text-xs rounded"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setDateRange(tempDateRange);

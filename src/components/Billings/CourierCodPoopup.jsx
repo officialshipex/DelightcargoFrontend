@@ -92,10 +92,10 @@ const CourierCodPoopup = ({ onClose, setRefresh }) => {
           </button>
           {/* <span className="text-purple-500 cursor-pointer">click here</span> */}
         </p>
-        <label className="cursor-pointer flex text-sm items-center gap-2 text-[#0CBB7D] bg-white px-4 py-2 mt-5 rounded-lg border-2 border-[#0CBB7D] transition">
+        <label className="cursor-pointer flex text-sm items-center gap-2 text-[#0192ED] bg-white px-4 py-2 mt-5 rounded-lg border-2 border-[#0192ED] transition">
           <div className="flex justify-between items-center w-full">
             <span>Upload File</span>
-            <FaUpload className="text-[#0CBB7D]" />
+            <FaUpload className="text-[#0192ED]" />
           </div>
           <input type="file" className="hidden" onChange={handleFileChange} />
         </label>
@@ -103,7 +103,7 @@ const CourierCodPoopup = ({ onClose, setRefresh }) => {
         {selectedFile && (
           <p className="text-sm text-gray-600">Selected: {selectedFile.name}</p>
         )}
-        <button onClick={handleSubmit} className="px-4 py-2 me-3 mt-3 bg-[#0CBB7D] text-white rounded-lg text-sm">
+        <button onClick={handleSubmit} className="px-4 py-2 me-3 mt-3 bg-[#0192ED] text-white rounded-lg text-sm">
           Submit
         </button>
 

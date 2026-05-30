@@ -58,7 +58,7 @@ const PaginationFooter = ({
           <button
             type="button"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-[60px] px-3 py-2 border rounded-lg text-[10px] font-[600] text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-[#0CBB7D] focus:border-transparent transition-all cursor-pointer flex items-center justify-between"
+            className="w-[60px] px-3 py-2 border rounded-lg text-[10px] font-[600] text-gray-700 bg-white focus:outline-none focus:ring-1 focus:ring-[#0192ED] focus:border-transparent transition-all cursor-pointer flex items-center justify-between"
           >
             <span>{getDisplayValue()}</span>
             <ChevronDown
@@ -74,8 +74,8 @@ const PaginationFooter = ({
                 <div
                   key={option.value}
                   onClick={() => handleLimitChange(option.value)}
-                  className={`px-3 py-2 text-[10px] hover:bg-green-50 font-[600] cursor-pointer transition-colors ${limit === option.value
-                      ? "bg-green-100"
+                  className={`px-3 py-2 text-[10px] hover:bg-blue-50 font-[600] cursor-pointer transition-colors ${limit === option.value
+                      ? "bg-blue-100"
                       : ""
                     }`}
                 >
@@ -92,20 +92,20 @@ const PaginationFooter = ({
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={page === 1}
-          className="p-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-[#0CBB7D] hover:text-white hover:border-[#0CBB7D] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-700 disabled:hover:border-gray-300 transition-all duration-200"
+          className="p-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-[#0192ED] hover:text-white hover:border-[#0192ED] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-700 disabled:hover:border-gray-300 transition-all duration-200"
           title="Previous page"
         >
           <FiArrowLeft className="w-3 h-3" />
         </button>
 
         <span className="text-gray-700 text-[10px] font-[600] px-2">
-          Page <span className="text-[#0CBB7D]">{page}</span> of <span className="text-gray-900">{totalPages}</span>
+          Page <span className="text-[#0192ED]">{page}</span> of <span className="text-gray-900">{totalPages}</span>
         </span>
 
         <button
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
-          className="p-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-[#0CBB7D] hover:text-white hover:border-[#0CBB7D] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-700 disabled:hover:border-gray-300 transition-all duration-200"
+          className="p-2 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-[#0192ED] hover:text-white hover:border-[#0192ED] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-700 disabled:hover:border-gray-300 transition-all duration-200"
           title="Next page"
         >
           <FiArrowRight className="w-3 h-3" />

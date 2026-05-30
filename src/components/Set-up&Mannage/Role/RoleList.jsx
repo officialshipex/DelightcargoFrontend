@@ -62,7 +62,7 @@ const RoleList = ({ isSidebarAdmin }) => {
             <div className="flex items-center justify-between mb-2">
                 <h3 className="text-[12px] sm:text-[18px] font-[600] text-gray-700">Employee Roles</h3>
                 <button
-                    className="text-white bg-[#0CBB7D] hover:bg-green-500 px-3 py-2 rounded-lg shadow text-[10px] sm:text-[12px] font-[600]"
+                    className="text-white bg-[#0192ED] hover:bg-blue-500 px-3 py-2 rounded-lg shadow text-[10px] sm:text-[12px] font-[600]"
                     onClick={() => navigate("/dashboard/Setup&Manage/Role_list/AddRole")}
                 >
                     Add Role
@@ -72,8 +72,8 @@ const RoleList = ({ isSidebarAdmin }) => {
             {/* Desktop Table */}
             <div className="hidden md:block overflow-x-auto">
                 <table className="min-w-full text-[12px] bg-white">
-                    <thead className="bg-[#0CBB7D] text-white text-[12px] font-[600] uppercase">
-                        <tr className='border border-[#0CBB7D]'>
+                    <thead className="bg-[#0192ED] text-white text-[12px] font-[600] uppercase">
+                        <tr className='border border-[#0192ED]'>
                             <th className="px-3 py-2 text-left">SL No.</th>
                             <th className="px-3 py-2 text-left">Employee Details</th>
                             <th className="px-3 py-2 text-left">Role</th>
@@ -111,7 +111,7 @@ const RoleList = ({ isSidebarAdmin }) => {
                                     <td className="px-3 py-2 text-center">
                                         <button
                                             title="Edit"
-                                            className="text-white px-2 py-1 font-[600] rounded-lg text-[10px] sm:text-[12px] hover:text-green-500 bg-[#0CBB7D] transition-colors"
+                                            className="text-white px-2 py-1 font-[600] rounded-lg text-[10px] sm:text-[12px] hover:text-blue-500 bg-[#0192ED] transition-colors"
                                             onClick={() => handleEditRole(role)}
                                         >
                                             {/* <Pencil size={14} strokeWidth={2} /> */}
@@ -137,7 +137,7 @@ const RoleList = ({ isSidebarAdmin }) => {
                             {/* Edit Button */}
                             <button
                                 title="Edit"
-                                className="absolute top-4 right-4 text-[#0CBB7D]"
+                                className="absolute top-4 right-4 text-[#0192ED]"
                                 onClick={() => handleEditRole(role)}
                             >
                                 <Pencil size={18} strokeWidth={2} />
@@ -173,7 +173,7 @@ const RoleList = ({ isSidebarAdmin }) => {
                                 Status:{" "}
                                 <span
                                     className={`px-2 py-1 rounded-md text-[10px] font-[600] ${role.isEmpActive
-                                            ? "bg-green-100 text-green-700"
+                                            ? "bg-blue-100 text-green-700"
                                             : "bg-red-100 text-red-600"
                                         }`}
                                 >

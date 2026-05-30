@@ -38,7 +38,7 @@ const CustomDropdown = ({ label, options, selected, setSelected }) => {
                                 setSelected(option);
                                 setOpen(false);
                             }}
-                            className="px-3 py-2 hover:bg-green-100 cursor-pointer text-[12px] text-gray-500"
+                            className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-[12px] text-gray-500"
                         >
                             {option}
                         </div>
@@ -185,7 +185,7 @@ const FilterBar = ({ filters, setFilters }) => {
                                 {dateOptions.map((option, idx) => (
                                     <li
                                         key={idx}
-                                        className="cursor-pointer hover:bg-green-50 px-3 py-2 text-[12px] font-[500] text-gray-500"
+                                        className="cursor-pointer hover:bg-blue-50 px-3 py-2 text-[12px] font-[500] text-gray-500"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             handleDateOptionClick(option);
@@ -211,7 +211,7 @@ const FilterBar = ({ filters, setFilters }) => {
                                 ranges={tempDateRange}
                                 moveRangeOnFirstSelection={false}
                                 showMonthAndYearPickers={false}
-                                rangeColors={["#0CBB7D"]}
+                                rangeColors={["#0192ED"]}
                                 months={1}
                                 direction="horizontal"
                                 showDateDisplay={false}
@@ -219,7 +219,7 @@ const FilterBar = ({ filters, setFilters }) => {
                             />
                             <div className="flex justify-end gap-2 mt-2">
                                 <button
-                                    className="bg-[#0CBB7D] text-white px-3 py-1 text-xs rounded"
+                                    className="bg-[#0192ED] text-white px-3 py-1 text-xs rounded"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         handleDateApply();
@@ -259,7 +259,7 @@ const FilterBar = ({ filters, setFilters }) => {
                 {/* Clear Filters Button */}
                 <button
                     onClick={clearFilters}
-                    className="ml-auto px-3 py-2 text-[12px] border bg-[#0CBB7D] text-white rounded-lg hover:bg-green-500 transition-all"
+                    className="ml-auto px-3 py-2 text-[12px] border bg-[#0192ED] text-white rounded-lg hover:bg-blue-500 transition-all"
                 >
                     Clear
                 </button>

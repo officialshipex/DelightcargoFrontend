@@ -189,7 +189,7 @@ const NewOrder = () => {
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="p-2 rounded-full hover:bg-green-200 transition"
+            className="p-2 rounded-full hover:bg-blue-200 transition"
           >
             <ArrowLeft className="w-4 h-4 text-gray-500" />
           </button>
@@ -198,7 +198,7 @@ const NewOrder = () => {
 
         {/* BULK ORDER BUTTON */}
         <button
-          className="px-3 py-2 rounded-lg bg-[#0CBB7D] text-white font-[600] text-[12px] flex items-center gap-1"
+          className="px-3 py-2 rounded-lg bg-[#0192ED] text-white font-[600] text-[12px] flex items-center gap-1"
           onClick={() => setIsSelectOrderTypeOpen(true)}
         >
           <FontAwesomeIcon icon={faFileArrowUp} className="text-white pr-1" />
@@ -209,9 +209,9 @@ const NewOrder = () => {
       <div className="rounded-lg space-y-2">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {/* Pickup Details */}
-          <div className="border rounded-lg p-4 space-y-2 bg-white border-[#0CBB7D]">
+          <div className="border rounded-lg p-4 space-y-2 bg-white border-[#0192ED]">
             <h2 className="text-[14px] text-gray-700 font-[600] flex items-center gap-2">
-              <span className="bg-[#0CBB7D] text-white rounded-lg p-2">
+              <span className="bg-[#0192ED] text-white rounded-lg p-2">
                 <FiTruck className="text-[14px]" />
               </span>
               Pickup Details
@@ -227,18 +227,18 @@ const NewOrder = () => {
                 ...theme,
                 colors: {
                   ...theme.colors,
-                  primary: "#0CBB7D", // main green
-                  primary75: "#0CBB7D",
-                  primary50: "#DCFCE7", // hover green-100
-                  primary25: "#DCFCE7",
+                  primary: "#0192ED", // main green
+                  primary75: "#0192ED",
+                  primary50: "#DBEAFE", // hover green-100
+                  primary25: "#DBEAFE",
                 },
               })}
               styles={{
                 control: (base, state) => ({
                   ...base,
-                  borderColor: state.isFocused ? "#0CBB7D" : "#d1d5db",
-                  boxShadow: state.isFocused ? "0 0 0 1px #0CBB7D" : "none",
-                  "&:hover": { borderColor: "#0CBB7D" },
+                  borderColor: state.isFocused ? "#0192ED" : "#d1d5db",
+                  boxShadow: state.isFocused ? "0 0 0 1px #0192ED" : "none",
+                  "&:hover": { borderColor: "#0192ED" },
                   minHeight: "38px",
                   fontSize: "12px",
                 }),
@@ -246,9 +246,9 @@ const NewOrder = () => {
                 option: (base, { isFocused, isSelected }) => ({
                   ...base,
                   backgroundColor: isSelected
-                    ? "#0CBB7D" // selected color
+                    ? "#0192ED" // selected color
                     : isFocused
-                      ? "#DCFCE7" // hover color (green-100)
+                      ? "#DBEAFE" // hover color (green-100)
                       : "#FFFFFF",
 
                   color: isSelected ? "#FFFFFF" : "#1f2937",
@@ -265,13 +265,13 @@ const NewOrder = () => {
 
             <button
               onClick={() => setIsModalOpen1(true)}
-              className="mt-3 text-[#0CBB7D] underline text-[12px] font-[600]"
+              className="mt-3 text-[#0192ED] underline text-[12px] font-[600]"
             >
               + Add new pickup address
             </button>
 
             {Pickup && (
-              <div className="mt-3 text-[12px] font-[600] bg-green-50 p-2 text-gray-500 rounded-lg">
+              <div className="mt-3 text-[12px] font-[600] bg-blue-50 p-2 text-gray-500 rounded-lg">
                 <p>
                   <span className="text-gray-700">Contact:</span>{" "}
                   {Pickup.pickupAddress?.contactName}
@@ -286,9 +286,9 @@ const NewOrder = () => {
           </div>
 
           {/* Receiver Details */}
-          <div className="border border-[#0CBB7D] rounded-lg p-4 space-y-2 bg-white">
+          <div className="border border-[#0192ED] rounded-lg p-4 space-y-2 bg-white">
             <h2 className="text-[12px] sm:text-[14px] font-[600] text-gray-700 flex items-center gap-2">
-              <span className="bg-[#0CBB7D] text-white rounded-lg p-2">
+              <span className="bg-[#0192ED] text-white rounded-lg p-2">
                 <FiTruck className="text-[14px]" />
               </span>
               Receiver Details

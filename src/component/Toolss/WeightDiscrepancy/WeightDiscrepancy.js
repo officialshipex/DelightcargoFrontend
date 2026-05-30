@@ -135,7 +135,7 @@ const WeightDiscrepancy = () => {
       {/* Cards Section */}
       <div className="w-full">
         {/* Mobile View: One Combined Card */}
-        <div className="md:hidden bg-white border border-[#0CBB7D] rounded-lg px-3 py-2 text-[10px] text-gray-700 space-y-2">
+        <div className="md:hidden bg-white border border-[#0192ED] rounded-lg px-3 py-2 text-[10px] text-gray-700 space-y-2">
           {[
             { label: "New Discrepancies", count: counts.new },
             { label: "Accepted", count: counts.accepted },
@@ -186,10 +186,10 @@ const WeightDiscrepancy = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 bg-white border border-[#0CBB7D] p-2 rounded-lg"
+              className="flex items-center space-x-2 bg-white border border-[#0192ED] p-2 rounded-lg"
             // onClick={() => setActiveTab(item.status)}
             >
-              <div className="p-2 bg-[#0CBB7D] rounded-full font-[600] flex items-center justify-center">
+              <div className="p-2 bg-[#0192ED] rounded-full font-[600] flex items-center justify-center">
                 {item.icon}
               </div>
               <div>
@@ -209,8 +209,8 @@ const WeightDiscrepancy = () => {
           <button
             key={tab}
             className={`px-3 py-2 rounded-lg border text-[12px] font-[600] transition-all ${activeTab === tab
-                ? "bg-[#0CBB7D] text-white"
-                : "bg-white text-gray-700 hover:bg-green-200"
+                ? "bg-[#0192ED] text-white"
+                : "bg-white text-gray-700 hover:bg-blue-100"
               }`}
             onClick={() => setActiveTab(tab)}
           >
@@ -232,7 +232,7 @@ const WeightDiscrepancy = () => {
             {tabs.map((tab) => (
               <button
                 key={tab}
-                className={`w-full text-left px-3 py-2 text-[12px] font-[600] ${activeTab === tab ? "bg-green-100" : "hover:bg-green-50"
+                className={`w-full text-left px-3 py-2 text-[12px] font-[600] ${activeTab === tab ? "bg-blue-100" : "hover:bg-blue-50"
                   }`}
                 onClick={() => {
                   setActiveTab(tab);

@@ -4,7 +4,7 @@ import { FiTrendingUp, FiTrendingDown } from "react-icons/fi";
 const formatGrowth = (value) => {
     const isPositive = value >= 0;
     const Icon = isPositive ? FiTrendingUp : FiTrendingDown;
-    const color = isPositive ? "text-green-500" : "text-red-500";
+    const color = isPositive ? "text-blue-500" : "text-red-500";
     return (
         <span className={`flex items-center gap-1 ${color}`}>
             <Icon className="inline text-sm" />

@@ -294,7 +294,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
   // UI REMAINS EXACTLY THE SAME AS BEFORE
   // ======================================================================
   const boxClass = (isPositive) =>
-    `p-3 rounded-lg shadow-sm flex items-center gap-3 ${isPositive ? "bg-green-50" : "bg-red-50"
+    `p-3 rounded-lg shadow-sm flex items-center gap-3 ${isPositive ? "bg-blue-50" : "bg-red-50"
     }`;
 
   return (
@@ -348,7 +348,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                       {/* Icon with dynamic background */}
                       <div
-                        className={`p-2 rounded-full ${balance >= 0 ? "bg-[#0CBB7D] text-white" : "bg-red-600 text-white"
+                        className={`p-2 rounded-full ${balance >= 0 ? "bg-[#0192ED] text-white" : "bg-red-600 text-white"
                           }`}
                       >
                         <Wallet size={16} />
@@ -375,7 +375,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                       {/* Icon with dynamic background */}
                       <div
-                        className={`p-2 rounded-full ${holdAmount > 0 ? "bg-red-600 text-white" : "bg-[#0CBB7D] text-white"
+                        className={`p-2 rounded-full ${holdAmount > 0 ? "bg-red-600 text-white" : "bg-[#0192ED] text-white"
                           }`}
                       >
                         <Lock size={16} />
@@ -404,7 +404,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                       {/* Icon with dynamic background */}
                       <div
-                        className={`p-2 rounded-full ${creditLimit >= 0 ? "bg-[#0CBB7D] text-white" : "bg-red-500 text-white"
+                        className={`p-2 rounded-full ${creditLimit >= 0 ? "bg-[#0192ED] text-white" : "bg-red-500 text-white"
                           }`}
                       >
                         <Lock size={16} />
@@ -413,7 +413,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                       <div>
                         <div className="text-[10px] font-[600]">Credit Limit</div>
                         <div
-                          className={`text-[16px] font-[700] ${creditLimit >= 0 ? "text-[#0CBB7D]" : "text-red-500"
+                          className={`text-[16px] font-[700] ${creditLimit >= 0 ? "text-[#0192ED]" : "text-red-500"
                             }`}
                         >
                           ₹{creditLimit.toFixed(2)}
@@ -431,7 +431,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                       {/* Icon with dynamic background */}
                       <div
-                        className={`p-2 rounded-full ${balance.toFixed(2) - holdAmount.toFixed(2) < 0 ? "bg-red-600 text-white" : "bg-[#0CBB7D] text-white"
+                        className={`p-2 rounded-full ${balance.toFixed(2) - holdAmount.toFixed(2) < 0 ? "bg-red-600 text-white" : "bg-[#0192ED] text-white"
                           }`}
                       >
                         <Lock size={16} />
@@ -440,7 +440,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                       <div>
                         <div className="text-[10px] font-[600]">Usable Balance</div>
                         <div
-                          className={`text-[16px] font-[700] ${balance.toFixed(2) - holdAmount.toFixed(2) > 0 ? "text-[#0CBB7D]" : "text-red-600"
+                          className={`text-[16px] font-[700] ${balance.toFixed(2) - holdAmount.toFixed(2) > 0 ? "text-[#0192ED]" : "text-red-600"
                             }`}
                         >
                           ₹{(balance - holdAmount).toFixed(2)}
@@ -518,7 +518,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
               </h3>
               {/* Bank Details (unchanged) */}
               {bankDetails && (
-                <div className="mb-2 px-3 py-2 border border-gray-200 rounded-lg bg-green-50 shadow-sm">
+                <div className="mb-2 px-3 py-2 border border-gray-200 rounded-lg bg-blue-50 shadow-sm">
                   <div className="grid sm:grid-cols-2 grid-cols-1 gap-2 text-[11px] text-gray-700">
                     <div>
                       <span className="font-[600]">Account Holder:</span>{" "}
@@ -551,8 +551,8 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                 Remittance Details
               </h3>
               {/* Summary Section — unchanged */}
-              <section className="mb-2 grid sm:grid-cols-2 grid-cols-1 font-[600] px-3 py-2 gap-2 text-[11px] border border-gray-200 rounded-lg bg-green-50 shadow-sm text-gray-700">
-                <div className="text-[#0CBB7D]">
+              <section className="mb-2 grid sm:grid-cols-2 grid-cols-1 font-[600] px-3 py-2 gap-2 text-[11px] border border-gray-200 rounded-lg bg-blue-50 shadow-sm text-gray-700">
+                <div className="text-[#0192ED]">
                   <span>Remittance Initiated:</span>{" "}
                   ₹{remittance.RemittanceInitiated.toFixed(2)}
                 </div>
@@ -568,7 +568,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                 <div className="overflow-x-auto rounded-lg border border-gray-200 max-h-60 overflow-y-auto">
                   <table className="sm:w-full min-w-[700px] text-left border-collapse text-[11px]">
-                    <thead className="bg-green-50 sticky top-0">
+                    <thead className="bg-blue-50 sticky top-0">
                       <tr>
                         <th className="px-3 py-2 border-b">Remittance ID</th>
                         <th className="px-3 py-2 border-b">Total COD Amount</th>
@@ -589,7 +589,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
 
                         return (
                           <tr key={idStr} className="border-b">
-                            <td className="px-3 py-2 text-[#0CBB7D]">
+                            <td className="px-3 py-2 text-[#0192ED]">
                               {item.remittanceId}
                             </td>
                             <td className="px-3 py-2">
@@ -631,7 +631,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                                   Partial TopUp (₹{walletNegativeOnly.needed.toFixed(2)})
                                 </span>
                               ) : (
-                                <span className="text-green-600 font-semibold">
+                                <span className="text-blue-600 font-semibold">
                                   Payable
                                 </span>
                               )}
@@ -686,7 +686,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                 </button>
 
                 <button
-                  className="px-3 py-2 bg-[#0CBB7D] text-[10px] sm:text-[12px] text-white rounded-lg font-[600] hover:bg-green-500 disabled:opacity-60"
+                  className="px-3 py-2 bg-[#0192ED] text-[10px] sm:text-[12px] text-white rounded-lg font-[600] hover:bg-blue-500 disabled:opacity-60"
                   onClick={handleSubmit}
                   disabled={loading}
                 >

@@ -135,7 +135,7 @@ const AsignPopup = ({ isOpen, onClose, initialSellerId }) => {
               {planOptions.map((plan) => (
                 <div
                   key={plan}
-                  className="px-3 py-2 hover:bg-green-50 cursor-pointer text-[12px]"
+                  className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-[12px]"
                   onClick={() => {
                     setSelectedPlan(plan);
                     setPlanDropdownOpen(false);
@@ -154,7 +154,7 @@ const AsignPopup = ({ isOpen, onClose, initialSellerId }) => {
           <input
             type="text"
             placeholder="Search Seller..."
-            className="w-full border border-gray-300 p-2 text-gray-500 focus:outline-none focus:border-[#0CBB7D] rounded-lg mb-2 h-9 placeholder:text-[12px] text-[12px]"
+            className="w-full border border-gray-300 p-2 text-gray-500 focus:outline-none focus:border-[#0192ED] rounded-lg mb-2 h-9 placeholder:text-[12px] text-[12px]"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onFocus={() => setSellerDropdownOpen(true)}
@@ -182,7 +182,7 @@ const AsignPopup = ({ isOpen, onClose, initialSellerId }) => {
                 .map((seller) => (
                   <div
                     key={seller.id}
-                    className="px-3 py-2 hover:bg-green-50 cursor-pointer text-[12px]"
+                    className="px-3 py-2 hover:bg-blue-50 cursor-pointer text-[12px]"
                     onClick={() => {
                       setSelectedSeller(seller.id);
                       setSellerDropdownOpen(false);
@@ -200,7 +200,7 @@ const AsignPopup = ({ isOpen, onClose, initialSellerId }) => {
           <button className="bg-gray-300 px-3 text-[10px] sm:text-[12px] font-[600] text-gray-700 py-2 rounded-lg mr-2" onClick={onClose}>
             Cancel
           </button>
-          <button className="bg-[#0CBB7D] text-white px-3 py-2 font-[600] rounded-lg text-[10px] sm:text-[12px]" onClick={handleAssign}>
+          <button className="bg-[#0192ED] text-white px-3 py-2 font-[600] rounded-lg text-[10px] sm:text-[12px]" onClick={handleAssign}>
             Assign
           </button>
         </div>

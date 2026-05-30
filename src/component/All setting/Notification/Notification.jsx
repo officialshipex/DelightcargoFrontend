@@ -104,7 +104,7 @@ const Notification = ({ targetUserId = null, basePath = "/dashboard/settings/not
 
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-[#0CBB7D] text-white text-[10px] sm:text-[12px] font-[600] rounded-lg px-3 py-2 hover:bg-opacity-90 transition"
+                        className="bg-[#0192ED] text-white text-[10px] sm:text-[12px] font-[600] rounded-lg px-3 py-2 hover:bg-opacity-90 transition"
                     >
                         Buy Credit
                     </button>
@@ -118,8 +118,8 @@ const Notification = ({ targetUserId = null, basePath = "/dashboard/settings/not
                         key={tab.path}
                         to={tab.path}
                         className={`px-3 py-2 rounded-lg text-[12px] font-[600] border transition-all duration-200 ${location.pathname === tab.path
-                            ? "bg-[#0CBB7D] text-white"
-                            : "text-gray-700 hover:bg-green-200 bg-white"
+                            ? "bg-[#0192ED] text-white"
+                            : "text-gray-700 hover:bg-blue-100 bg-white"
                             }`}
                     >
                         {tab.label}
@@ -151,8 +151,8 @@ const Notification = ({ targetUserId = null, basePath = "/dashboard/settings/not
                             key={tab.path}
                             onClick={() => handleSelect(tab.path)}
                             className={`px-3 py-2 text-[12px] cursor-pointer font-[600] transition-all ${location.pathname === tab.path
-                                ? "bg-green-100 text-[#0CBB7D]"
-                                : "text-gray-700 hover:bg-green-50"
+                                ? "bg-blue-100 text-[#0192ED]"
+                                : "text-gray-700 hover:bg-blue-50"
                                 }`}
                         >
                             {tab.label}

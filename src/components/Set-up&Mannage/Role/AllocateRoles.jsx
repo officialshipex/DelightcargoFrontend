@@ -21,7 +21,7 @@ function ThemedDropdown({ label, options, selected, setSelected }) {
     <div className="relative w-full sm:w-[250px] text-[10px] md:text-[12px]">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
-          <Listbox.Button className="w-full cursor-pointer rounded-lg border-2 border-gray-300 bg-white px-3 py-2 text-left shadow-sm focus:outline-none focus:ring-0 focus:ring-green-500 focus:border-green-500 text-gray-500">
+          <Listbox.Button className="w-full cursor-pointer rounded-lg border-2 border-gray-300 bg-white px-3 py-2 text-left shadow-sm focus:outline-none focus:ring-0 focus:ring-blue-500 focus:border-[#0192ED] text-gray-500">
             {selected ? selected.name : label}
             <span className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
               <ChevronsUpDownIcon className="h-5 w-5 text-gray-500" />
@@ -31,7 +31,7 @@ function ThemedDropdown({ label, options, selected, setSelected }) {
             <div className="px-3 py-2 sticky top-0 bg-white z-10">
               <input
                 type="text"
-                className="w-full border border-green-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-green-500"
+                className="w-full border border-blue-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
                 placeholder="Search..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -45,7 +45,7 @@ function ThemedDropdown({ label, options, selected, setSelected }) {
                 key={option.id}
                 value={option}
                 className={({ active }) =>
-                  `cursor-pointer select-none px-3 py-2 ${active ? "bg-green-100 text-green-900" : "text-gray-500"
+                  `cursor-pointer select-none px-3 py-2 ${active ? "bg-blue-100 text-green-900" : "text-gray-500"
                   }`
                 }
               >
@@ -242,7 +242,7 @@ function AllocateRoles() {
 
         <div className="w-full md:w-auto">
           <button
-            className="w-full md:w-auto border-2 bg-[#0CBB7D] text-white font-[600] py-2 px-3 rounded-lg shadow-sm hover:bg-[#0CBB7D] focus:outline-none focus:ring-2 focus:ring-[#0CBB7D] focus:ring-opacity-50 text-[10px] md:text-[12px]"
+            className="w-full md:w-auto border-2 bg-[#0192ED] text-white font-[600] py-2 px-3 rounded-lg shadow-sm hover:bg-[#0192ED] focus:outline-none focus:ring-2 focus:ring-[#0192ED] focus:ring-opacity-50 text-[10px] md:text-[12px]"
             onClick={handleSave}
           >
             Save
@@ -254,7 +254,7 @@ function AllocateRoles() {
       <div className="my-2">
         <input
           type="text"
-          className="block w-full sm:w-[300px] px-3 py-2 border-2 border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-0 focus:ring-[#0CBB7D] focus:border-[#0CBB7D] text-[10px] md:text-[12px]"
+          className="block w-full sm:w-[300px] px-3 py-2 border-2 border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-0 focus:ring-[#0192ED] focus:border-[#0192ED] text-[10px] md:text-[12px]"
           placeholder="Search by SellerID, Seller Name, EmployeeID, Employee Name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -266,7 +266,7 @@ function AllocateRoles() {
       <div className="hidden md:block overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 bg-white shadow-sm text-[12px]">
           <thead>
-            <tr className="bg-[#0CBB7D] text-white border border-[#0CBB7D]">
+            <tr className="bg-[#0192ED] text-white border border-[#0192ED]">
               <th className="px-3 py-2 text-left uppercase">
                 SL No.
               </th>
@@ -295,7 +295,7 @@ function AllocateRoles() {
                 </td>
                 <td className="px-3 py-2 relative flex justify-center items-center">
                   <button
-                    className="p-2 rounded-full bg-[#0CBB7D] hover:bg-gray-250 allocation-action-btn"
+                    className="p-2 rounded-full bg-[#0192ED] hover:bg-gray-250 allocation-action-btn"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleActionDropdown(item._id, e);

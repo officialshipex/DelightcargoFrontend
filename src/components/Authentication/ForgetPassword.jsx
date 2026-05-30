@@ -163,13 +163,13 @@ const ForgotPassword = () => {
               disabled={emailVerified}
             />
             {emailVerified ? (
-              <div className="flex items-center gap-1 text-green-600 text-sm font-medium">
+              <div className="flex items-center gap-1 text-blue-600 text-sm font-medium">
                 <CheckCircle size={16} />
                 Verified
               </div>
             ) : (
               <button
-                className="px-3 py-2 text-xs bg-[#0CBB7D] text-white rounded-md transition disabled:opacity-60 w-full sm:w-auto whitespace-nowrap"
+                className="px-3 py-2 text-xs bg-[#0192ED] text-white rounded-md transition disabled:opacity-60 w-full sm:w-auto whitespace-nowrap"
                 onClick={handleSendOtp}
                 disabled={otpTimer > 0}
               >
@@ -226,13 +226,13 @@ const ForgotPassword = () => {
 
         <button
           onClick={handleUpdatePassword}
-          className="w-full mt-4 bg-[#0CBB7D] text-white py-2 rounded-md transition"
+          className="w-full mt-4 bg-[#0192ED] text-white py-2 rounded-md transition"
         >
           Update Password
         </button>
 
         <div className="text-center mt-4">
-          <Link to="/login" className="text-[#0CBB7D] hover:underline text-sm">
+          <Link to="/login" className="text-[#0192ED] hover:underline text-sm">
             Back to Login
           </Link>
         </div>

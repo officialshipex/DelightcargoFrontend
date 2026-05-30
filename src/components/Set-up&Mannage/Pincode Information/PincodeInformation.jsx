@@ -145,8 +145,8 @@ const PincodeInformation = () => {
                 <div className="hidden sm:block overflow-x-auto">
                     <div className="rounded-lg overflow-hidden">
                         <table className="min-w-full">
-                            <thead className="bg-[#0CBB7D] text-white text-[12px]">
-                                <tr className="border border-[#0CBB7D]">
+                            <thead className="bg-[#0192ED] text-white text-[12px]">
+                                <tr className="border border-[#0192ED]">
                                     <th className="px-3 py-2 text-left">Courier</th>
                                     <th className="px-3 py-2 text-left">Total</th>
                                     <th className="px-3 py-2 text-left">Active</th>
@@ -163,7 +163,7 @@ const PincodeInformation = () => {
                                     pincodeData.map((courier, idx) => (
                                         <tr
                                             key={idx}
-                                            className="hover:bg-green-50 border border-gray-300 transition text-[12px]"
+                                            className="hover:bg-blue-50 border border-gray-300 transition text-[12px]"
                                         >
                                             <td className="px-3 py-2 flex items-center gap-3 font-[500] text-gray-600">
                                                 <img
@@ -194,13 +194,13 @@ const PincodeInformation = () => {
 
                                             <td className="px-3 py-2 flex justify-center items-center gap-3">
                                                 <button
-                                                    className="flex items-center justify-center gap-1 bg-green-50 border border-[#0CBB7D] text-[#0CBB7D] px-3 py-1.5 rounded-lg text-[11px] font-[600] hover:bg-green-100 transition"
+                                                    className="flex items-center justify-center gap-1 bg-blue-50 border border-[#0192ED] text-[#0192ED] px-3 py-1.5 rounded-lg text-[11px] font-[600] hover:bg-blue-100 transition"
                                                     onClick={() => handleUpload(courier.courier)}
                                                 >
                                                     <FiUpload className="w-4 h-4" /> Upload
                                                 </button>
                                                 <button
-                                                    className="flex items-center justify-center gap-1 bg-[#0CBB7D] text-white px-3 py-1.5 rounded-lg text-[11px] font-[600] shadow hover:bg-green-600 transition"
+                                                    className="flex items-center justify-center gap-1 bg-[#0192ED] text-white px-3 py-1.5 rounded-lg text-[11px] font-[600] shadow hover:bg-blue-600 transition"
                                                     onClick={() => handleDownload(courier.courier)}
                                                 >
                                                     <FiDownload className="w-4 h-4" /> Download
@@ -225,7 +225,7 @@ const PincodeInformation = () => {
                     {pincodeData.map((courier, idx) => (
                         <div
                             key={idx}
-                            className="bg-green-50 border border-[#0CBB7D] p-4 rounded-lg shadow-sm"
+                            className="bg-blue-50 border border-[#0192ED] p-4 rounded-lg shadow-sm"
                         >
                             <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-2">
@@ -264,13 +264,13 @@ const PincodeInformation = () => {
                             <div className="flex justify-end gap-2 mt-2">
                                 <button
                                     onClick={() => handleUpload(courier.courier)}
-                                    className="flex items-center font-[600] gap-1 bg-green-50 border border-[#0CBB7D] text-[#0CBB7D] px-3 py-1 rounded-lg text-[10px] hover:bg-green-100 transition"
+                                    className="flex items-center font-[600] gap-1 bg-blue-50 border border-[#0192ED] text-[#0192ED] px-3 py-1 rounded-lg text-[10px] hover:bg-blue-100 transition"
                                 >
                                     <FiUpload /> Upload
                                 </button>
                                 <button
                                     onClick={() => handleDownload(courier.courier)}
-                                    className="flex items-center font-[600] gap-1 bg-[#0CBB7D] text-white px-3 py-1 rounded-lg text-[10px] shadow hover:bg-green-600 transition"
+                                    className="flex items-center font-[600] gap-1 bg-[#0192ED] text-white px-3 py-1 rounded-lg text-[10px] shadow hover:bg-blue-600 transition"
                                 >
                                     <FiDownload /> Download
                                 </button>

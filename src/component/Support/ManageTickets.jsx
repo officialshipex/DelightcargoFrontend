@@ -295,8 +295,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
             <button
               key={status.value}
               className={`px-3 py-2 rounded-lg transition-colors duration-200 ${selectedStatus === status.value
-                ? "bg-[#0CBB7D] text-white"
-                : "bg-white text-gray-700 hover:bg-green-200"
+                ? "bg-[#0192ED] text-white"
+                : "bg-white text-gray-700 hover:bg-blue-100"
                 }`}
               onClick={() => filterByStatus(status.value)}
             >
@@ -308,7 +308,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
         {/* Mobile View: Custom Dropdown */}
         <div className="md:hidden relative w-full">
           <button
-            className="w-full py-2 px-3 text-[12px] rounded-lg bg-[#0CBB7D] text-white font-[600] transition-all duration-200 flex justify-between items-center"
+            className="w-full py-2 px-3 text-[12px] rounded-lg bg-[#0192ED] text-white font-[600] transition-all duration-200 flex justify-between items-center"
             onClick={() => setStatusDropdownOpen(!statusDropdownOpen)}
           >
             {statusOptions.find((o) => o.value === selectedStatus)?.label ||
@@ -321,8 +321,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
               {statusOptions.map((option) => (
                 <li
                   key={option.value}
-                  className={`cursor-pointer px-3 py-2 text-gray-700 text-[12px] font-[600] hover:bg-green-50 ${selectedStatus === option.value
-                    ? "font-[600] bg-green-200"
+                  className={`cursor-pointer px-3 py-2 text-gray-700 text-[12px] font-[600] hover:bg-blue-50 ${selectedStatus === option.value
+                    ? "font-[600] bg-blue-200"
                     : ""
                     }`}
                   onClick={() => {
@@ -420,8 +420,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                   {platformOptions.map((option) => (
                     <li
                       key={option.value}
-                      className={`cursor-pointer px-4 py-2 hover:bg-green-50 ${selectedPlatform === option.value
-                        ? "font-semibold bg-green-50"
+                      className={`cursor-pointer px-4 py-2 hover:bg-blue-50 ${selectedPlatform === option.value
+                        ? "font-semibold bg-blue-50"
                         : ""}`}
                       onClick={() => {
                         setSelectedPlatform(option.value);
@@ -459,8 +459,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                   {categoryOptions.map((option) => (
                     <li
                       key={option.value}
-                      className={`cursor-pointer px-3 py-2 hover:bg-green-50 ${selectedCategory === option.value
-                        ? "font-semibold bg-green-50"
+                      className={`cursor-pointer px-3 py-2 hover:bg-blue-50 ${selectedCategory === option.value
+                        ? "font-semibold bg-blue-50"
                         : ""}`}
                       onClick={() => {
                         setSelectedCategory(option.value);
@@ -479,7 +479,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
           </div>
           {/* Clear Button right-aligned, height same as fields */}
           <button
-            className="ml-auto bg-[#0CBB7D] border border-white hover:bg-green-500 text-white px-3 py-2 rounded-lg text-[12px] font-semibold transition h-9"
+            className="ml-auto bg-[#0192ED] border border-white hover:bg-blue-500 text-white px-3 py-2 rounded-lg text-[12px] font-semibold transition h-9"
             onClick={() => {
               setSearchNameEmail("");
               setSearchDate("");
@@ -570,8 +570,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                 {platformOptions.map((option) => (
                   <li
                     key={option.value}
-                    className={`cursor-pointer px-3 py-2 hover:bg-green-50 ${selectedPlatform === option.value
-                      ? "font-semibold bg-green-50"
+                    className={`cursor-pointer px-3 py-2 hover:bg-blue-50 ${selectedPlatform === option.value
+                      ? "font-semibold bg-blue-50"
                       : ""}`}
                     onClick={() => {
                       setSelectedPlatform(option.value);
@@ -609,8 +609,8 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                   {categoryOptions.map((option) => (
                     <li
                       key={option.value}
-                      className={`cursor-pointer px-3 py-2 hover:bg-green-50 ${selectedCategory === option.value
-                        ? "font-semibold bg-green-50"
+                      className={`cursor-pointer px-3 py-2 hover:bg-blue-50 ${selectedCategory === option.value
+                        ? "font-semibold bg-blue-50"
                         : ""}`}
                       onClick={() => {
                         setSelectedCategory(option.value);
@@ -627,7 +627,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
               )}
             </div>
             <button
-              className="flex-shrink-0 bg-[#0CBB7D] hover:bg-green-500 border border-white text-white px-3 py-2 rounded-lg text-[12px] font-semibold transition h-9"
+              className="flex-shrink-0 bg-[#0192ED] hover:bg-blue-500 border border-white text-white px-3 py-2 rounded-lg text-[12px] font-semibold transition h-9"
               onClick={() => {
                 setSearchNameEmail("");
                 setSearchDate("");
@@ -653,7 +653,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
         <div className="hidden md:block">
           <table className="w-full border border-gray-300">
             <thead>
-              <tr className="bg-[#0CBB7D] text-[12px] text-white border-[#0CBB7D] border font-[600]">
+              <tr className="bg-[#0192ED] text-[12px] text-white border-[#0192ED] border font-[600]">
                 <th className="py-2 px-3">Sl No.</th>
                 <th className="py-2 px-3">Ticket ID</th>
                 <th className="py-2 px-3">AWB No.</th>
@@ -700,7 +700,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
 
                       <td className="px-3 py-2 flex justify-center relative" ref={dropdownRef}>
                         <button
-                          className={`dropdown-button bg-[#0CBB7D] text-white w-6 h-6 rounded-full flex items-center justify-center ${!isSidebarAdmin && !employeeAccess.canUpdate
+                          className={`dropdown-button bg-[#0192ED] text-white w-6 h-6 rounded-full flex items-center justify-center ${!isSidebarAdmin && !employeeAccess.canUpdate
                             ? "opacity-50 cursor-not-allowed"
                             : ""
                             }`}
@@ -723,7 +723,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                               View Details
                             </button>
                             <button
-                              className="block w-full text-green-600 py-2 px-3 text-[12px] text-left hover:bg-green-100"
+                              className="block w-full text-blue-600 py-2 px-3 text-[12px] text-left hover:bg-blue-50"
                               onClick={() => {
                                 handleStatusChange(ticket._id, "resolved");
                                 setOpenDropdown(null);
@@ -776,7 +776,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                       Sl No: {startIndex + index + 1}
                     </span>
                     <button
-                      className={`dropdown-button bg-[#0CBB7D] text-white w-6 h-6 rounded-full flex items-center justify-center ${!isSidebarAdmin && !employeeAccess.canUpdate
+                      className={`dropdown-button bg-[#0192ED] text-white w-6 h-6 rounded-full flex items-center justify-center ${!isSidebarAdmin && !employeeAccess.canUpdate
                         ? "opacity-50 cursor-not-allowed"
                         : ""
                         }`}
@@ -820,7 +820,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                       <strong className="text-gray-600">Status: </strong>
                       <span
                         className={`${ticket.status === "resolved"
-                          ? "text-green-600 font-semibold"
+                          ? "text-blue-600 font-semibold"
                           : ticket.status === "deleted"
                             ? "text-red-600 font-semibold"
                             : "text-yellow-600 font-semibold"
@@ -845,7 +845,7 @@ const ManageTickets = ({ isSidebarAdmin }) => {
                         View Details
                       </button>
                       <button
-                        className="block w-full text-green-600 py-2 text-left text-[12px] hover:bg-green-100"
+                        className="block w-full text-blue-600 py-2 text-left text-[12px] hover:bg-blue-50"
                         onMouseDown={() => {
                           handleStatusChange(ticket._id, "resolved");
                           setOpenDropdown(null);

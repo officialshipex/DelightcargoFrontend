@@ -95,7 +95,7 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
             placeholder="Enter Contact Name"
             value={formData.contactName}
             onChange={handleChange}
-            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         </div>
         <div>
@@ -105,10 +105,10 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
           <input
             type="email"
             name="email"
-            placeholder="buyer.contact@shipex.in"
+            placeholder="buyer.contact@delightcargo.in"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         </div>
         <div>
@@ -121,7 +121,7 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
             placeholder="Enter Phone Number"
             value={formData.phoneNumber}
             onChange={handleChange}
-            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         </div>
         <div>
@@ -134,7 +134,7 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
             placeholder="Enter Address"
             value={formData.address}
             onChange={handleChange}
-            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         </div>
         <div>
@@ -147,7 +147,7 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
             placeholder="Enter Pincode"
             value={formData.pinCode}
             onChange={handlePincodeChange}
-            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-3 py-2 text-[12px] font-[600] border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         </div>
         <div>
@@ -188,7 +188,7 @@ const UpdateReceiverAdd = ({ isOpen, onClose, onSave, ReceiverAddress }) => {
           </button>
           <button
             type="submit"
-            className="bg-[#0CBB7D] text-white px-5 py-2 hover:opacity-90 transition rounded-lg text-[12px] font-[600]"
+            className="bg-[#0192ED] text-white px-5 py-2 hover:opacity-90 transition rounded-lg text-[12px] font-[600]"
           >
             Save
           </button>

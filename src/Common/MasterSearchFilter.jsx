@@ -107,8 +107,8 @@ const MasterSearchFilter = ({ isMobile = false }) => {
     if (isMobile) {
         return (
             <div className="relative w-full" ref={dropdownRef}>
-                <div className="relative flex items-center border border-gray-300 rounded-lg overflow-hidden focus-within:border-[#0CBB7D] transition-colors group">
-                    <div className="pl-3 text-gray-400 group-focus-within:text-[#0CBB7D] transition-colors">
+                <div className="relative flex items-center border border-gray-300 rounded-lg overflow-hidden focus-within:border-[#0192ED] transition-colors group">
+                    <div className="pl-3 text-gray-400 group-focus-within:text-[#0192ED] transition-colors">
                         <FiSearch className="text-[14px]" />
                     </div>
                     <div className="relative flex-1 h-[35px] overflow-hidden">
@@ -119,7 +119,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyDown={handleKeyDown}
                             className="absolute inset-0 w-full h-full px-3 text-[12px] font-[600] border-none focus:outline-none bg-transparent"
-                            style={{ caretColor: '#0CBB7D' }}
+                            style={{ caretColor: '#0192ED' }}
                         />
                         {!searchQuery && (
                             <div className="absolute inset-0 flex items-center px-3 pointer-events-none">
@@ -154,7 +154,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                                 <div
                                     key={order._id}
                                     onClick={() => handleSuggestionClick(order._id)}
-                                    className="px-3 py-2 hover:bg-green-50 cursor-pointer border-b last:border-b-0 transition-colors"
+                                    className="px-3 py-2 hover:bg-blue-50 cursor-pointer border-b last:border-b-0 transition-colors"
                                 >
                                     <div className="flex justify-between items-start">
 
@@ -165,7 +165,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                                             </div>
 
                                             {order.awb_number && (
-                                                <div className="text-[#0CBB7D] font-[600]">
+                                                <div className="text-[#0192ED] font-[600]">
                                                     {order.awb_number}
                                                 </div>
                                             )}
@@ -179,7 +179,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
 
                                         {/* Right Section */}
                                         <div className="text-[10px] text-right space-y-0.5 text-gray-700">
-                                            <div className="font-[500] bg-green-100 text-[#0CBB7D] px-1 rounded">
+                                            <div className="font-[500] bg-blue-100 text-[#0192ED] px-1 rounded">
                                                 {order.status}
                                             </div>
 
@@ -204,8 +204,8 @@ const MasterSearchFilter = ({ isMobile = false }) => {
     // Desktop version
     return (
         <div className="relative w-[350px]" ref={dropdownRef}>
-            <div className="relative flex items-center border border-gray-300 rounded-lg overflow-hidden focus-within:border-[#0CBB7D] transition-colors h-[32px] group">
-                <div className="pl-3 text-gray-400 group-focus-within:text-[#0CBB7D] transition-colors">
+            <div className="relative flex items-center border border-gray-300 rounded-lg overflow-hidden focus-within:border-[#0192ED] transition-colors h-[32px] group">
+                <div className="pl-3 text-gray-400 group-focus-within:text-[#0192ED] transition-colors">
                     <FiSearch className="text-[14px]" />
                 </div>
                 <div className="relative flex-1 h-full overflow-hidden">
@@ -216,7 +216,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyDown={handleKeyDown}
                         className="absolute inset-0 w-full text-gray-700 h-full px-3 text-[11px] font-[600] border-none focus:outline-none bg-transparent"
-                        style={{ caretColor: '#0CBB7D' }}
+                        style={{ caretColor: '#0192ED' }}
                     />
                     {!searchQuery && (
                         <div className="absolute inset-0 flex items-center px-3 pointer-events-none">
@@ -251,7 +251,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                             <div
                                 key={order._id}
                                 onClick={() => handleSuggestionClick(order._id)}
-                                className="px-3 py-2 hover:bg-green-50 cursor-pointer border-b last:border-b-0 transition-colors"
+                                className="px-3 py-2 hover:bg-blue-50 cursor-pointer border-b last:border-b-0 transition-colors"
                             >
                                 <div className="flex justify-between items-start">
 
@@ -263,7 +263,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                                         </div>
 
                                         {order.awb_number && (
-                                            <div className="text-[#0CBB7D] font-[600]">
+                                            <div className="text-[#0192ED] font-[600]">
                                                 {order.awb_number}
                                             </div>
                                         )}
@@ -278,7 +278,7 @@ const MasterSearchFilter = ({ isMobile = false }) => {
                                     {/* Right Section */}
                                     <div className="text-[10px] text-right space-y-0.5 text-gray-700">
 
-                                        <div className="px-2 py-0.5 bg-green-100 text-[#0CBB7D] rounded uppercase inline-block">
+                                        <div className="px-2 py-0.5 bg-blue-100 text-[#0192ED] rounded uppercase inline-block">
                                             {order.status}
                                         </div>
 

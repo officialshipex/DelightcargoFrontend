@@ -20,10 +20,10 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       </p>
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed ">
-        <span className="font-bold">Shipex India</span>, a company incorporated under the provisions of the Companies Act, 2013, and having its
+        <span className="font-bold">Delight Cargo</span>, a company incorporated under the provisions of the Companies Act, 2013, and having its
         registered office at 01, Basement, Biju Tower, Baba Nagar, Bhiwani, Haryana 127021, legally
-        represented by Mr. Sandeep (hereinafter referred to as “Company” or “Service Provider” or “Shipex
-        India or Shipex India”), which means and include, unless repugnant to the context or meaning thereof
+        represented by Mr. Sandeep (hereinafter referred to as “Company” or “Service Provider” or “DelightCargo
+        India or Delight Cargo”), which means and include, unless repugnant to the context or meaning thereof
         its legal agents, contractors, sub-contractors, affiliates, employees, receivers and assigns of ONE
         PART;
       </p>
@@ -40,17 +40,17 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
 
       {/* Other Agreement Clauses */}
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
-        This Agreement comes into effect when the Customer register for use of Shipex India services or sign an
-        application for utilizing services of Shipex India available at www.shipexindia.com (“Website/
-        Platform”). By registering or signing with Shipex India, the Customer signifies absolute and unconditional
+        This Agreement comes into effect when the Customer register for use of Delight Cargo services or sign an
+        application for utilizing services of Delight Cargo available at www.delightcargo.com (“Website/
+        Platform”). By registering or signing with Delight Cargo, the Customer signifies absolute and unconditional
         consent to all the provisions of this Agreement in its entirety.
       </p>
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
-        This Agreement constitutes a legally binding agreement between the Customer and Shipex India.
+        This Agreement constitutes a legally binding agreement between the Customer and Delight Cargo.
         The Customer is advised to read this Agreement carefully. If the Customer is not in agreement with
         any of the terms and conditions, the Customer(s) should not use the Services and should notify the
-        same to Shipex India. The Customer expressly represents and warrants that it will not avail the
+        same to Delight Cargo. The Customer expressly represents and warrants that it will not avail the
         Services if they do not understand, agree to become a party to, and abide by all of the terms and
         conditions specified below. Any violation of this Agreement may result in legal liability upon the
         Customer. By clicking “Agree”, the Customer agrees to all the terms and conditions of this Agreement
@@ -83,7 +83,7 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       </p>
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
-        Your access to use the Services will be solely at the discretion of Shipex
+        Your access to use the Services will be solely at the discretion of DelightCargo
         India.
 
       </p>
@@ -133,34 +133,34 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
         2) ACCOUNT USAGE:
       </p>
       <ol className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed space-y-2">
-        <li>i.	This Agreement is a master agreement which governs the relationship between the Parties inrelation to one or more Services that are offered by Shipex India to the Customer, inter-alia as per the terms and specifications mentioned and payment as per commercials updated on regular basis on Shipex India online panel. Shipex India authorizes the Customer to view and access the content available
+        <li>i.	This Agreement is a master agreement which governs the relationship between the Parties inrelation to one or more Services that are offered by Delight Cargo to the Customer, inter-alia as per the terms and specifications mentioned and payment as per commercials updated on regular basis on Delight Cargo online panel. Delight Cargo authorizes the Customer to view and access the content available
           on the Website solely for ordering, receiving, delivering and communicating as per this Agreement.
         </li>
-        <li>ii.	The contents of the Services, information, text, graphics, images, logos, button icons,software code, design, and the collection, arrangement and assembly of content on the Website and Mobile App (collectively, "Shipex India Content"), are the property of Shipex India and are
-          protected under copyright, trademark and other laws. User shall not modify the Shipex India Content or reproduce, display, publicly perform, distribute, or otherwise use the Shipex India Content in any manner,
-          without the consent of Shipex India.
+        <li>ii.	The contents of the Services, information, text, graphics, images, logos, button icons,software code, design, and the collection, arrangement and assembly of content on the Website and Mobile App (collectively, "Delight Cargo Content"), are the property of Delight Cargo and are
+          protected under copyright, trademark and other laws. User shall not modify the Delight Cargo Content or reproduce, display, publicly perform, distribute, or otherwise use the Delight Cargo Content in any manner,
+          without the consent of Delight Cargo.
         </li>
-        <li>iii.	Customer shall not transfer or share (including by way of sublicense, lease,assignment orother transfer, including by operation of law) their log-in or right to use the Service to any third party. The Customer shall be solely responsible for the way anyone it has authorized to use the Services and for ensuring that all of such customer comply with all of the terms and conditions of this Agreement. Any violation of the terms and/or conditions of this Agreement by any such customer shall be deemed to be a violation thereof by you, towards which Shipex India shall have no liability or responsibility.</li>
+        <li>iii.	Customer shall not transfer or share (including by way of sublicense, lease,assignment orother transfer, including by operation of law) their log-in or right to use the Service to any third party. The Customer shall be solely responsible for the way anyone it has authorized to use the Services and for ensuring that all of such customer comply with all of the terms and conditions of this Agreement. Any violation of the terms and/or conditions of this Agreement by any such customer shall be deemed to be a violation thereof by you, towards which Delight Cargo shall have no liability or responsibility.</li>
         <li>iv.	Multiple users are not permitted to share the same/single log-in. You agree and understandthat you are responsible for maintaining the confidentiality of passwords associated with any log-in you use to access the Services;</li>
-        <li>v.	Customer agree that any information it gives to Shipex India will always be true, accurate,
+        <li>v.	Customer agree that any information it gives to Delight Cargo will always be true, accurate,
           correct, complete and up to date, to the best of its knowledge. Any phone number used to register with supporting documents to prove the same.
         </li>
         <li>vi. Customer agrees that you will not use the Services
-          provided by Shipex India for any unauthorized and unlawful purpose. The Customer will not impersonate another person to any of the aforesaid. </li>
+          provided by Delight Cargo for any unauthorized and unlawful purpose. The Customer will not impersonate another person to any of the aforesaid. </li>
         <li>vii. Customer agrees to use the Services only for purposes that are permitted by: (a)the
           terms of usage as outlined herein; and (b) any applicable law, regulation and generally accepted practices or guidelines in the relevant jurisdictions (including any laws regarding the export of goods, data or software to and from India or other relevant countries). </li>
-        <li>viii. Customer agrees that it is solely responsible for (and that Shipex India has no responsibility to
+        <li>viii. Customer agrees that it is solely responsible for (and that Delight Cargo has no responsibility to
           the
-          Customer or to any third party for) any breach of Customer’s obligations under this Agreement and for the consequences (including any loss or damage which Shipex India may suffer) of any
+          Customer or to any third party for) any breach of Customer’s obligations under this Agreement and for the consequences (including any loss or damage which Delight Cargo may suffer) of any
           such breach.
         </li>
-        <li>ix.	Customer expressly acknowledges and agrees that the use of the Services is at Customer’ssole risk and that the Services are provided “as is” and “as available”, and Shipex India at its discretion, will provide any customization or modification.</li>
-        <li>x.	Customer agrees that this Agreement and the Services of Shipex India form a part of subject to
-          any modification or be removed by Shipex India with change in government regulations, policies and local laws as applicable.
+        <li>ix.	Customer expressly acknowledges and agrees that the use of the Services is at Customer’ssole risk and that the Services are provided “as is” and “as available”, and Delight Cargo at its discretion, will provide any customization or modification.</li>
+        <li>x.	Customer agrees that this Agreement and the Services of Delight Cargo form a part of subject to
+          any modification or be removed by Delight Cargo with change in government regulations, policies and local laws as applicable.
         </li>
-        <li>xi.	Customer agrees not to access (or attempt to access) any of the Services by any meansother than through the interface that is provided by Shipex India, unless you have been specifically allowed to do so in a separate agreement with Shipex India.</li>
+        <li>xi.	Customer agrees not to access (or attempt to access) any of the Services by any meansother than through the interface that is provided by Delight Cargo, unless you have been specifically allowed to do so in a separate agreement with Delight Cargo.</li>
         <li>xii.	Customer agrees that you will not engage in any activity that interferes with or disrupts theServices (or the servers and networks which are connected to the Services).</li>
-        <li>xiii.	Customer agrees that you are solely responsible for (and that Shipex India has noresponsibility to
+        <li>xiii.	Customer agrees that you are solely responsible for (and that Delight Cargo has noresponsibility to
           you or to any third party for) any breach of your obligations under this Agreement
         </li>
       </ol>
@@ -170,10 +170,10 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       </p>
 
       <ol className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed space-y-2">
-        <li>i. With effect from the Effective Date, the Customer hereby appoints the Company, to provide consequences (including any loss or damage which Shipex India may sulogistics solutions in accordance with the terms and conditions of this Agreement (“Services”).ffer) of any such breach</li>
+        <li>i. With effect from the Effective Date, the Customer hereby appoints the Company, to provide consequences (including any loss or damage which Delight Cargo may sulogistics solutions in accordance with the terms and conditions of this Agreement (“Services”).ffer) of any such breach</li>
         <li>ii.	In order to avail the Services, the Customer is required to create an account at the Platform(“User Account”), by providing all the relevant, true, accurate, current and complete details, as detailed in (which includes- GST registration in case of registered customer, Pan, TAN, COI in case of company, Cancelled cheque of bank account as per KYC).</li>
-        <li>iii.	Customer agrees that no fake, inaccurate or incomplete details of the Customer shall beprovided to Shipex India as part of the KYC process set out above. In case the Customer fails to provide
-          complete and accurate details to the Company as part of the KYC process, such act or omission shall be considered a material breach of this Agreement and Shipex India has the right to recover from the Customer, damages and any and all losses suffered by it on account of such incomplete or inaccurate KYC details provided by the Customer.
+        <li>iii.	Customer agrees that no fake, inaccurate or incomplete details of the Customer shall beprovided to Delight Cargo as part of the KYC process set out above. In case the Customer fails to provide
+          complete and accurate details to the Company as part of the KYC process, such act or omission shall be considered a material breach of this Agreement and Delight Cargo has the right to recover from the Customer, damages and any and all losses suffered by it on account of such incomplete or inaccurate KYC details provided by the Customer.
         </li>
         <li>iv.	Customer is mandatorily required to give full address of shipping location/warehouses fromwhere the shipment is required to be picked and address should be updated at place of business or additional place of business in statutory registrations as applicable.</li>
         <li>v.	The Customer shall also be required to assign itself, a username and password to access theUser Account.</li>
@@ -181,17 +181,17 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
         <li>vii.	The Customer agrees and acknowledges that it shall be required to process/ place a requestfor its logistics requirement on the Platform. Upon receiving the request, the Company shall assign a Logistics Service Provider, who shall pick up the shipment from the location provided by the Customer. The Company shall assign a Logistics Service Provider, at its sole discretion and such assignment of a Logistics Service Provider shall be based on the location of the Customer, nature of the consignment, etc.</li>
         <li>viii.	The Customer shall be required to clearly provide on the Platform, the details of theconsignment, including but not limited to consignment details, consignee details, return address/ shipping address, amount of money to be collected in case of cash on delivery (“COD”) shipments etc The details of the bank account, where any money is collected as part of the COD, should also be provided on the Platform. Any bank account details provided for collection of COD should match the copy of the cancelled cheque submitted by the Customer. In case of revision of bank account revised cancelled cheque will need to be provided. The customer also certifies and confirms that the bank accounts provided are for legitimate business purposes and are legally permitted to receive monies collected by the Company for such shipment/s for which the Company received COD.</li>
         <li>ix.	The duly packaged consignment shall be handed over to the Logistics Service Provider bythe Customer, along with the aforementioned details on the packaging.</li>
-        <li>x.	Customer agrees that tax invoice shall be issued as per GST compliances and copy of thesame shall be attached in shipment. Customer can use the feature of Add on services of Shipex India
-          on seller panel and generate invoice from the same. In both the scenario, Shipex India has no involvement in the invoicing and not liable for the same. Customer shall be only liable for the same.
+        <li>x.	Customer agrees that tax invoice shall be issued as per GST compliances and copy of thesame shall be attached in shipment. Customer can use the feature of Add on services of Delight Cargo
+          on seller panel and generate invoice from the same. In both the scenario, Delight Cargo has no involvement in the invoicing and not liable for the same. Customer shall be only liable for the same.
         </li>
-        <li>xi.	In case of COD consignments, the Logistics Service Provider shall collect the amount ofmoney from the consignee, as per the instructions provided by the Customer. The Logistics Service Provider shall remit such money to the bank account of the Company, after the same being collected from the consignee. The Company shall thereafter remit the COD amount so received from the Logistics Service Provider to the bank account of the Customer as notified by the Customer on the Platform and as per any other terms agreed between the Shipex India and Customer. However, the Company shall not be held liable in case the COD payments are delayed or misplaced by the Logistics Service Provider. Upon receipt of the COD payments from the Logistics Service Provider by the Company and remittance of the same by the Company to the aforementioned bank account notified by the Customer, the Company shall have no liability towards the Customer for the collection or recovery of such COD payments. Further, once the details of relevant bank account have been notified to the Company by the Customer, the Company shall have no further obligation to verify the veracity and genuineness of the notification by the Customer, or to undertake any further due diligence or KYC process on the signatories of such bank account. However, the Company shall have the right to conduct a KYC on such bank account for its records.</li>
+        <li>xi.	In case of COD consignments, the Logistics Service Provider shall collect the amount ofmoney from the consignee, as per the instructions provided by the Customer. The Logistics Service Provider shall remit such money to the bank account of the Company, after the same being collected from the consignee. The Company shall thereafter remit the COD amount so received from the Logistics Service Provider to the bank account of the Customer as notified by the Customer on the Platform and as per any other terms agreed between the Delight Cargo and Customer. However, the Company shall not be held liable in case the COD payments are delayed or misplaced by the Logistics Service Provider. Upon receipt of the COD payments from the Logistics Service Provider by the Company and remittance of the same by the Company to the aforementioned bank account notified by the Customer, the Company shall have no liability towards the Customer for the collection or recovery of such COD payments. Further, once the details of relevant bank account have been notified to the Company by the Customer, the Company shall have no further obligation to verify the veracity and genuineness of the notification by the Customer, or to undertake any further due diligence or KYC process on the signatories of such bank account. However, the Company shall have the right to conduct a KYC on such bank account for its records.</li>
         <li>xii.	The Customer shall be required to raise any concerns/ queries, (i) with respect to a lostconsignment, within a period of 15 days from sending the consignment; and (ii) with respect to any damage, default or any other concerns with respect to the consignment, within a period of 7 days from delivery/ reverse delivery of the consignment. xiii. The Customer shall be provided with a tracking number (AWB number) by the Company for the consignment. The Customer can track the consignment, on a real time basis using the tracking number provided.</li>
         <li>xiii. The Customer shall be provided with a tracking number (AWB number) by the Company for the consignment. The Customer can track the consignment, on a real time basis using the tracking number provided.</li>
         <li>The Customer agrees and acknowledges that it shall be responsible for paying all duties, taxes, any other charge/levy that may be levied on consignment under Applicable Law. </li>
         <li>xv. The Customer hereby agrees that the Company is only an intermediary between the Customer and the Logistics Service Provider. In the event of a dispute between the Customer and the Logistics Service Provider, the Company shall take all reasonable steps to try and ensure an amicable settlement between the Customer and the Logistics Service Provider. In the event of a settlement between the Customer and the Logistics Service Provider, the Company’s obligation shall be to merely pass on any damages provided by the Logistics Service Provider to the Customer, as per the individual terms and conditions of the Logistics Service Provider. However, the Company shall not be liable in the event the Customer and the Logistics Service Provider are unable to reach an amicable settlement. Further, the Company shall not be liable for any costs/ damages/ claims arising from or in relation to such dispute between the Customer and the Logistics Service Provider.</li>
-        <li>Customer agrees that no fake products/goods will be delivered to the end consumer and if any fake product is found then Shipex India has the right to pay the amount to end customer and same
+        <li>Customer agrees that no fake products/goods will be delivered to the end consumer and if any fake product is found then Delight Cargo has the right to pay the amount to end customer and same
           shall be recovered from Customer. Any cost , expense in relation to that issue will be received from the customer or deducted from COD amount . In addition to this, Customer shall be liable for prosecution and penalty of Rs 100,000/- or Goods value whichever is higher if found to be in delivering any illegal or fake products/Goods. </li>
-        <li>xvii. Customer agrees that if there is any quality issue with the end consumer then Shipex India has
+        <li>xvii. Customer agrees that if there is any quality issue with the end consumer then Delight Cargo has
           the right to pay the amount to end consumer and same shall be received from the customer.</li>
         <li>xviii. Customer agrees that it is solely responsible for any breach of Customer obligations under this Agreement and for the consequences of any such breach.</li>
         <li>xix. In consideration of the Services rendered by Company, the Customer agrees to pay to the Company, the consideration in accordance with Clause 4 of this Agreement.</li>
@@ -201,52 +201,52 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       </p>
 
       <ol className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed space-y-2">
-        <li>i.	In consideration of the Company providing the Services to the Customer, the Customer agreesto pay the Company, valid consideration, the details of which are mentioned on Billing section on Shipex India online panel to this Agreement (“Consideration”) or in the billing section of the
-          Shipex India panel. In addition to the Consideration, the Customer shall also be required to pay applicable fees for shipping the consignment, which shall again be provided on the billing section of Shipex
+        <li>i.	In consideration of the Company providing the Services to the Customer, the Customer agreesto pay the Company, valid consideration, the details of which are mentioned on Billing section on Delight Cargo online panel to this Agreement (“Consideration”) or in the billing section of the
+          Delight Cargo panel. In addition to the Consideration, the Customer shall also be required to pay applicable fees for shipping the consignment, which shall again be provided on the billing section of DelightCargo
           India panel to this Agreement (“Shipping fees")
         </li>
         <li>ii.	The Consideration specified in this Agreement is exclusive of all applicable taxes. TheCustomer shall be required to pay applicable goods and service tax and fuel surcharge etc. The same shall be stated as separate items in the invoice raised by the Company on the Customer on or before 07th of the succeeding month for the Services that have been rendered in previous month as per the terms of this Agreement.</li>
-        <li>iii.	Shipex India may add new services for additional fees and charges or may proactively amendfees and charges for existing services, at any time in its sole discretion. Fees stated prior to the services being provided, as amended at Shipex India’s sole discretion from time to time, shall apply.</li>
-        <li>iv.	If you purchase any subscription based paid service, you authorize Shipex India to charge youapplicable fees at the beginning of every subscription period or at such intervals as applicable to the said service, and you authorize Shipex India make such modification to the fee structure as required and also agree to abide by such modified fee structure.</li>
-        <li>v.	Customer agrees that the billing credentials provided by it for any purchases from Shipex India
+        <li>iii.	Delight Cargo may add new services for additional fees and charges or may proactively amendfees and charges for existing services, at any time in its sole discretion. Fees stated prior to the services being provided, as amended at Delight Cargo’s sole discretion from time to time, shall apply.</li>
+        <li>iv.	If you purchase any subscription based paid service, you authorize Delight Cargo to charge youapplicable fees at the beginning of every subscription period or at such intervals as applicable to the said service, and you authorize Delight Cargo make such modification to the fee structure as required and also agree to abide by such modified fee structure.</li>
+        <li>v.	Customer agrees that the billing credentials provided by it for any purchases from Delight Cargo
           will be accurate and the Customer shall not use billing credentials that are not lawfully owned by it.</li>
         <li>vi. The Customer agrees to pay all subscription fees, service fees and other fees applicable to User’s use of Services or any other services which are beyond the scope of the Services and/or this Agreement, and the User shall not (directly or indirectly) circumvent the fee structure.</li>
-        <li>vii.	The User is solely responsible for payment of all taxes, legal compliances, and statutoryregistrations and reporting under applicable law. Shipex India is in no way responsible for any of the
+        <li>vii.	The User is solely responsible for payment of all taxes, legal compliances, and statutoryregistrations and reporting under applicable law. Delight Cargo is in no way responsible for any of the
           User’s taxes or legal or statutory compliances.
         </li>
         <li>viii.	Unless otherwise specified, all fees shall be exclusive of taxes, and Goods and Service taxand other statutory taxes, as applicable, shall be levied on every purchase/Service.</li>
         <li>ix.	The Customer may also use the prepaid mode of payment of Consideration and Shipping Fees.</li>
         <li>x.	The Company shall issue an invoice to the Customer on or before 07th of each succeedingmonth for the Services that have been rendered in previous month as per the terms of this Agreement.</li>
-        <li>xi.	The Customer shall pay to the Company within Seven (7) days from the date of submissionof the invoice as per commercials updated on the billing section of the Shipex India panel. </li>
+        <li>xi.	The Customer shall pay to the Company within Seven (7) days from the date of submissionof the invoice as per commercials updated on the billing section of the Delight Cargo panel. </li>
         <li>xii. It will be the responsibility of the Customer to verify the invoices and inform the Company within 5 (five) days in case of any disputes regarding the contents of the invoice from the date of receipt of invoices. Thereafter, the Parties shall promptly seek to resolve the dispute in good faith. Payment of the undisputed amount shall not be affected and should be made as per the general terms of this Agreement.</li>
         <li>xiii.	If for any reason the Customer defaults in making the payments against undisputedInvoices issued by Service Provider, then the Service Provider shall have the right to invoke the dispute resolution as set out under the Agreement.</li>
-        <li>xiv.	If the User fails to pay the full invoice amount in accordance with the time period mentionedabove or any other amounts/charges payable under this Agreement by the due date, then Shipex India will have the right to: (i) retain (and subsequently adjust the outstanding amounts/charges within 30 days of retention from) the amounts received from the end customer of the User through the cash on delivery method (“COD Amount”), and/or (ii) retain the custody of (and subsequently dispose within 30 days of retention) the shipments of the User which are in the possession of Shipex India logistics partner(s), and/or (iii) levy an interest of 18% per annum from
-          the due date of payment, till such time that the User makes entire payment towards the invoice, and/or (iv) forfeit the security deposit amount of the User (if any) lying with Shipex India. Without
+        <li>xiv.	If the User fails to pay the full invoice amount in accordance with the time period mentionedabove or any other amounts/charges payable under this Agreement by the due date, then Delight Cargo will have the right to: (i) retain (and subsequently adjust the outstanding amounts/charges within 30 days of retention from) the amounts received from the end customer of the User through the cash on delivery method (“COD Amount”), and/or (ii) retain the custody of (and subsequently dispose within 30 days of retention) the shipments of the User which are in the possession of Delight Cargo logistics partner(s), and/or (iii) levy an interest of 18% per annum from
+          the due date of payment, till such time that the User makes entire payment towards the invoice, and/or (iv) forfeit the security deposit amount of the User (if any) lying with Delight Cargo. Without
           being
-          prejudice to the above, the User hereby agrees that it shall become liable to pay the freight charges (both forward and RTO charges) as soon as a shipment is picked up or is RTO initiated by the Shipex India courier partner, and that Shipex India shall have a right to recover such freight charges
+          prejudice to the above, the User hereby agrees that it shall become liable to pay the freight charges (both forward and RTO charges) as soon as a shipment is picked up or is RTO initiated by the Delight Cargo courier partner, and that Delight Cargo shall have a right to recover such freight charges
           from the User (for all the shipments which have been picked-up/shipped/RTO however which have not been invoiced) as per the various modes agreed under this Agreement, including but not limited to retaining/adjusting the COD Amounts for the shipments of the User. The Company shall release such consignments and/or COD shipment payments, only upon the Customer paying the Consideration owed to the Company.
         </li>
         <li>xv.	The Company reserves its right to revise the Consideration payable by the Customer, byproviding a prior written notice of 7 days to the Customer. The Customer shall be required to raise any concerns pertaining to the same within a period of 4 days from the date of receiving such notice. In the event, the Customer fails to raise any concern within the stipulated time period, the revised Consideration shall deemed to be accepted by the Customer. In the event the Customer raises any concerns within stipulated time period, the Parties shall negotiate and determine the revised Consideration. Such revised Consideration shall be effective, upon the expiry of the notice period.</li>
-        <li>xvi.	In the event the User closes its account with the Company, or this Agreement expires or isterminated, the Company will deduct the Consideration and Shipping Fees and the freight amounts due to it from the User, from the COD Amount. The Company shall, thereafter, remit the remaining COD amount after such deduction, within 45 (Forty-Five) business working days from the date of such closure/expiration/termination, subject to reconciliation and completion of all the shipments and transactions pertaining to the User/his account. In the event, the COD Amount falls short of the outstanding amount payable by the User, the User shall within 5 (five) days from the date of such closure/expiration/termination pay the outstanding amount to the Company, and until the payment of the entire outstanding amount, the Company shall retain the custody of the shipments of the User which are in the possession of Logistics Service Provider. In the event of any delay in payment of outstanding amount by the User (as required under this clause), Shipex India shall have a right to levy an interest of 18% per annum on the outstanding amount from the due date of payment till the date of actual payment and/or to forfeit the security deposit amount of the User (if any) lying with Shipex India.</li>
-        <li>xvii.	For any claims by the User regarding non connectivity of the shipment (i.e.where the Useris claiming that the shipment has been picked up but not connected) the signed copy of the manifest sheet of the pick up against the disputed shipment has to be submitted along with the claim request by the User within 3 (three) days from the pickup date. Without the signed manifest any such request shall not be considered valid. Shipex India shall be liable for forward &
+        <li>xvi.	In the event the User closes its account with the Company, or this Agreement expires or isterminated, the Company will deduct the Consideration and Shipping Fees and the freight amounts due to it from the User, from the COD Amount. The Company shall, thereafter, remit the remaining COD amount after such deduction, within 45 (Forty-Five) business working days from the date of such closure/expiration/termination, subject to reconciliation and completion of all the shipments and transactions pertaining to the User/his account. In the event, the COD Amount falls short of the outstanding amount payable by the User, the User shall within 5 (five) days from the date of such closure/expiration/termination pay the outstanding amount to the Company, and until the payment of the entire outstanding amount, the Company shall retain the custody of the shipments of the User which are in the possession of Logistics Service Provider. In the event of any delay in payment of outstanding amount by the User (as required under this clause), Delight Cargo shall have a right to levy an interest of 18% per annum on the outstanding amount from the due date of payment till the date of actual payment and/or to forfeit the security deposit amount of the User (if any) lying with Delight Cargo.</li>
+        <li>xvii.	For any claims by the User regarding non connectivity of the shipment (i.e.where the Useris claiming that the shipment has been picked up but not connected) the signed copy of the manifest sheet of the pick up against the disputed shipment has to be submitted along with the claim request by the User within 3 (three) days from the pickup date. Without the signed manifest any such request shall not be considered valid. Delight Cargo shall be liable for forward &
           RTO
-          delivery subject to the liability of Rs 5,000 (Rupees Five thousand only) in case of forward delivery and if loss or damage is in excess of Rs 5,000 than Shipex India shall issue COF (Certificate
+          delivery subject to the liability of Rs 5,000 (Rupees Five thousand only) in case of forward delivery and if loss or damage is in excess of Rs 5,000 than Delight Cargo shall issue COF (Certificate
           of
           Facts) govern by Limitation of Liability clause.
         </li>
         <li>xviii.	The User agrees that in case of shipments booked under Cash on Delivery(“COD”), Logistics
-          Service Provider shall collect cash, as per the instructions of Shipex India from the consignee as per the
-          details mentioned on the COD order form and remit/reimburse the amount to Shipex India which
-          then forthwith would be reimbursed to the User. However, Shipex India shall not be held liable in case the
-          COD amount has been delayed or misplaced by the courier company. The User shall seek its claim, loss or any damages suffered from the Logistics Service Provider directly, and in no way shall recover from Shipex India or hold Shipex India liable for the same. In this regard, the User
+          Service Provider shall collect cash, as per the instructions of Delight Cargo from the consignee as per the
+          details mentioned on the COD order form and remit/reimburse the amount to Delight Cargo which
+          then forthwith would be reimbursed to the User. However, Delight Cargo shall not be held liable in case the
+          COD amount has been delayed or misplaced by the courier company. The User shall seek its claim, loss or any damages suffered from the Logistics Service Provider directly, and in no way shall recover from Delight Cargo or hold Delight Cargo liable for the same. In this regard, the User
           agrees that
-          Shipex India shall have the right to deduct the freight charges from the COD Amounts received by Shipex India, and then remit/reimburse the balance amount to the User. xx. Shipex India may, from time to time, in its sole discretion, provide/allocate a credit limit to the
+          Delight Cargo shall have the right to deduct the freight charges from the COD Amounts received by Delight Cargo, and then remit/reimburse the balance amount to the User. xx. Delight Cargo may, from time to time, in its sole discretion, provide/allocate a credit limit to the
           User
-          for the Services, which can be used by the User within a specified time period. In this regard, the User hereby acknowledges and agrees to pay the service fees and all other amounts (payable by it pursuant to this Agreement), and in the event User fails to timely pay the same, Shipex India shall have an unconditional and irrevocable right, in addition to other rights and
+          for the Services, which can be used by the User within a specified time period. In this regard, the User hereby acknowledges and agrees to pay the service fees and all other amounts (payable by it pursuant to this Agreement), and in the event User fails to timely pay the same, Delight Cargo shall have an unconditional and irrevocable right, in addition to other rights and
           remedies
         </li>
-        <li>xix.	Shipex India reserves the right to modify the fee structure by providing a notice, either on yourdashboard or through email to the authorized User, which shall be considered as valid and agreed communication. Upon the User not communicating any negative response/objection to Shipex India to such notice, Shipex India shall apply the modified Fee structure.</li>
-        <li>xxi.	In order to process the fee payments, Shipex India might require details of User’s bank account, credit card number and other such financial information. Users shall be responsible to maintain the confidentiality of such information provided by Users.</li>
+        <li>xix.	Delight Cargo reserves the right to modify the fee structure by providing a notice, either on yourdashboard or through email to the authorized User, which shall be considered as valid and agreed communication. Upon the User not communicating any negative response/objection to Delight Cargo to such notice, Delight Cargo shall apply the modified Fee structure.</li>
+        <li>xxi.	In order to process the fee payments, Delight Cargo might require details of User’s bank account, credit card number and other such financial information. Users shall be responsible to maintain the confidentiality of such information provided by Users.</li>
       </ol>
 
 
@@ -254,13 +254,13 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       <p className="text-xs font-bold sm:text-sm text-gray-700 leading-relaxed">5) LIMITATION OF LIABILITY AND DISCLAIMERS:</p>
       <ol className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed space-y-2">
         <li>
-          i. In case of loss or damage up to Rs 5,000 (Rupees five thousand only), the total aggregate liability of Shipex India shall be Rs 5,000 or actual loss, whichever is lower. If damage or loss exceeds Rs 5,000, then Shipex India shall issue a Certificate of Facts (COF) only.
+          i. In case of loss or damage up to Rs 5,000 (Rupees five thousand only), the total aggregate liability of Delight Cargo shall be Rs 5,000 or actual loss, whichever is lower. If damage or loss exceeds Rs 5,000, then Delight Cargo shall issue a Certificate of Facts (COF) only.
         </li>
         <li>
           ii. Under any circumstances, the company shall not be liable to the customer in any amount for special, incidental, consequential, or indirect damages, loss of goodwill or business profits, work stoppage, or exemplary or punitive damages.
         </li>
         <li>
-          iii. The Customer agrees and acknowledges that the use of the Services is at its sole risk and that the Services are provided "AS IS" by Shipex India.
+          iii. The Customer agrees and acknowledges that the use of the Services is at its sole risk and that the Services are provided "AS IS" by Delight Cargo.
         </li>
         <li>
           iv. The Company shall not be responsible or liable in any manner to the Customer for any losses, damage, or expenses incurred by the Customer as a result of any action taken by the Company, where the Customer has consented to the same.
@@ -275,10 +275,10 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
           vii. The Company shall, in no manner, be liable to remit the Cash-on-Delivery (COD) that is to be received as payment by the User in case of theft, robbery, or forcible snatching of the delivery package from the Logistics Service Provider. Such incidents shall be the sole responsibility of the User, and the User is liable to initiate actions to resolve such incidents, including legal proceedings and reimbursement of any losses to the concerned logistics partner or its personnel.
         </li>
         <li>
-          viii. In no event, including but not limited to negligence, shall Shipex India or any of its directors, officers, employees, agents, or service providers (collectively, the “Protected Entities”) be liable for any direct, indirect, special, incidental, consequential, exemplary, or punitive damages arising from, or directly or indirectly related to, the use of, or the inability to use, the Services or the content, materials, and functions related thereto, including lost business or lost sales, even if such Protected Entity has been advised of the possibility of such damages.
+          viii. In no event, including but not limited to negligence, shall Delight Cargo or any of its directors, officers, employees, agents, or service providers (collectively, the “Protected Entities”) be liable for any direct, indirect, special, incidental, consequential, exemplary, or punitive damages arising from, or directly or indirectly related to, the use of, or the inability to use, the Services or the content, materials, and functions related thereto, including lost business or lost sales, even if such Protected Entity has been advised of the possibility of such damages.
         </li>
         <li>
-          ix. In no event shall the total aggregate liability of the Protected Entities/Service Provider(s) to a User for all damages, losses, and causes of action (whether in contract or tort, including but not limited to negligence or otherwise) arising from the terms and conditions of this Agreement or a User’s use of the Services exceed INR 5,000 (Indian Rupees Five Thousand) only. In case of loss or damage exceeding Rs 5,000, Shipex India shall issue a Certificate of Facts (COF) only.
+          ix. In no event shall the total aggregate liability of the Protected Entities/Service Provider(s) to a User for all damages, losses, and causes of action (whether in contract or tort, including but not limited to negligence or otherwise) arising from the terms and conditions of this Agreement or a User’s use of the Services exceed INR 5,000 (Indian Rupees Five Thousand) only. In case of loss or damage exceeding Rs 5,000, Delight Cargo shall issue a Certificate of Facts (COF) only.
         </li>
         <li>
           x. The Protected Entities shall not be liable for any act or omission of any other person or entity furnishing a portion of the Service, or from any act or omission of a third party, including vendors participating in the Services, or for any unauthorized interception of communications or other breaches of privacy attributable in part to the acts or omissions of the User or third parties.
@@ -329,7 +329,7 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
 
       <p className="text-[10px] sm:text-[12px] font-bold text-gray-700">7) INDEMNITY</p>
       <p className="text-gray-700 text-[10px] sm:text-[12px]">
-        <span className="font-semibold">i.</span> The Customer (“Indemnifying Party”) hereby agrees to indemnify, defend, and hold Shipex India,
+        <span className="font-semibold">i.</span> The Customer (“Indemnifying Party”) hereby agrees to indemnify, defend, and hold Delight Cargo,
         its affiliates, officers, directors, employees, contractors, sub-contractors, consultants, licensors, other third-party service providers,
         agents, and representatives (“Indemnified Party”) harmless from and against claims, demands, actions, liabilities, costs, interest, damages, and expenses
         of any nature whatsoever (including all legal and other costs, charges, and expenses) incurred or suffered (directly or indirectly) by the Indemnified Party, on account of:
@@ -409,7 +409,7 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
           <span className="font-semibold text-[10px] sm:text-[12px] mt-2">12) NON-SOLICITATION:</span>
           <ul className="list-[lower-alpha] ml-2 space-y-1 text-[10px] sm:text-[12px]">
             <li>
-              The User agrees and undertakes that, during the term of this Agreement, and for a period of 36 (thirty-six) months thereafter, it shall not directly or indirectly attempt in any manner to solicit, any client/customer, or to persuade any person, firm or entity which is a client/customer/supplier/vendor/partner of Shipex India, to cease doing business or to reduce the amount of business which any such client/customer/supplier/vendor/partner has customarily done or might propose doing with Shipex India.
+              The User agrees and undertakes that, during the term of this Agreement, and for a period of 36 (thirty-six) months thereafter, it shall not directly or indirectly attempt in any manner to solicit, any client/customer, or to persuade any person, firm or entity which is a client/customer/supplier/vendor/partner of Delight Cargo, to cease doing business or to reduce the amount of business which any such client/customer/supplier/vendor/partner has customarily done or might propose doing with Delight Cargo.
             </li>
           </ul>
         
@@ -421,10 +421,10 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
               The Agreement shall come into force with effect from the Effective Date and shall remain in place until terminated by either Party in accordance with the provision of this agreement.
             </li>
             <li>
-              The Customer can request for termination of his/her/its membership with Shipex India at any time with a 30 days prior written notice subject to the provisions for the Services undertaken. During this notice period, Shipex India will investigate and ascertain the fulfillment of any ongoing Services or pending dues related to fees or any other payables by the Customer. The Customer shall be obligated to clear any dues with the Company for any of its Services which the Customer has procured. Shipex India shall not be liable to the Customer or consignee or any third party for any termination of the Customer access to the Services.
+              The Customer can request for termination of his/her/its membership with Delight Cargo at any time with a 30 days prior written notice subject to the provisions for the Services undertaken. During this notice period, Delight Cargo will investigate and ascertain the fulfillment of any ongoing Services or pending dues related to fees or any other payables by the Customer. The Customer shall be obligated to clear any dues with the Company for any of its Services which the Customer has procured. Delight Cargo shall not be liable to the Customer or consignee or any third party for any termination of the Customer access to the Services.
             </li>
             <li>
-              Shipex India reserves the right to terminate the Customer’s User Account in case:
+              Delight Cargo reserves the right to terminate the Customer’s User Account in case:
               <ul className="list-[lower-roman] ml-6 space-y-1">
                 <li>The Customer breaches any terms and conditions of this Agreement.</li>
                 <li>
@@ -433,7 +433,7 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
               </ul>
             </li>
             <li>
-              Shipex India may terminate the Agreement by giving 10 days prior written notice to the Customer.
+              Delight Cargo may terminate the Agreement by giving 10 days prior written notice to the Customer.
             </li>
             <li>
               In case of dispute between the parties, the Customer hereby agrees to negotiate in good faith to resolve any dispute between them regarding this Agreement. If the negotiations do not resolve the dispute to the reasonable satisfaction of the parties, then each party shall nominate a person with respectable professional standing and unimpeachable conduct as its representative. These representatives shall, within 30 (thirty) days of a written request by either party to call such a meeting, meet in person and shall attempt in good faith to resolve the dispute.
@@ -490,13 +490,13 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
         i.	This Agreement, the annexures and any other documents entered into or delivered ascontemplated in this Agreement herein sets out the entire agreement and understanding between the Parties with respect to the subject matter hereof. Unless otherwise decided by
-        Shipex India, the annexures containing specific terms of use supersedes all general terms of the Agreement, previous letters of intent, heads of terms, prior discussions and correspondence exchanged between the Parties in connection with the Agreement referred to herein. Similarly, unless otherwise decided by Shipex India, the SOPs/SLAs issued in furtherance to this Agreement,
+        Delight Cargo, the annexures containing specific terms of use supersedes all general terms of the Agreement, previous letters of intent, heads of terms, prior discussions and correspondence exchanged between the Parties in connection with the Agreement referred to herein. Similarly, unless otherwise decided by Delight Cargo, the SOPs/SLAs issued in furtherance to this Agreement,
         shall supersedes the provisions of this Agreement and of the annexures.
 
       </p>
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
-        ii.	This Agreement and the rights and obligations herein shall not be assigned by the User,without the consent of Shipex India.
+        ii.	This Agreement and the rights and obligations herein shall not be assigned by the User,without the consent of Delight Cargo.
       </p>
 
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
@@ -547,10 +547,10 @@ const Aggrement = ({ documentDetails, companyAddress, gstNumber, billingInfo }) 
       <p className="text-[10px] sm:text-[12px] text-gray-700 font-bold">28) CONTACT DETAILS</p>
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
         a.	If any User has any question, issue, complaint regarding any of our Services, please contact
-        Company’s customer service at support@shipexindia.com
+        Company’s customer service at support@delightcargo.com
        </p>
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed"> 
-        b.	If a User has any questions concerning Shipex India, the Services, this Agreement, oranythingrelated to any of the foregoing, it can be reached at the following email address – support@shipexindia.com
+        b.	If a User has any questions concerning Delight Cargo, the Services, this Agreement, oranythingrelated to any of the foregoing, it can be reached at the following email address – support@delightcargo.com
         </p>
       <p className="text-[10px] sm:text-[12px] text-gray-700 leading-relaxed">
         c.	The User hereby agrees and provides his consent to receive communications,correspondences, updates, notifications, etc. from the Company through email, SMS, WhatsApp and any other mode as agreed by the Parties from time to time. The Parties agree that the said communications, correspondences, updates, notifications, etc. will be legally binding on them. d. Notwithstanding anything provided contrary in this Agreement, the User here by agrees, provides his consent and further authorizes the Company to share his relevant details and documents (including but not limited to business/registered name(s), phone number(s), address(es), email-id(s), bank account details, KYC documents, etc.) with the concerned judicial authority, court, police, complainant, etc. (as the case may be) in the event of a complaint been filed against the User or dispute been raised in relation to the shipment(s) made by the User.

@@ -51,8 +51,8 @@ const Billings = () => {
                         key={tab.path}
                         to={tab.path}
                         className={`px-3 py-2 rounded-lg border text-[12px] font-[600] transition-all duration-200 ${location.pathname === tab.path
-                            ? 'bg-[#0CBB7D] text-white'
-                            : 'text-gray-700 hover:bg-green-200 bg-white'
+                            ? 'bg-[#0192ED] text-white'
+                            : 'text-gray-700 hover:bg-blue-100 bg-white'
                             }`}
                     >
                         {tab.label}
@@ -82,8 +82,8 @@ const Billings = () => {
                             key={tab.path}
                             onClick={() => handleSelect(tab.path)}
                             className={`px-3 py-2 text-[12px] cursor-pointer font-[600] transition-all ${location.pathname === tab.path
-                                ? "bg-green-200 text-gray-700"
-                                : "text-gray-700 hover:bg-green-50"
+                                ? "bg-blue-200 text-gray-700"
+                                : "text-gray-700 hover:bg-blue-50"
                                 }`}
                         >
                             {tab.label}

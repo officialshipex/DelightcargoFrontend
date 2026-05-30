@@ -147,7 +147,7 @@ const Invoices = ({
   const getStatusColor = (status) => {
     switch (status?.toLowerCase()) {
       case "paid":
-        return "bg-green-100 text-[#0CBB7D] border-[#0CBB7D]/20";
+        return "bg-blue-100 text-[#0192ED] border-[#0192ED]/20";
       case "pending":
         return "bg-red-100 text-red-600 border-red-200";
       case "partially_paid":
@@ -172,7 +172,7 @@ const Invoices = ({
               setInvoiceNumber(e.target.value);
               setPage(1);
             }}
-            className="w-full h-9 px-3 text-[12px] font-[600] border border-gray-300 rounded-lg focus:outline-none focus:border-[#0CBB7D] text-gray-700 placeholder:text-gray-400 shadow-sm"
+            className="w-full h-9 px-3 text-[12px] font-[600] border border-gray-300 rounded-lg focus:outline-none focus:border-[#0192ED] text-gray-700 placeholder:text-gray-400 shadow-sm"
           />
         </div>
 
@@ -180,7 +180,7 @@ const Invoices = ({
           onClick={() => setIsFilterPanelOpen(true)}
           className="flex-shrink-0 flex items-center justify-center gap-2 px-3 py-2 bg-white border border-gray-300 rounded-lg text-[12px] font-[600] text-gray-500 hover:bg-gray-50 transition-all shadow-sm whitespace-nowrap h-9"
         >
-          <Filter className="w-4 h-4 text-[#0CBB7D]" />
+          <Filter className="w-4 h-4 text-[#0192ED]" />
           More Filters
         </button>
 
@@ -199,7 +199,7 @@ const Invoices = ({
               disabled={selectedInvoices.length === 0}
               onClick={() => setActionOpen(!actionOpen)}
               className={`h-9 px-3 rounded-lg text-[12px] font-[600] flex items-center gap-1 border transition-all ${selectedInvoices.length > 0
-                ? "border-[#0CBB7D] text-[#0CBB7D] hover:bg-green-50 shadow-sm"
+                ? "border-[#0192ED] text-[#0192ED] hover:bg-blue-50 shadow-sm"
                 : "bg-gray-50 text-gray-400 border-gray-200 cursor-not-allowed"
                 }`}
             >
@@ -213,7 +213,7 @@ const Invoices = ({
             {actionOpen && (
               <div className="absolute right-0 mt-1 bg-white border-2 border-gray-100 rounded-lg shadow-xl w-40 text-[12px] z-[100] animate-popup-in overflow-hidden">
                 <div
-                  className="px-4 py-2 hover:bg-green-50 cursor-pointer font-[600] text-gray-600"
+                  className="px-4 py-2 hover:bg-blue-50 cursor-pointer font-[600] text-gray-600"
                   onClick={() => {
                     setActionOpen(false);
                     if (!selectedInvoices.length) return;
@@ -243,14 +243,14 @@ const Invoices = ({
                 setInvoiceNumber(e.target.value);
                 setPage(1);
               }}
-              className="w-full h-9 px-3 text-[12px] font-[600] border border-gray-300 rounded-lg focus:outline-none focus:border-[#0CBB7D] text-gray-700 placeholder:text-gray-400 shadow-sm"
+              className="w-full h-9 px-3 text-[12px] font-[600] border border-gray-300 rounded-lg focus:outline-none focus:border-[#0192ED] text-gray-700 placeholder:text-gray-400 shadow-sm"
             />
           </div>
           <button
             onClick={() => setIsFilterPanelOpen(true)}
             className="flex-shrink-0 flex items-center justify-center gap-2 px-3 py-2 bg-white border border-gray-300 rounded-lg text-[12px] font-[600] text-gray-500 hover:bg-gray-50 shadow-sm h-9"
           >
-            <Filter className="w-4 h-4 text-[#0CBB7D]" />
+            <Filter className="w-4 h-4 text-[#0192ED]" />
             More Filters
           </button>
         </div>
@@ -271,7 +271,7 @@ const Invoices = ({
       <div className="hidden md:block relative">
         <div className="h-[calc(100vh-300px)] overflow-y-auto bg-white shadow-sm">
           <table className="w-full text-left border-collapse text-[12px] relative">
-            <thead className="sticky top-0 z-40 bg-[#0CBB7D] text-white font-[600]">
+            <thead className="sticky top-0 z-40 bg-[#0192ED] text-white font-[600]">
               <tr>
                 <th className="py-2 px-3 w-10">
                   <div className="flex items-center justify-center">
@@ -282,7 +282,7 @@ const Invoices = ({
                         selectedInvoices.length === invoices.length
                       }
                       onChange={handleSelectAll}
-                      className="cursor-pointer accent-[#0CBB7D] w-3 h-3"
+                      className="cursor-pointer accent-[#0192ED] w-3 h-3"
                     />
                   </div>
                 </th>
@@ -325,19 +325,19 @@ const Invoices = ({
                         type="checkbox"
                         checked={selectedInvoices.includes(inv._id)}
                         onChange={() => handleCheckboxChange(inv._id)}
-                        className="cursor-pointer accent-[#0CBB7D] w-3 h-3"
+                        className="cursor-pointer accent-[#0192ED] w-3 h-3"
                       />
                     </td>
                     <td className="px-3 py-2">
                       <div className="flex items-center gap-1 group">
-                        <span className="font-[600] text-[#0CBB7D]">
+                        <span className="font-[600] text-[#0192ED]">
                           {inv.invoiceNumber}
                         </span>
                         <button
                           onClick={() => handleCopy(inv.invoiceNumber, inv._id)}
                         >
                           {copiedId === inv._id ? (
-                            <FiCheck className="w-3 h-3 text-[#0CBB7D]" />
+                            <FiCheck className="w-3 h-3 text-[#0192ED]" />
                           ) : (
                             <FiCopy className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                           )}
@@ -378,7 +378,7 @@ const Invoices = ({
                             href={inv.invoiceUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center bg-[#0CBB7D] text-white w-8 h-8 rounded-lg hover:shadow-md hover:bg-opacity-90 transition-all shadow-sm"
+                            className="inline-flex items-center justify-center bg-[#0192ED] text-white w-8 h-8 rounded-lg hover:shadow-md hover:bg-opacity-90 transition-all shadow-sm"
                             title="Download Invoice PDF"
                           >
                             <HiOutlineDownload className="w-4 h-4" />
@@ -389,7 +389,7 @@ const Invoices = ({
                             const url = `${REACT_APP_BACKEND_URL}/invoice/export-excel?invoiceNumber=${inv.invoiceNumber}`;
                             window.open(url, "_blank");
                           }}
-                          className="inline-flex items-center justify-center bg-[#0CBB7D] text-white w-8 h-8 rounded-lg hover:shadow-md hover:bg-opacity-90 transition-all shadow-sm"
+                          className="inline-flex items-center justify-center bg-[#0192ED] text-white w-8 h-8 rounded-lg hover:shadow-md hover:bg-opacity-90 transition-all shadow-sm"
                           title="Download Invoice Excel"
                         >
                           <FaFileExcel className="w-3.5 h-3.5" />
@@ -414,7 +414,7 @@ const Invoices = ({
                 invoices.length > 0 && selectedInvoices.length === invoices.length
               }
               onChange={handleSelectAll}
-              className="cursor-pointer accent-[#0CBB7D] w-3 h-3 ml-1"
+              className="cursor-pointer accent-[#0192ED] w-3 h-3 ml-1"
             />
             <span className="text-[10px] font-[600] text-gray-700">
               Select All
@@ -426,7 +426,7 @@ const Invoices = ({
               disabled={selectedInvoices.length === 0}
               onClick={() => setActionOpen(!actionOpen)}
               className={`h-[30px] px-3 rounded-lg flex items-center justify-center border transition-all ${selectedInvoices.length > 0
-                ? "border-[#0CBB7D] text-[#0CBB7D] bg-white shadow-sm"
+                ? "border-[#0192ED] text-[#0192ED] bg-white shadow-sm"
                 : "bg-gray-50 text-gray-400 border-gray-200 cursor-not-allowed"
                 }`}
             >
@@ -435,7 +435,7 @@ const Invoices = ({
             {actionOpen && (
               <div className="absolute right-0 mt-1 bg-white border-2 border-gray-100 rounded-lg shadow-xl w-40 text-[11px] z-[100] animate-popup-in overflow-hidden">
                 <div
-                  className="px-4 py-2 hover:bg-green-50 cursor-pointer font-[600] text-gray-600"
+                  className="px-4 py-2 hover:bg-blue-50 cursor-pointer font-[600] text-gray-600"
                   onClick={() => {
                     setActionOpen(false);
                     if (!selectedInvoices.length) return;
@@ -478,12 +478,12 @@ const Invoices = ({
                         type="checkbox"
                         checked={selectedInvoices.includes(inv._id)}
                         onChange={() => handleCheckboxChange(inv._id)}
-                        className="cursor-pointer accent-[#0CBB7D] w-3 h-3"
+                        className="cursor-pointer accent-[#0192ED] w-3 h-3"
                       />
                     </div>
                     <div className="space-y-1">
                       <div className="flex items-center gap-1">
-                        <span className="text-[#0CBB7D] font-[600] text-[10px]">
+                        <span className="text-[#0192ED] font-[600] text-[10px]">
                           {inv.invoiceNumber}
                         </span>
                         <button
@@ -492,7 +492,7 @@ const Invoices = ({
                           }
                         >
                           {copiedId === inv._id + "_mob" ? (
-                            <FiCheck className="w-3 h-3 text-[#0CBB7D]" />
+                            <FiCheck className="w-3 h-3 text-[#0192ED]" />
                           ) : (
                             <FiCopy className="w-3 h-3 text-gray-300" />
                           )}
@@ -520,7 +520,7 @@ const Invoices = ({
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 mb-2 bg-green-50/50 p-2 rounded-lg border border-gray-100">
+                <div className="grid grid-cols-2 gap-2 mb-2 bg-blue-50/50 p-2 rounded-lg border border-gray-100">
                   <div className="space-y-0.5">
                     <p className="text-gray-700 text-[10px] tracking-wider">
                       Shipments
@@ -545,7 +545,7 @@ const Invoices = ({
                       href={inv.invoiceUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-3 py-1.5 bg-green-50 text-[#0CBB7D] border border-green-100 rounded-lg flex items-center gap-2 font-[600] text-[10px] hover:bg-green-100 transition-colors"
+                      className="px-3 py-1.5 bg-blue-50 text-[#0192ED] border border-blue-100 rounded-lg flex items-center gap-2 font-[600] text-[10px] hover:bg-blue-50 transition-colors"
                     >
                       <HiOutlineDownload className="w-4 h-4" />
                       PDF
@@ -556,7 +556,7 @@ const Invoices = ({
                       const url = `${REACT_APP_BACKEND_URL}/invoice/export-excel?invoiceNumber=${inv.invoiceNumber}`;
                       window.open(url, "_blank");
                     }}
-                    className="px-3 py-1.5 bg-green-50 text-[#0CBB7D] border border-green-100 rounded-lg flex items-center gap-2 font-[600] text-[10px] hover:bg-green-100 transition-colors"
+                    className="px-3 py-1.5 bg-blue-50 text-[#0192ED] border border-blue-100 rounded-lg flex items-center gap-2 font-[600] text-[10px] hover:bg-blue-50 transition-colors"
                   >
                     <FaFileExcel className="w-3.5 h-3.5" />
                     Excel

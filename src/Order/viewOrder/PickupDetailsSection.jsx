@@ -34,9 +34,9 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                         onClick={() => handleCopy(value, fieldKey)}
                         className="md:opacity-0 md:group-hover:opacity-100 cursor-pointer transition-opacity"
                     >
-                        <div className="relative flex items-center justify-center w-5 h-5 text-gray-500 hover:text-[#0CBB7D]">
+                        <div className="relative flex items-center justify-center w-5 h-5 text-gray-500 hover:text-[#0192ED]">
                             {copiedField === fieldKey ? (
-                                <FiCheck className="w-3 h-3 text-[#0CBB7D]" />
+                                <FiCheck className="w-3 h-3 text-[#0192ED]" />
                             ) : (
                                 <FiCopy className="w-3 h-3" />
                             )}
@@ -53,8 +53,8 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                 {/* Header */}
                 <div className="flex justify-between items-center mb-3 border-b pb-2">
                     <div className="flex items-center gap-2">
-                        <p className="p-2 bg-green-100 hidden sm:block rounded-full">
-                            <MapPin className="w-4 h-4 text-[#0CBB7D]" />
+                        <p className="p-2 bg-blue-100 hidden sm:block rounded-full">
+                            <MapPin className="w-4 h-4 text-[#0192ED]" />
                         </p>
 
                         <h2 className="text-[12px] sm:text-[14px] font-[600] text-gray-700">
@@ -97,9 +97,9 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                                     }
                                     className="md:opacity-0 md:group-hover:opacity-100 cursor-pointer transition-opacity mt-0.5"
                                 >
-                                    <div className="relative flex items-center justify-center text-gray-500 w-4 h-4 hover:text-[#0CBB7D]">
+                                    <div className="relative flex items-center justify-center text-gray-500 w-4 h-4 hover:text-[#0192ED]">
                                         {copiedField === "pickup-address" ? (
-                                            <FiCheck className="w-3 h-3 text-green-600" />
+                                            <FiCheck className="w-3 h-3 text-blue-600" />
                                         ) : (
                                             <FiCopy className="w-3 h-3" />
                                         )}
@@ -120,7 +120,7 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                         <span className="font-[600] text-[10px] text-gray-700">Pickup:</span>
 
                         <div className="flex items-center gap-2">
-                            <span className="text-[#0CBB7D] font-[600] text-[10px]">
+                            <span className="text-[#0192ED] font-[600] text-[10px]">
                                 {order.pickupAddress?.contactName || "-"}
                             </span>
                             {mobileOpen ? <FiChevronUp /> : <FiChevronDown />}
@@ -128,7 +128,7 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                     </div>
 
                     {mobileOpen && (
-                        <div className="mt-2 pl-1 border-l-2 border-green-200 animate-popup-in">
+                        <div className="mt-2 pl-1 border-l-2 border-blue-200 animate-popup-in">
                             <p className="text-[12px] text-gray-500 leading-relaxed">
                                 {order.pickupAddress?.address}, {order.pickupAddress?.city},{" "}
                                 {order.pickupAddress?.state} - {order.pickupAddress?.pinCode}
@@ -141,7 +141,7 @@ const PickupDetailsSection = ({ order, onUpdate, userId }) => {
                                         "mobile-pickup-address"
                                     )
                                 }
-                                className="mt-2 flex items-center gap-2 text-[#0CBB7D] text-[12px] font-[600]"
+                                className="mt-2 flex items-center gap-2 text-[#0192ED] text-[12px] font-[600]"
                             >
                                 {copiedField === "mobile-pickup-address" ? (
                                     <>

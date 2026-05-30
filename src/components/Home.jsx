@@ -37,7 +37,7 @@ const Home = () => {
       description: "Complete your KYC to start processing your orders",
       title: "Unlocks all feature restrictions",
       status: `${kyc ? "Done" : "Pending"}`,
-      statusColor: `${kyc ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`,
+      statusColor: `${kyc ? "bg-blue-100 text-green-700" : "bg-red-100 text-red-700"}`,
       navigateTo: `${kyc ? "/step1" : "/kyc"}`,
     },
     {
@@ -53,7 +53,7 @@ const Home = () => {
       description: "Make your first recharge!",
       title: "Let's start shipping...",
       status: "Done",
-      statusColor: "bg-green-100 text-green-700",
+      statusColor: "bg-blue-100 text-green-700",
       navigateTo: "/step3",
     },
     {
@@ -61,7 +61,7 @@ const Home = () => {
       description: "Add a default pickup address",
       title: "Help us with your favorite pickup location",
       status: "Done",
-      statusColor: "bg-green-100 text-green-700",
+      statusColor: "bg-blue-100 text-green-700",
       navigateTo: "/step4",
     },
     {
@@ -69,12 +69,12 @@ const Home = () => {
       description: "Configure carrier priorities",
       title: "Let us know your courier partner preferences",
       status: "Done",
-      statusColor: "bg-green-100 text-green-700",
+      statusColor: "bg-blue-100 text-green-700",
       navigateTo: "/step5",
     },
     {
       step: "Step 6",
-      description: "Integrate your marketplace accounts with Shipex",
+      description: "Integrate your marketplace accounts with DelightCargo",
       title: "Manage all your accounts from one place",
       status: "Pending",
       statusColor: "bg-red-100 text-red-700",
@@ -93,7 +93,7 @@ const Home = () => {
       description: "Create your first order!",
       title: "Happy shipping...",
       status: "Done",
-      statusColor: "bg-green-100 text-green-700",
+      statusColor: "bg-blue-100 text-green-700",
       navigateTo: "/step8",
     },
   ];

@@ -81,11 +81,11 @@ const DetailedTicketView = ({
         <div className="flex items-center gap-2 mb-4">
           <button
             onClick={onClose}
-            className="text-[#0CBB7D] hover:text-[#099e67] sm:text-[18px] text-[16px]"
+            className="text-[#0192ED] hover:text-[#099e67] sm:text-[18px] text-[16px]"
           >
             <IoArrowBack />
           </button>
-          <h2 className="sm:text-[18px] text-[14px] font-[600] text-[#0CBB7D]">Ticket Details</h2>
+          <h2 className="sm:text-[18px] text-[14px] font-[600] text-[#0192ED]">Ticket Details</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
@@ -98,7 +98,7 @@ const DetailedTicketView = ({
             <span
               className={`inline-block px-3 py-1 rounded-full text-[10px] font-[600] ${
                 status === "resolved"
-                  ? "bg-green-100 text-green-700"
+                  ? "bg-blue-100 text-green-700"
                   : status === "deleted"
                   ? "bg-red-100 text-red-700"
                   : "bg-yellow-100 text-yellow-700"
@@ -170,7 +170,7 @@ const DetailedTicketView = ({
 
           <div className="flex gap-2 sm:gap-3 flex-col sm:flex-row">
             <button
-              className="px-3 py-2 h-9 rounded-lg bg-[#0CBB7D] text-white font-[600] sm:text-[12px] text-[10px] hover:bg-[#0aa66d]"
+              className="px-3 py-2 h-9 rounded-lg bg-[#0192ED] text-white font-[600] sm:text-[12px] text-[10px] hover:bg-blue-600"
               onClick={() => handleStatusChange("resolved")}
             >
               Resolved

@@ -7,8 +7,8 @@ const TrackingDetailsSection = ({ tracking, orderStatus }) => {
     return (
         <div className="bg-white p-4 rounded-lg shadow-sm sticky top-34 h-[calc(100vh-8rem)] flex flex-col">
             <div className="flex items-center gap-2 mb-2 border-b pb-2">
-                <p className={`p-2 hidden sm:block rounded-full ${isCancelled ? 'bg-red-100' : 'bg-green-100'}`}>
-                    <Activity className={`w-4 h-4 ${isCancelled ? 'text-red-500' : 'text-[#0CBB7D]'}`} />
+                <p className={`p-2 hidden sm:block rounded-full ${isCancelled ? 'bg-red-100' : 'bg-blue-100'}`}>
+                    <Activity className={`w-4 h-4 ${isCancelled ? 'text-red-500' : 'text-[#0192ED]'}`} />
                 </p>
 
                 <h2 className="text-[12px] sm:text-[14px] font-[600] text-gray-700">
@@ -59,9 +59,9 @@ const TrackingDetailsSection = ({ tracking, orderStatus }) => {
 
                                 {/* TIMELINE (MIDDLE) */}
                                 <div className="flex flex-col items-center">
-                                    <div className={`w-3 h-3 rounded-full border-2 z-10 ${(isCancelled && index === 0) ? 'bg-red-500 border-red-500' : 'bg-green-500 border-green-500'}`} />
+                                    <div className={`w-3 h-3 rounded-full border-2 z-10 ${(isCancelled && index === 0) ? 'bg-red-500 border-red-500' : 'bg-blue-500 border-blue-500'}`} />
                                     {index !== filteredArray.length - 1 && (
-                                        <div className={`w-0.5 flex-1 mt-1 ${(isCancelled && index === 0) ? 'bg-red-500' : 'bg-green-500'}`} />
+                                        <div className={`w-0.5 flex-1 mt-1 ${(isCancelled && index === 0) ? 'bg-red-500' : 'bg-blue-500'}`} />
                                     )}
                                 </div>
 

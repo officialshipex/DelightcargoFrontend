@@ -194,7 +194,7 @@ const AllWeightDiscrepancy = () => {
           onClick={() => setIsFilterPanelOpen(true)}
           className="flex-shrink-0 flex items-center justify-center gap-2 px-3 py-2 bg-white border border-gray-300 rounded-lg text-[12px] font-[600] text-gray-500 hover:bg-gray-50 transition-all shadow-sm whitespace-nowrap h-9"
         >
-          <Filter className="w-4 h-4 text-[#0CBB7D]" />
+          <Filter className="w-4 h-4 text-[#0192ED]" />
           More Filters
         </button>
 
@@ -213,7 +213,7 @@ const AllWeightDiscrepancy = () => {
               disabled={selectedDispute.length === 0}
               onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
               className={`h-9 px-3 rounded-lg text-[12px] font-[600] flex items-center gap-1 border transition-all ${selectedDispute.length > 0
-                ? "border-[#0CBB7D] text-[#0CBB7D] hover:bg-green-50"
+                ? "border-[#0192ED] text-[#0192ED] hover:bg-blue-50"
                 : "bg-gray-50 text-gray-400 border-gray-200 cursor-not-allowed"
                 }`}
             >
@@ -224,7 +224,7 @@ const AllWeightDiscrepancy = () => {
             {desktopDropdownOpen && (
               <div className="absolute right-0 mt-1 animate-popup-in bg-white border-2 border-gray-100 rounded-lg shadow-xl w-36 text-[12px] z-[100] overflow-hidden">
                 <div
-                  className="px-3 py-2 hover:bg-green-100 cursor-pointer font-[600] text-gray-500"
+                  className="px-3 py-2 hover:bg-blue-50 cursor-pointer font-[600] text-gray-500"
                   onClick={() => { handleExport(); setDesktopDropdownOpen(false); }}
                 >
                   Export
@@ -252,7 +252,7 @@ const AllWeightDiscrepancy = () => {
             onClick={() => setIsFilterPanelOpen(true)}
             className="flex-shrink-0 flex items-center justify-center gap-2 px-3 py-2 bg-white border border-gray-300 rounded-lg text-[10px] font-[600] text-gray-500 hover:bg-gray-50 transition-all shadow-sm whitespace-nowrap h-[32px] min-w-[100px]"
           >
-            <Filter className="w-3 h-3 text-[#0CBB7D]" />
+            <Filter className="w-3 h-3 text-[#0192ED]" />
             More Filters
           </button>
         </div>
@@ -293,7 +293,7 @@ const AllWeightDiscrepancy = () => {
               type="checkbox"
               checked={selectedDispute.length === orders.length && orders.length > 0}
               onChange={handleSelectAll}
-              className="accent-[#0CBB7D] w-3 h-3"
+              className="accent-[#0192ED] w-3 h-3"
             />
             <span className="text-[10px] font-[600] text-gray-700 tracking-wider">Select All</span>
           </div>
@@ -303,7 +303,7 @@ const AllWeightDiscrepancy = () => {
               disabled={selectedDispute.length === 0}
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
               className={`h-[30px] px-3 rounded-lg flex items-center justify-center border transition-all ${selectedDispute.length > 0
-                ? "border-[#0CBB7D] text-[#0CBB7D] bg-white shadow-sm"
+                ? "border-[#0192ED] text-[#0192ED] bg-white shadow-sm"
                 : "bg-gray-50 text-gray-400 border-gray-200 cursor-not-allowed"
                 }`}
             >
@@ -312,7 +312,7 @@ const AllWeightDiscrepancy = () => {
             {mobileDropdownOpen && (
               <div className="absolute right-0 mt-1 bg-white border-2 border-gray-100 rounded-lg shadow-xl w-40 text-[11px] z-[100] overflow-hidden">
                 <div
-                  className="px-3 py-2 hover:bg-green-50 cursor-pointer font-[600] text-gray-600"
+                  className="px-3 py-2 hover:bg-blue-50 cursor-pointer font-[600] text-gray-600"
                   onClick={() => { handleExport(); setMobileDropdownOpen(false); }}
                 >
                   Export

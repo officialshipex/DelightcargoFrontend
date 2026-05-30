@@ -47,7 +47,7 @@ const AcceptDiscrepancy = ({ isOpen, onClose, awbNumber, setRefresh }) => {
         </h2>
         <div className="flex justify-center space-x-4">
           <button
-            className="px-4 py-2 bg-[#0CBB7D] text-white rounded-md transition"
+            className="px-4 py-2 bg-[#0192ED] text-white rounded-md transition"
             onClick={handleConfirm} // Call local function
           >
             Yes

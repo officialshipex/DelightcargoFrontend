@@ -168,7 +168,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                 {instructionOptions.map((opt) => (
                                     <li
                                         key={opt.value}
-                                        className="px-3 py-2 hover:bg-green-50 cursor-pointer"
+                                        className="px-3 py-2 hover:bg-blue-50 cursor-pointer"
                                         onClick={() => {
                                             setAction(opt.value);
                                             setDropdownOpen(false);
@@ -190,7 +190,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                 value={remarks}
                                 onChange={(e) => setRemarks(e.target.value)}
                                 rows={2}
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                 placeholder="Enter remarks"
                             />
                         </div>
@@ -205,7 +205,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                 value={scheduledDate}
                                 onChange={(e) => setScheduledDate(e.target.value)}
                                 min={new Date().toISOString().split("T")[0]}
-                                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                             />
                         </div>
                     )}
@@ -223,7 +223,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                         onChange={(e) =>
                                             setAddress({ ...address, customer_name: e.target.value })
                                         }
-                                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                         placeholder="Full Name"
                                     />
                                 </div>
@@ -233,7 +233,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                         type="text"
                                         value={mobile}
                                         onChange={(e) => setMobile(e.target.value)}
-                                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                         placeholder="New Phone"
                                     />
                                 </div>
@@ -247,7 +247,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                     onChange={(e) =>
                                         setAddress({ ...address, address1: e.target.value })
                                     }
-                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                     placeholder="House/Flat, Street"
                                 />
                             </div>
@@ -260,7 +260,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                     onChange={(e) =>
                                         setAddress({ ...address, address2: e.target.value })
                                     }
-                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                     placeholder="Area, Landmark"
                                 />
                             </div>
@@ -272,7 +272,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                         type="text"
                                         value={address.city}
                                         onChange={(e) => setAddress({ ...address, city: e.target.value })}
-                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                         placeholder="City"
                                     />
                                 </div>
@@ -282,7 +282,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                         type="text"
                                         value={address.state}
                                         onChange={(e) => setAddress({ ...address, state: e.target.value })}
-                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                         placeholder="State"
                                     />
                                 </div>
@@ -292,7 +292,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                                         type="text"
                                         value={address.pincode}
                                         onChange={(e) => setAddress({ ...address, pincode: e.target.value })}
-                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-green-500 outline-none"
+                                        className="w-full border border-gray-300 rounded-lg px-2 py-2 text-[12px] focus:ring-1 focus:ring-blue-500 outline-none"
                                         placeholder="Pincode"
                                     />
                                 </div>
@@ -313,7 +313,7 @@ const BulkNdrActionModal = ({ isOpen, onClose, selectedOrders = [], onRefresh })
                     </button>
 
                     <button
-                        className="px-3 py-2 bg-[#0CBB7D] text-white rounded-lg text-[10px] sm:text-[12px] font-[600] hover:bg-green-500 disabled:opacity-50"
+                        className="px-3 py-2 bg-[#0192ED] text-white rounded-lg text-[10px] sm:text-[12px] font-[600] hover:bg-blue-500 disabled:opacity-50"
                         disabled={loading}
                         onClick={handleSubmit}
                     >

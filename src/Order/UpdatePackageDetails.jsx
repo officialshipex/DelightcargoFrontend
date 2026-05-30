@@ -37,7 +37,7 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 shadow-lg flex items-center justify-center z-[1000] animate-popup-in">
             <div className="bg-white p-4 rounded-lg w-[500px] shadow-lg relative">
                 <div className="flex items-center gap-2 mb-4">
-                    <FiBox className="w-4 h-4 text-[#0CBB7D]" />
+                    <FiBox className="w-4 h-4 text-[#0192ED]" />
                     <h2 className="text-[12px] sm:text-[14px] font-[600] text-gray-700">Update Package Details</h2>
                 </div>
 
@@ -59,7 +59,7 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
                             placeholder="0"
                             value={packageDetails.length}
                             onChange={(e) => handleChange("length", e.target.value)}
-                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0CBB7D] focus:border-[#0CBB7D] transition-all"
+                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0192ED] focus:border-[#0192ED] transition-all"
                         />
                     </div>
 
@@ -73,7 +73,7 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
                             placeholder="0"
                             value={packageDetails.width}
                             onChange={(e) => handleChange("width", e.target.value)}
-                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0CBB7D] focus:border-[#0CBB7D] transition-all"
+                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0192ED] focus:border-[#0192ED] transition-all"
                         />
                     </div>
 
@@ -87,7 +87,7 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
                             placeholder="0"
                             value={packageDetails.height}
                             onChange={(e) => handleChange("height", e.target.value)}
-                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0CBB7D] focus:border-[#0CBB7D] transition-all"
+                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0192ED] focus:border-[#0192ED] transition-all"
                         />
                     </div>
 
@@ -101,13 +101,13 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
                             placeholder="0"
                             value={packageDetails.weight}
                             onChange={(e) => handleChange("weight", e.target.value)}
-                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0CBB7D] focus:border-[#0CBB7D] transition-all"
+                            className="w-full px-3 py-2 text-[10px] sm:text-[12px] rounded-lg border border-gray-300 outline-none focus:ring-1 focus:ring-[#0192ED] focus:border-[#0192ED] transition-all"
                         />
                     </div>
                 </div>
 
                 {/* Summary Section */}
-                <div className="bg-green-50 font-[600] rounded-lg p-2 mb-4 border border-gray-100">
+                <div className="bg-blue-50 font-[600] rounded-lg p-2 mb-4 border border-gray-100">
                     <div className="flex justify-between items-center mb-2">
                         <span className="text-[10px] sm:text-[12px] text-gray-600">Volumetric Weight:</span>
                         <span className="text-[10px] sm:text-[12px] font-[600] text-gray-500">{volumetricWeight} Kg</span>
@@ -127,7 +127,7 @@ const UpdatePackageDetails = ({ isOpen, onClose, onSave, packageDetails, setPack
                     </button>
                     <button
                         onClick={handleSave}
-                        className="px-3 py-2 text-[10px] sm:text-[12px] font-[600] text-white bg-[#0CBB7D] rounded-lg hover:bg-opacity-90 transition-colors shadow-sm"
+                        className="px-3 py-2 text-[10px] sm:text-[12px] font-[600] text-white bg-[#0192ED] rounded-lg hover:bg-opacity-90 transition-colors shadow-sm"
                     >
                         Save Changes
                     </button>

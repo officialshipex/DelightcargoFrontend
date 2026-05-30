@@ -156,7 +156,7 @@ const UpdateRateCardPopup = ({ id, userName, selectedRateCardValue, onClose, onS
                                 <div
                                     key={option}
                                     onClick={() => handleSelect(option)}
-                                    className={`px-3 py-2 cursor-pointer text-gray-500 text-[12px] hover:bg-green-100 ${selectedRateCard === option ? "bg-green-100 font-[600]" : ""
+                                    className={`px-3 py-2 cursor-pointer text-gray-500 text-[12px] hover:bg-blue-50 ${selectedRateCard === option ? "bg-blue-100 font-[600]" : ""
                                         }`}
                                 >
                                     {option}
@@ -175,7 +175,7 @@ const UpdateRateCardPopup = ({ id, userName, selectedRateCardValue, onClose, onS
                         Cancel
                     </button>
                     <button
-                        className="bg-[#0CBB7D] hover:bg-green-500 font-[600] text-white px-3 py-2 text-[10px] transition-all duration-500 sm:text-[12px] rounded-lg"
+                        className="bg-[#0192ED] hover:bg-blue-500 font-[600] text-white px-3 py-2 text-[10px] transition-all duration-500 sm:text-[12px] rounded-lg"
                         onClick={handleAssign}
                     >
                         Assign

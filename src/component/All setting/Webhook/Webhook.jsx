@@ -29,8 +29,8 @@ const Webhook = () => {
             onClick={() => setActiveTab(tab.value)}
             className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[10px] sm:text-[12px] font-[600] border transition-all duration-200 ${
               activeTab === tab.value
-                ? "bg-[#0CBB7D] text-white"
-                : "text-gray-700 hover:bg-green-200 bg-white"
+                ? "bg-[#0192ED] text-white"
+                : "text-gray-700 hover:bg-blue-100 bg-white"
             }`}
           >
             {tab.label}

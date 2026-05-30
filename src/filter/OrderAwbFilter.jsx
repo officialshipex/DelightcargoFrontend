@@ -22,7 +22,7 @@ const OrderAwbFilter = ({
         className={`flex w-full ${heightClass}
           border rounded-lg border-gray-300
           bg-white transition-colors
-          focus-within:border-[#0CBB7D]`}
+          focus-within:border-[#0192ED]`}
       >
         {/* Dropdown */}
         <div className="relative w-[35%]">
@@ -60,7 +60,7 @@ const OrderAwbFilter = ({
                     setShowDropdown(false);
                   }}
                   className="px-3 py-2 cursor-pointer text-gray-700
-                    hover:bg-green-100"
+                    hover:bg-blue-50"
                 >
                   {opt.label}
                 </li>

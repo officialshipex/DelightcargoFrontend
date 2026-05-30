@@ -36,7 +36,7 @@ const ProviderFilter = ({ provider, setProvider }) => {
                     {["Delhivery", "DTDC", "EcomExpress", "Amazon"].map((s) => (
                         <li
                             key={s}
-                            className={`px-3 py-2 cursor-pointer hover:bg-green-100 ${provider === s ? "bg-gray-100 font-medium" : ""}`}
+                            className={`px-3 py-2 cursor-pointer hover:bg-blue-50 ${provider === s ? "bg-gray-100 font-medium" : ""}`}
                             onClick={() => {
                                 setProvider(s);
                                 setShowDropdown(false);
@@ -82,7 +82,7 @@ const StatusFilter = ({ status, setStatus }) => {
                     {["pending", "Accepted", "Discrepancy Raised"].map((s) => (
                         <li
                             key={s}
-                            className={`px-3 py-2 cursor-pointer hover:bg-green-100 ${status === s ? "bg-gray-100 font-medium" : ""}`}
+                            className={`px-3 py-2 cursor-pointer hover:bg-blue-50 ${status === s ? "bg-gray-100 font-medium" : ""}`}
                             onClick={() => {
                                 setStatus(s);
                                 setShowDropdown(false);
@@ -202,7 +202,7 @@ const DiscrepancyFilter = ({
                             <button
                                 className={`px-3 h-9 border rounded-lg font-[600] flex items-center gap-1 transition-all ${selectedDispute.length === 0
                                     ? "border-gray-200 text-gray-400 cursor-not-allowed"
-                                    : "text-[#0CBB7D] border-[#0CBB7D]"
+                                    : "text-[#0192ED] border-[#0192ED]"
                                     } text-[12px]`}
                                 onClick={(e) => {
                                     e.stopPropagation();
@@ -217,7 +217,7 @@ const DiscrepancyFilter = ({
                                 <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-[100]">
                                     <ul className="font-[600] py-1">
                                         <li
-                                            className="px-3 py-2 text-gray-700 hover:bg-green-100 cursor-pointer text-[12px]"
+                                            className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer text-[12px]"
                                             onClick={(e) => {
                                                 handleExport();
                                                 setActionDropdownOpen(false);
@@ -228,7 +228,7 @@ const DiscrepancyFilter = ({
                                         {customActions.map((action, idx) => (
                                             <li
                                                 key={idx}
-                                                className="px-3 py-2 text-gray-700 hover:bg-green-100 cursor-pointer text-[12px]"
+                                                className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer text-[12px]"
                                                 onClick={(e) => {
                                                     action.onClick();
                                                     setActionDropdownOpen(false);
@@ -243,7 +243,7 @@ const DiscrepancyFilter = ({
                         </div>
                         <button
                             onClick={handleClearFilters}
-                            className="py-2 px-4 border rounded-lg bg-[#0CBB7D] text-[12px] font-[600] text-white hover:opacity-90 transition"
+                            className="py-2 px-4 border rounded-lg bg-[#0192ED] text-[12px] font-[600] text-white hover:opacity-90 transition"
                         >
                             Clear
                         </button>
@@ -276,7 +276,7 @@ const DiscrepancyFilter = ({
                     />
 
                     <button
-                        className="px-3 flex items-center justify-center text-white bg-[#0CBB7D] h-9 rounded-lg transition text-[12px] font-[600]"
+                        className="px-3 flex items-center justify-center text-white bg-[#0192ED] h-9 rounded-lg transition text-[12px] font-[600]"
                         onClick={() => setShowMobileFilters((prev) => !prev)}
                     >
                         <FaFilter className="text-white" size={14} />
@@ -286,7 +286,7 @@ const DiscrepancyFilter = ({
                         <button
                             className={`px-3 h-9 border rounded-lg font-[600] flex items-center gap-1 ${selectedDispute.length === 0
                                 ? "border-gray-300 text-[12px] cursor-not-allowed text-gray-400"
-                                : "text-[#0CBB7D] border-[#0CBB7D] text-[12px]"
+                                : "text-[#0192ED] border-[#0192ED] text-[12px]"
                                 }`}
                             onClick={() =>
                                 selectedDispute.length > 0 &&
@@ -294,13 +294,13 @@ const DiscrepancyFilter = ({
                             }
                             disabled={selectedDispute.length === 0}
                         >
-                            <FaBars className={selectedDispute.length === 0 ? "text-gray-400" : "text-[#0CBB7D]"} />
+                            <FaBars className={selectedDispute.length === 0 ? "text-gray-400" : "text-[#0192ED]"} />
                         </button>
                         {actionDropdownOpen && (
                             <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-[60]">
                                 <ul className="py-2 font-[600]">
                                     <li
-                                        className="px-3 py-2 text-gray-700 hover:bg-green-100 cursor-pointer text-[12px]"
+                                        className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer text-[12px]"
                                         onClick={(e) => {
                                             handleExport();
                                             setActionDropdownOpen(false);
@@ -311,7 +311,7 @@ const DiscrepancyFilter = ({
                                     {customActions.map((action, idx) => (
                                         <li
                                             key={idx}
-                                            className="px-3 py-2 text-gray-700 hover:bg-green-100 cursor-pointer text-[12px]"
+                                            className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer text-[12px]"
                                             onClick={(e) => {
                                                 action.onClick();
                                                 setActionDropdownOpen(false);
@@ -349,7 +349,7 @@ const DiscrepancyFilter = ({
                             {showStatus && <StatusFilter status={status} setStatus={setStatus} />}
                         </div>
                         <button
-                            className="w-full bg-[#0CBB7D] py-2 text-[12px] font-[600] rounded-lg text-white border hover:opacity-90 transition"
+                            className="w-full bg-[#0192ED] py-2 text-[12px] font-[600] rounded-lg text-white border hover:opacity-90 transition"
                             onClick={handleClearFilters}
                         >
                             Clear

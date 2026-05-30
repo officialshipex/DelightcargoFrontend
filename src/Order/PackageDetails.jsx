@@ -127,11 +127,11 @@ const PackageDetails = ({
   // --------------------------
 
   return (
-    <div className="border mt-2 border-[#0CBB7D] rounded-lg p-4 bg-white">
+    <div className="border mt-2 border-[#0192ED] rounded-lg p-4 bg-white">
 
       {/* HEADER */}
       <h2 className="text-[14px] font-[600] flex items-center gap-2 text-gray-700 mb-2">
-        <span className="bg-[#0CBB7D] text-white rounded-lg p-2">
+        <span className="bg-[#0192ED] text-white rounded-lg p-2">
           <FiBox className="text-[14px]" />
         </span>
         Package Details
@@ -163,7 +163,7 @@ const PackageDetails = ({
               {["B2C","B2B"].map((item) => (
                 <div
                   key={item}
-                  className={`px-3 py-2 text-[12px] cursor-pointer hover:bg-green-100 ${orderType === item ? "bg-green-100 font-[600]" : ""
+                  className={`px-3 py-2 text-[12px] cursor-pointer hover:bg-blue-100 ${orderType === item ? "bg-blue-100 font-[600]" : ""
                     }`}
                   onClick={() => {
                     setOrderType(item);
@@ -201,7 +201,7 @@ const PackageDetails = ({
                 {["ROV Owner", "ROV Carrier"].map((item) => (
                   <div
                     key={item}
-                    className={`px-3 py-2 text-[12px] cursor-pointer hover:bg-green-100 ${rovType === item ? "bg-green-100 font-[600]" : ""
+                    className={`px-3 py-2 text-[12px] cursor-pointer hover:bg-blue-100 ${rovType === item ? "bg-blue-100 font-[600]" : ""
                       }`}
                     onClick={() => {
                       setRovType(item);
@@ -237,7 +237,7 @@ const PackageDetails = ({
                   className="w-full h-8 px-2 text-[12px] border-none outline-none rounded-l-lg"
                   placeholder="0.00"
                 />
-                <span className="w-12 h-8 flex justify-center items-center text-[12px] text-white rounded-r-lg bg-[#0CBB7D]">
+                <span className="w-12 h-8 flex justify-center items-center text-[12px] text-white rounded-r-lg bg-[#0192ED]">
                   kg
                 </span>
               </div>
@@ -256,7 +256,7 @@ const PackageDetails = ({
                       placeholder={dim}
                       className="w-full h-8 px-2 text-[12px] font-[600] border-none outline-none rounded-l-lg"
                     />
-                    <span className="w-12 h-8 flex font-[600] justify-center items-center text-[12px] text-white rounded-r-lg bg-[#0CBB7D]">
+                    <span className="w-12 h-8 flex font-[600] justify-center items-center text-[12px] text-white rounded-r-lg bg-[#0192ED]">
                       cm
                     </span>
                   </div>
@@ -273,7 +273,7 @@ const PackageDetails = ({
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
-            <div className="bg-green-100 rounded-lg p-3 w-full sm:w-2/4">
+            <div className="bg-blue-100 rounded-lg p-3 w-full sm:w-2/4">
               <div className="flex sm:flex-col flex-row justify-between">
                 <h3 className="text-[12px] font-[600] text-gray-700">
                   Applicable Weight
@@ -292,7 +292,7 @@ const PackageDetails = ({
               </p>
             </div>
 
-            <div className="bg-green-100 rounded-lg p-3 w-full sm:w-1/2 flex justify-between">
+            <div className="bg-blue-100 rounded-lg p-3 w-full sm:w-1/2 flex justify-between">
               <h3 className="text-[12px] font-[600]">Volumetric Weight</h3>
               <p className="text-[12px] font-[600]">{volumetricWeight} Kg</p>
             </div>
@@ -300,7 +300,7 @@ const PackageDetails = ({
 
           <hr className="my-4" />
 
-          <div className="bg-green-100 px-3 py-2 rounded-lg mb-4 flex justify-between">
+          <div className="bg-blue-100 px-3 py-2 rounded-lg mb-4 flex justify-between">
             <p className="text-[12px] font-[600]">Total Order Value</p>
             <p className="text-[12px] font-[600]">₹{totalPrice}</p>
           </div>
@@ -315,10 +315,10 @@ const PackageDetails = ({
           {B2BPackageDetails.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="border border-dashed border-[#0CBB7D] rounded-lg p-4 my-4 relative bg-white"
+              className="border border-dashed border-[#0192ED] rounded-lg p-4 my-4 relative bg-white"
             >
               {/* Badge */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#0CBB7D] text-white w-8 h-8 flex justify-center items-center rounded-full text-[12px] font-[600] shadow">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#0192ED] text-white w-8 h-8 flex justify-center items-center rounded-full text-[12px] font-[600] shadow">
                 {index + 1}
               </div>
 
@@ -347,7 +347,7 @@ const PackageDetails = ({
                     type="text"
                     value={pkg.noOfBox}
                     onChange={(e) => updateB2BField(pkg.id, "noOfBox", e.target.value)}
-                    className="border rounded-lg focus:outline-[#0CBB7D] px-3 py-2 text-[12px] w-full"
+                    className="border rounded-lg focus:outline-[#0192ED] px-3 py-2 text-[12px] w-full"
                     placeholder="Box Count"
                   />
                 </div>
@@ -360,7 +360,7 @@ const PackageDetails = ({
                     onChange={(e) =>
                       updateB2BField(pkg.id, "weightPerBox", e.target.value)
                     }
-                    className="border rounded-lg px-3 focus:outline-[#0CBB7D] py-2 text-[12px] w-full"
+                    className="border rounded-lg px-3 focus:outline-[#0192ED] py-2 text-[12px] w-full"
                     placeholder="Weight"
                   />
                 </div>
@@ -372,7 +372,7 @@ const PackageDetails = ({
                       type="text"
                       value={pkg[dim]}
                       onChange={(e) => updateB2BField(pkg.id, dim, e.target.value)}
-                      className="border rounded-lg focus:outline-[#0CBB7D] px-3 py-2 font-[600] text-[12px] w-full"
+                      className="border rounded-lg focus:outline-[#0192ED] px-3 py-2 font-[600] text-[12px] w-full"
                       placeholder={dim}
                     />
                   </div>
@@ -384,19 +384,19 @@ const PackageDetails = ({
           {/* Add B2B package button */}
           <button
             onClick={addB2BPackage}
-            className="flex items-center justify-center w-8 h-8 bg-[#0CBB7D] text-white rounded-full mx-auto text-[12px]"
+            className="flex items-center justify-center w-8 h-8 bg-[#0192ED] text-white rounded-full mx-auto text-[12px]"
           >
             +
           </button>
 
           {/* B2B RESULT SUMMARY */}
           <div className="flex flex-col sm:flex-row gap-2 mt-4">
-            <div className="bg-green-100 p-4 rounded-lg w-full sm:w-2/4">
+            <div className="bg-blue-100 p-4 rounded-lg w-full sm:w-2/4">
               <h3 className="text-[12px] font-[600]">Applicable Weight</h3>
               <p className="text-[12px] font-[600]">{applicableWeightB2B.toFixed(2)} Kg</p>
             </div>
 
-            <div className="bg-green-100 p-4 rounded-lg w-full sm:w-1/2 flex justify-between">
+            <div className="bg-blue-100 p-4 rounded-lg w-full sm:w-1/2 flex justify-between">
               <h3 className="text-[12px] font-[600]">Volumetric Weight</h3>
               <p className="text-[12px] font-[600]">{totalVolumetricWeightB2B.toFixed(2)} Kg</p>
             </div>
@@ -404,7 +404,7 @@ const PackageDetails = ({
 
           <hr className="my-4" />
 
-          <div className="bg-green-100 px-4 py-2 rounded-lg mb-4 flex justify-between">
+          <div className="bg-blue-100 px-4 py-2 rounded-lg mb-4 flex justify-between">
             <p className="text-[12px] font-[600]">Total Order Value</p>
             <p className="text-[12px] font-[600]">₹{totalPrice}</p>
           </div>

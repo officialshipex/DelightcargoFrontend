@@ -165,7 +165,7 @@ const navigate=useNavigate()
             type="date"
             value={filters[header] || ""}
             onChange={(e) => handleFilterChange(header, e.target.value)}
-            className="w-full px-1 py-1 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-1 py-1 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         );
       } else if (header === "Category") {
@@ -174,7 +174,7 @@ const navigate=useNavigate()
             key={index}
             value={filters[header] || ""}
             onChange={(e) => handleFilterChange(header, e.target.value)}
-            className="w-full px-1 py-1.5 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-1 py-1.5 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           >
             <option value="">Category</option>
             <option value="Credit">Credit</option>
@@ -189,7 +189,7 @@ const navigate=useNavigate()
             placeholder={header}
             value={filters[header] || ""}
             onChange={(e) => handleFilterChange(header, e.target.value)}
-            className="w-full px-1 py-1.5 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0CBB7D]"
+            className="w-full px-1 py-1.5 text-[12px] border rounded-md focus:outline-none focus:ring-1 focus:ring-[#0192ED]"
           />
         );
       }
@@ -197,7 +197,7 @@ const navigate=useNavigate()
     <div className="md:col-span-full flex justify-end ">
       <button
         onClick={applyFilters}
-        className="bg-[#0CBB7D] text-white px-3 py-1.5 rounded-md text-[12px]"
+        className="bg-[#0192ED] text-white px-3 py-1.5 rounded-md text-[12px]"
       >
         Apply
       </button>
@@ -208,7 +208,7 @@ const navigate=useNavigate()
 
       {/* Desktop Table View */}
       <div className="hidden md:block">
-        <div className="grid grid-cols-7 gap-6 mb-4 py-2 bg-[#0CBB7D] text-white font-semibold text-left rounded-[5px] shadow-md text-[12px] text-center">
+        <div className="grid grid-cols-7 gap-6 mb-4 py-2 bg-[#0192ED] text-white font-semibold text-left rounded-[5px] shadow-md text-[12px] text-center">
           <div>Date</div>
           <div>Channel Order ID</div>
           <div>AWB Number</div>
@@ -232,7 +232,7 @@ const navigate=useNavigate()
                 <div className="flex items-center justify-center">
                   {row.channelOrderId}
                 </div>
-                <div className="flex items-center cursor-pointer justify-center text-[#0CBB7D]" onClick={() => handleTrackingByAwb(row.awb_number)}>
+                <div className="flex items-center cursor-pointer justify-center text-[#0192ED]" onClick={() => handleTrackingByAwb(row.awb_number)}>
                   {row.awb_number}
                 </div>
                 <div className="flex items-center justify-center">
@@ -241,7 +241,7 @@ const navigate=useNavigate()
                 <div
                   className={`flex items-center justify-center ${row.category.toLowerCase() === "debit"
                     ? "text-red-500"
-                    : "text-green-500"
+                    : "text-blue-500"
                     }`}
                 >
                   {row.category.toLowerCase() === "debit"
@@ -272,7 +272,7 @@ const navigate=useNavigate()
         {currentRows.map((row, index) => (
           <div
             key={index}
-            className="bg-green-100 p-4 rounded-md shadow-lg  max-w-xl mx-auto"
+            className="bg-blue-100 p-4 rounded-md shadow-lg  max-w-xl mx-auto"
           >
             <div className="flex justify-between items-start gap-4">
               <div className="space-y-1 text-[12px] text-gray-700 w-full">
@@ -299,7 +299,7 @@ const navigate=useNavigate()
                 </div>
 
                 <div className="flex items-center gap-2">
-                  {/* <FaBarcode className="text-green-600" /> */}
+                  {/* <FaBarcode className="text-blue-600" /> */}
                   <span className="font-semibold text-[12px] text-gray-900">
                     AWB:
                   </span>
@@ -320,7 +320,7 @@ const navigate=useNavigate()
               <div
                 className={`text-[12px] font-bold min-w-fit pt-1 flex items-center ${row.category.toLowerCase() === "debit"
                   ? "text-red-500"
-                  : "text-green-500"
+                  : "text-blue-500"
                   }`}
               >
                 {row.category.toLowerCase() === "debit" ? (
