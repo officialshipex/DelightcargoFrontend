@@ -298,7 +298,7 @@ const RateCard = ({ isSidebarAdmin }) => {
                       <td className="px-3 py-2 text-gray-700" rowSpan={2}>₹{card.codCharge}</td>
                       <td className="px-3 py-2 text-gray-700" rowSpan={2}>{card.codPercent}%</td>
                       <td className="px-3 py-2" rowSpan={2}>
-                        <span className={`px-2 py-0.5 rounded text-[10px] tracking-wider ${card.status === "Active" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>{card.status}</span>
+                        <span className={`px-2 py-0.5 rounded text-[10px] tracking-wider ${card.status === "Active" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}>{card.status}</span>
                       </td>
                       <td rowSpan={2} className="px-3 py-2">
                         <div className="flex justify-center items-center gap-1.5">
@@ -412,7 +412,7 @@ const RateCard = ({ isSidebarAdmin }) => {
                       <span className="text-gray-700 font-bold">{card.codPercent}%</span>
                     </div>
                   </div>
-                  <span className={`px-2 py-0.5 rounded text-[10px] tracking-widest ${card.status === "Active" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] tracking-widest ${card.status === "Active" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}>
                     {card.status}
                   </span>
                 </div>

@@ -357,7 +357,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                       <div>
                         <div className="text-[10px] font-[600]">Wallet Balance</div>
                         <div
-                          className={`text-[16px] font-[600] ${balance >= 0 ? "text-green-700" : "text-red-600"
+                          className={`text-[16px] font-[600] ${balance >= 0 ? "text-blue-700" : "text-red-600"
                             }`}
                         >
                           ₹{balance.toFixed(2)}
@@ -384,7 +384,7 @@ const TranseferCODModal = ({ id, onClose, selectedRemittanceIds = [] }) => {
                       <div>
                         <div className="text-[10px] font-[600]">Hold Amount</div>
                         <div
-                          className={`text-[16px] font-[700] ${holdAmount > 0 ? "text-red-600" : "text-green-700"
+                          className={`text-[16px] font-[700] ${holdAmount > 0 ? "text-red-600" : "text-blue-700"
                             }`}
                         >
                           ₹{holdAmount.toFixed(2)}

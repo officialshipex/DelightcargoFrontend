@@ -1147,7 +1147,7 @@ export default function ProfileCard() {
                   <Settings size={16} className="text-gray-600" />API Details
                 </h3>
               </div>
-              <div className="p-4 sm:p-4 space-y-2">
+              {/* <div className="p-4 sm:p-4 space-y-2">
                 <div className="flex items-center gap-2 text-[10px] sm:text-[12px] font-[600]">
                   <p>Check latest version of API documentation</p>
                   <button onClick={() => window.open("https://api-docs.delightcargo.com/", "_blank")} className="hover:text-blue-500 text-[#0192ED] transition-colors">
@@ -1171,7 +1171,7 @@ export default function ProfileCard() {
                     <div className="absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform peer-checked:translate-x-4"></div>
                   </label>
                 </div>
-              </div>
+              </div> */}
             </div>
             {!!admin && (
               <UserServiceManagement

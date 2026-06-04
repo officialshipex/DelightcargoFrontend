@@ -35,7 +35,7 @@ const AddChannel = () => {
           <div
             className="flex items-center text-gray-700 text-[14px] font-[600]"
           >
-            <HiArrowLeft className="mr-2 w-6 p-1.5 rounded-full h-6 bg-gray-300 text-white hover:bg-green-400 transition-all cursor-pointer" onClick={() => navigate(-1)} />
+            <HiArrowLeft className="mr-2 w-6 p-1.5 rounded-full h-6 bg-gray-300 text-white hover:bg-[#0192ED] transition-all cursor-pointer" onClick={() => navigate(-1)} />
             <span className="text-[14px]">Add Channel</span>
           </div>
         </div>

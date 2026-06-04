@@ -99,7 +99,7 @@ const RoleList = ({ isSidebarAdmin }) => {
                                     </td>
                                     <td className="px-3 py-2 text-[12px]">{role.role}</td>
                                     <td className="px-3 py-2">
-                                        <span className={`px-2 py-1 rounded-md text-[10px] font-medium ${role.isEmpActive ? 'bg-green-100 text-green-700 text-[10px]' : 'bg-red-100 text-red-600 text-[10px]'
+                                        <span className={`px-2 py-1 rounded-md text-[10px] font-medium ${role.isEmpActive ? 'bg-blue-100 text-blue-700 text-[10px]' : 'bg-red-100 text-red-600 text-[10px]'}
                                             }`}>
                                             {role.isEmpActive ? 'Active' : 'Inactive'}
                                         </span>
@@ -173,7 +173,7 @@ const RoleList = ({ isSidebarAdmin }) => {
                                 Status:{" "}
                                 <span
                                     className={`px-2 py-1 rounded-md text-[10px] font-[600] ${role.isEmpActive
-                                            ? "bg-blue-100 text-green-700"
+                                            ? "bg-blue-100 text-blue-700"
                                             : "bg-red-100 text-red-600"
                                         }`}
                                 >

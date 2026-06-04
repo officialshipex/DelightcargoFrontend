@@ -112,6 +112,13 @@ const courierConfigs = {
       { name: "apiKey", label: "API Token", placeholder: "Enter Shadowfax Production Token", type: "text" },
     ],
   },
+  ShipexIndia: {
+    endpoint: "/ShipexIndia/authorize",
+    fields: [
+      { name: "username", label: "Email/Username", placeholder: "Email", type: "email" },
+      { name: "password", label: "Password", placeholder: "Password", type: "password" },
+    ],
+  },
 };
 
 const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) => {

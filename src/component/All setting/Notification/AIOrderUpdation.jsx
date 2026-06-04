@@ -11,7 +11,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || process.env.REACT_APP_BA
 // ─── Status badge colors ───────────────────────────────────
 const statusConfig = {
   pending:    { color: "bg-yellow-100 text-yellow-700", label: "Pending",    icon: <FiClock className="w-3 h-3" /> },
-  answered:   { color: "bg-blue-100 text-green-700",  label: "Answered",   icon: <FiCheckCircle className="w-3 h-3" /> },
+  answered:   { color: "bg-blue-100 text-blue-700",  label: "Answered",   icon: <FiCheckCircle className="w-3 h-3" /> },
   unanswered: { color: "bg-orange-100 text-orange-700",label: "Unanswered", icon: <MdOutlinePhoneMissed className="w-3 h-3" /> },
   failed:     { color: "bg-red-100 text-red-700",      label: "Failed",     icon: <FiXCircle className="w-3 h-3" /> },
 };

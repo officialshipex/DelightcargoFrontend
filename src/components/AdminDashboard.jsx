@@ -103,7 +103,7 @@ const Dashboard = () => {
   }, []);
 
   const courierColors = {
-    Delivered: '#22c55e',
+    Delivered: '#0192ED',
     RTO: '#ef4444',
     Pending: '#f59e0b'
   };
@@ -121,7 +121,7 @@ const Dashboard = () => {
     <div className="p-1 min-h-screen">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <StatsCard title="Total Orders" value={stats.totalOrders} color="border-blue-500" />
-        <StatsCard title="Delivered" value={sumByStatus('delivered')} color="border-green-500" />
+        <StatsCard title="Delivered" value={sumByStatus('delivered')} color="border-[#0192ED]" />
         <StatsCard title="Undelivered" value={sumByStatus('undelivered')} color="border-yellow-500" />
         <StatsCard title="RTO Orders" value={sumByStatus('rto')} color="border-red-500" />
       </div>

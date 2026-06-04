@@ -506,7 +506,7 @@ export default function CostingRateCard() {
                       <td className="px-3 py-2" rowSpan={2}>₹{card.codCharge}</td>
                       <td className="px-3 py-2" rowSpan={2}>{card.codPercent}%</td>
                       <td className="px-3 py-2" rowSpan={2}>
-                        <span className={`px-2 py-0.5 rounded text-[10px] tracking-wider ${card.status === "Active" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+                        <span className={`px-2 py-0.5 rounded text-[10px] tracking-wider ${card.status === "Active" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}>
                           {card.status}
                         </span>
                       </td>
@@ -588,7 +588,7 @@ export default function CostingRateCard() {
                     <div><span className="text-gray-500 block">COD Charge</span><span className="font-bold">₹{card.codCharge}</span></div>
                     <div><span className="text-gray-500 block">COD %</span><span className="font-bold">{card.codPercent}%</span></div>
                   </div>
-                  <span className={`px-2 py-0.5 rounded text-[10px] ${card.status === "Active" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] ${card.status === "Active" ? "bg-blue-100 text-blue-700" : "bg-red-100 text-red-700"}`}>
                     {card.status}
                   </span>
                 </div>

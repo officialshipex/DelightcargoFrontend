@@ -34,10 +34,12 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const fetchServicesForProvider = async (providerName) => {
+  const fetchServicesForProvider = async (providerName, list = courierProviders) => {
     try {
+      const matched = list.find(c => c.courierName === providerName);
+      const actualProvider = matched ? matched.courierProvider : providerName;
       let services = [];
-      switch (providerName) {
+      switch (actualProvider) {
         case "NimbusPost":
           const nimbusRes = await axios.get(`${REACT_APP_BACKEND_URL}/NimbusPost/getCourierServices`);
           services = nimbusRes.data.map((item) => item.service);
@@ -52,6 +54,53 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
           break;
         case "Dtdc":
           services = ["B2C SMART EXPRESS", "B2C PRIORITY", "B2C GROUND ECONOMY"];
+          break;
+        case "ShipexIndia":
+          services = [
+            "Dtdc Surface 0.5KG",
+            "Dtdc Surface 1KG",
+            "Shree Maruti Surface 0.25KG",
+            "Shree Maruti Surface 0.5KG",
+            "Shree Maruti Surface 1KG",
+            "Amazon Surface 0.5KG",
+            "Amazon Surface 1KG",
+            "Dtdc Air 0.5KG",
+            "Dtdc Air 1KG",
+            "Delhivery Air 0.25KG",
+            "Delhivery Air 0.5KG",
+            "Delhivery Air 1KG",
+            "Delhivery Surface 0.25KG",
+            "Delhivery Surface 0.5KG",
+            "Delhivery Surface 1KG",
+            "Dtdc Surface 3KG",
+            "Dtdc Surface 5KG",
+            "Shree Maruti Surface 2KG",
+            "Amazon Surface 2KG",
+            "Amazon Surface 5KG",
+            "Delhivery Surface 2KG",
+            "Delhivery Surface 5KG",
+            "Dtdc Surface 10KG",
+            "Dtdc Surface 20KG",
+            "Amazon Surface 10KG",
+            "Amazon Surface 20KG",
+            "Delhivery Surface 10KG",
+            "Bluedart Surface 0.5KG",
+            "Bluedart Surface 1KG",
+            "Ekart Surface",
+            "Ekart Surface 1KG",
+            "Ekart Surface 2KG",
+            "Xpressbees Surface 5KG",
+            "Xpressbees Surface 10KG",
+            "Shadowfax Surface",
+            "Shadowfax Surface 1KG",
+            "Shadowfax Surface 2KG",
+            "Shadowfax Surface 5KG",
+            "Bluedart Air 0.5KG",
+            "Ekart Surface 3KG",
+            "Ekart Surface 5KG",
+            "Ekart Surface 10KG",
+            "Dtdc Surface 0.75KG"
+          ];
           break;
         default:
           services = [];
@@ -91,7 +140,13 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
         }
 
         const response = await axios.get(`${REACT_APP_BACKEND_URL}/allCourier/couriers`);
-        setCourierProviders(Array.isArray(response.data) ? response.data : []);
+        const list = Array.isArray(response.data) ? response.data : [];
+        setCourierProviders(list);
+
+        if (location.state?.courierToEdit) {
+          const editCourier = location.state.courierToEdit;
+          fetchServicesForProvider(editCourier.provider, list);
+        }
       } catch (error) {
         const userInfo = getUserInfoFromToken();
         const isMainAdmin = userInfo?.type !== "employee" && (userInfo?.isAdmin || userInfo?.adminTab);
@@ -117,9 +172,12 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
         courierType: editCourier.courierType || "",
         name: editCourier.name || "",
         status: editCourier.status || "",
+        courier_id: editCourier.courier_id || "",
       });
-      setSelectedProvider(editCourier.provider);
-      fetchServicesForProvider(editCourier.provider);
+      // Find dynamic provider key
+      const matched = courierProviders.find(c => c.courierName === editCourier.provider);
+      const actualProvider = matched ? matched.courierProvider : editCourier.provider;
+      setSelectedProvider(actualProvider);
     }
   }, [location.state, isSidebarAdmin, refresh]);
 
@@ -132,15 +190,35 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
 
     if (name === "provider") {
-      setSelectedProvider(value);
+      const matched = courierProviders.find(c => c.courierName === value);
+      const actualProvider = matched ? matched.courierProvider : value;
+      setSelectedProvider(actualProvider);
       setFormData((prev) => ({ ...prev, courier: "", courier_id: "" }));
       fetchServicesForProvider(value);
     }
     
-    if (name === "courier" && selectedProvider === "Shiprocket") {
-      const selectedService = providerServices.find(s => s.service === value);
-      if (selectedService) {
-        setFormData(prev => ({ ...prev, courier_id: selectedService.courier_id }));
+    if (name === "courier") {
+      const matched = courierProviders.find(c => c.courierName === formData.provider);
+      const actualProvider = matched ? matched.courierProvider : selectedProvider;
+
+      if (actualProvider === "Shiprocket") {
+        const selectedService = providerServices.find(s => s.service === value);
+        if (selectedService) {
+          setFormData(prev => ({ ...prev, courier_id: selectedService.courier_id }));
+        }
+      } else if (actualProvider === "ShipexIndia") {
+        const courierLower = value.toLowerCase();
+        let cId = "";
+        if (courierLower.includes("delhivery")) cId = "02";
+        else if (courierLower.includes("dtdc")) cId = "03";
+        else if (courierLower.includes("bluedart")) cId = "04";
+        else if (courierLower.includes("amazon")) cId = "05";
+        else if (courierLower.includes("maruti")) cId = "08";
+        else if (courierLower.includes("ekart")) cId = "09";
+        else if (courierLower.includes("xpressbees")) cId = "06";
+        else if (courierLower.includes("shadowfax")) cId = "07";
+        
+        setFormData(prev => ({ ...prev, courier_id: cId }));
       }
     }
   };

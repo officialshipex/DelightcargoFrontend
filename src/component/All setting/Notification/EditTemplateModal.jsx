@@ -123,7 +123,7 @@ const EditTemplateModal = ({
               <Info className="w-4 h-4" />
               <span className="text-[12px] font-bold">Dynamic Variables</span>
             </div>
-            <p className="text-[11px] text-green-700/80 leading-snug">
+            <p className="text-[11px] text-blue-700/80 leading-snug">
               Click a variable below to insert it into your message. These will
               be replaced with actual order data.
             </p>

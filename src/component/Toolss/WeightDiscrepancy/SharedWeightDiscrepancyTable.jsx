@@ -240,7 +240,7 @@ const SharedWeightDiscrepancyTable = ({
 
                                         {/* Status */}
                                         <td className="py-2 px-3 whitespace-nowrap text-gray-500" style={{ maxWidth: "130px", width: "100px" }}>
-                                            <span className="px-2 py-1 rounded text-[10px] bg-blue-100 text-green-700">
+                                            <span className="px-2 py-1 rounded text-[10px] bg-blue-100 text-blue-700">
                                                 {order.adminStatus || order.status}
                                             </span>
                                         </td>

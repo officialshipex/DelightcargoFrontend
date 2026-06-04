@@ -6,8 +6,16 @@ export function setupAxiosInterceptors() {
     (response) => response,
     (error) => {
       const status = error.response?.status;
+      const url = error.config?.url || "";
 
-      if (status === 403 || status === 401) {
+      // Skip logging out for third-party courier credentials validation endpoints
+      const isCourierAuth =
+        url.includes("/getAuthToken") ||
+        url.includes("/getToken") ||
+        url.includes("/authorize") ||
+        url.includes("/addCourier");
+
+      if ((status === 403 || status === 401) && !isCourierAuth) {
         console.warn("Invalid or expired token. Logging out...");
         Cookies.remove("session");
         window.location.href = "/login";

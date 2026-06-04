@@ -112,7 +112,7 @@ const DashboardCards = ({ }) => {
       const colorMap = {
         "Delhivery": "#9C27B0",
         "Amazon": "#36A2EB",
-        "EcomExpress": "#4CAF50",
+        "EcomExpress": "#0192ED",
         "DTDC": "#FF5733",
       };
 
@@ -132,7 +132,7 @@ const DashboardCards = ({ }) => {
   useEffect(() => {
     if (dashdata) {
       setShipmentStatus([
-        { name: "Delivered", value: dashdata.deliveredOrders || 0, color: "#2ECC71" },
+        { name: "Delivered", value: dashdata.deliveredOrders || 0, color: "#0192ED" },
         { name: "In-Transit", value: dashdata.inTransitOrders || 0, color: "#3498DB" },
         { name: "Undelivered", value: dashdata.ndrOrders || 0, color: "#E74C3C" },
         { name: "Lost/Damaged", value: dashdata?.lostOrders || 0, color: "#F39C12" }, // Static value for now

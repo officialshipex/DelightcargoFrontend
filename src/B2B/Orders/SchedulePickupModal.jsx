@@ -80,7 +80,7 @@ const SchedulePickupModal = ({ orderId, awb, pickupAddress, onClose }) => {
                 </button>
 
                 {/* Success Banner */}
-                <div className="bg-blue-50 text-green-700 rounded-lg px-3 py-2 flex items-center gap-2 mb-2 border border-blue-100">
+                <div className="bg-blue-50 text-blue-700 rounded-lg px-3 py-2 flex items-center gap-2 mb-2 border border-blue-100">
                     <div className="w-5 h-5 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3" strokeWidth={3} />
                     </div>

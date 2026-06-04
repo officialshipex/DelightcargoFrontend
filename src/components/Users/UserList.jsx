@@ -284,7 +284,7 @@ const UserList2 = ({ isSidebarAdmin }) => {
                         </p>
                       </td>
                       <td className="border-b border-gray-300 px-3 py-2 text-center">
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${e.kycStatus ? "bg-green-100 text-[#0192ED]" : "bg-red-100 text-red-600"}`}>
+                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${e.kycStatus ? "bg-blue-100 text-[#0192ED]" : "bg-red-100 text-red-600"}`}>
                           {e.kycStatus ? "Verified" : "Pending"}
                         </span>
                       </td>
@@ -347,7 +347,7 @@ const UserList2 = ({ isSidebarAdmin }) => {
                       <div className="flex items-center gap-1.5 min-w-0">
                         <CheckCircle className="w-3 h-3 text-white shrink-0" />
                         <span className="text-white font-bold text-[10px]">User ID: {e.userId}</span>
-                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full ml-1 shrink-0 ${e.kycStatus ? "bg-green-700 text-white" : "bg-red-500 text-white"}`}>
+                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded-full ml-1 shrink-0 ${e.kycStatus ? "bg-[#0192ED] text-white" : "bg-red-500 text-white"}`}>
                           {e.kycStatus ? "KYC ✓" : "KYC ✗"}
                         </span>
                       </div>

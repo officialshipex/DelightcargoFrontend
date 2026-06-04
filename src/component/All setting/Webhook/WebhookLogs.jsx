@@ -305,7 +305,7 @@ const WebhookLogs = () => {
                       {copiedId === "payload" ? <FiCheck size={14} /> : <FiCopy size={14} />}
                     </button>
                   </div>
-                  <pre className="bg-gray-900 text-green-400 p-3 rounded-lg text-[10px] overflow-x-auto max-h-48 font-mono">
+                  <pre className="bg-gray-900 text-blue-300 p-3 rounded-lg text-[10px] overflow-x-auto max-h-48 font-mono">
                     {JSON.stringify(selectedLog.payload, null, 2)}
                   </pre>
                 </div>
