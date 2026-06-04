@@ -28,10 +28,13 @@ const ProductDetails = ({ Address, initialData, userId, updateId }) => {
             const data = initialData.data || initialData;
 
             if (data.productDetails && Array.isArray(data.productDetails)) {
-                setProducts(data.productDetails.map((p, index) => ({
-                    id: index + 1,
-                    ...p
-                })));
+                setProducts(data.productDetails.map((p, index) => {
+                    const { _id, ...rest } = p;
+                    return {
+                        id: index + 1,
+                        ...rest
+                    };
+                }));
             }
             if (data.packageDetails) {
                 setDeadWeight(data.packageDetails.deadWeight || 0);

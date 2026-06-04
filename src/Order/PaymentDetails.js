@@ -299,7 +299,8 @@ const PaymentDetails = ({ packageData, initialData, userId, updateId }) => {
       }
     } catch (error) {
       console.log("error", error);
-      Notification("Something went wrong while creating the order.", "error");
+      const errorMsg = error.response?.data?.error || error.response?.data?.message || "Something went wrong while creating the order.";
+      Notification(errorMsg, "error");
     } finally {
       setIsSubmitting(false);
     }
