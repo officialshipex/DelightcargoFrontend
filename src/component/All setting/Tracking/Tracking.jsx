@@ -213,8 +213,8 @@ function Tracing2() {
       <div className="mt-8 mb-2 text-center text-gray-500 text-xs select-none">
         Powered by{" "}
         <span className="font-bold">
-          <span className="text-black">Ship</span>
-          <span className="text-[#0192ed]">ex</span>
+          <span className="text-black">Delight</span>
+          <span className="text-[#0192ed]">Cargo</span>
         </span>
       </div>
     </div>
