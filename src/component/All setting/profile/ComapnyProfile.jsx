@@ -664,7 +664,7 @@ export default function ProfileCard() {
 
               <div className="p-4 sm:p-4 space-y-2">
 
-                <div className="flex items-center gap-2 text-[10px] sm:text-[12px] font-[600]">
+                {/* <div className="flex items-center gap-2 text-[10px] sm:text-[12px] font-[600]">
                   <p>Check latest version of API documentation</p>
                   <button
                     onClick={() => window.open("https://api-docs.delightcargo.com/", "_blank")}
@@ -672,12 +672,12 @@ export default function ProfileCard() {
                   >
                     <ExternalLink size={16} />
                   </button>
-                </div>
+                </div> */}
 
                 <div className="flex items-center gap-2 text-[10px] sm:text-[12px] font-[600]">
                   <p>Download Postman Collection <span className="text-[#0192ED] text-[9px]">(Recommended)</span></p>
                   <button
-                    onClick={() => window.open("https://documenter.getpostman.com/view/32361120/2sB3HetiH6", "_blank")}
+                    onClick={() => window.open("https://documenter.getpostman.com/view/32361120/2sBXwqrqaH", "_blank")}
                     className="hover:text-blue-500 text-[#0192ED] transition-colors"
                   >
                     <Download size={16} />
