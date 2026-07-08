@@ -9,6 +9,7 @@ const courierConfigs = {
     fields: [
       { name: "email", label: "Email", placeholder: "API Email", type: "email" },
       { name: "password", label: "Password", placeholder: "API Password", type: "password" },
+      { name: "apiKey", label: "API Key", placeholder: "Enter API Key", type: "text" },
     ],
   },
   Shiprocket: {
