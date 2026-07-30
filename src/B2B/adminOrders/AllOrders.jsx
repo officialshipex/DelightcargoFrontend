@@ -259,6 +259,7 @@ const AllOrders = ({ userId: initialUserId }) => {
             showShippingDetails={true}
             showUserDetails={true}
             handleUpdateOrder={handleUpdateOrder}
+            isB2B={true}
           />
         </div>
         <PaginationFooter page={page} totalPages={totalPages} setPage={setPage} limit={limit} setLimit={setLimit} />
@@ -323,6 +324,7 @@ const AllOrders = ({ userId: initialUserId }) => {
                 showShippingDetails={true}
                 showUserDetails={true}
                 handleUpdateOrder={handleUpdateOrder}
+                isB2B={true}
               />
             ))
           ) : (

@@ -122,7 +122,7 @@ const courierConfigs = {
   },
 };
 
-const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) => {
+const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers, isB2B }) => {
   const [courierName, setCourierName] = useState("");
   const [codDays, setCodDays] = useState("");
   const [status, setStatus] = useState("");
@@ -131,6 +131,27 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) =
 
   const config = courierConfigs[provider] || {};
   const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
+  // Resolve endpoint dynamically
+  let endpoint = config.endpoint;
+  if (isB2B) {
+    if (provider.toLowerCase() === "delhivery") {
+      endpoint = "/b2b/delhivery/getToken";
+    } else if (provider.toLowerCase() === "shiprocket") {
+      endpoint = "/b2b/shiprocket/getToken";
+    } else {
+      endpoint = `/b2b${config.endpoint}`;
+    }
+  }
+
+  // Resolve fields dynamically
+  let fields = config.fields;
+  if (isB2B && provider.toLowerCase() === "delhivery") {
+    fields = [
+      { name: "username", label: "Username", placeholder: "Enter B2B Username", type: "text" },
+      { name: "password", label: "Password", placeholder: "Enter B2B Password", type: "password" },
+    ];
+  }
 
   // Reset fields when provider changes
   useEffect(() => {
@@ -155,7 +176,7 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) =
     }
 
     // Dynamic credentials validation
-    const missingField = config.fields?.find(field => !credentials[field.name]);
+    const missingField = fields?.find(field => !credentials[field.name]);
     if (missingField) {
       Notification(`Please enter ${missingField.label}`, "info");
       return;
@@ -202,7 +223,7 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) =
       };
 
       const response = await axios.post(
-        `${REACT_APP_BACKEND_URL}${config.endpoint}`,
+        `${REACT_APP_BACKEND_URL}${endpoint}`,
         newCourier
       );
 
@@ -229,7 +250,7 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) =
     }
   };
 
-  if (!config.endpoint) return null;
+  if (!endpoint) return null;
 
   return (
     <div className="w-full animate-fadeIn">
@@ -268,7 +289,7 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers }) =
         </div>
 
         {/* Dynamic Credentials Fields */}
-        {config.fields?.map((field) => (
+        {fields?.map((field) => (
           <div key={field.name} className="w-full xl:w-40 flex flex-col gap-1">
             <label className="text-[10px] sm:text-[12px] font-[600] text-gray-700 tracking-tight">
               {field.label}

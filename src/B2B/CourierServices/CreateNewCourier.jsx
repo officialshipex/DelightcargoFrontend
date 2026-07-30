@@ -36,21 +36,24 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
   const fetchServicesForProvider = async (providerName) => {
     try {
       let services = [];
-      switch (providerName) {
-        case "NimbusPost":
+      switch (providerName?.toLowerCase()) {
+        case "nimbuspost":
           const nimbusRes = await axios.get(`${REACT_APP_BACKEND_URL}/NimbusPost/getCourierServices`);
           services = nimbusRes.data.map((item) => item.service);
           break;
-        case "Xpressbees":
+        case "xpressbees":
           const xpressRes = await axios.get(`${REACT_APP_BACKEND_URL}/Xpressbees/getCourierList`);
           services = xpressRes.data.map((item) => item.service);
           break;
-        case "Shiprocket":
+        case "shiprocket":
           const shipRes = await axios.get(`${REACT_APP_BACKEND_URL}/b2b/couriers/getShiprocketCourierServices`);
-          services = shipRes?.data?.data?.map((item) => item.service) || [];
+          services = shipRes?.data?.data?.flatMap((item) => item.service) || [];
           break;
-        case "Dtdc":
+        case "dtdc":
           services = ["B2C SMART EXPRESS", "B2C PRIORITY", "B2C GROUND ECONOMY"];
+          break;
+        case "delhivery":
+          services = ["Delhivery-surface", "Delhivery-air"];
           break;
         default:
           services = [];
@@ -218,12 +221,12 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
 
               {/* Courier */}
               <CustomDropdown
-                label={selectedProvider === "Dtdc" ? "Service Type" : "Courier"}
+                label={selectedProvider?.toLowerCase() === "dtdc" ? "Service Type" : "Courier"}
                 name="courier"
                 value={formData.courier}
                 onChange={handleChange}
                 options={providerServices}
-                placeholder={selectedProvider ? `Select ${selectedProvider === "Dtdc" ? "Service Type" : "Courier"}` : "Select Provider first"}
+                placeholder={selectedProvider ? `Select ${selectedProvider?.toLowerCase() === "dtdc" ? "Service Type" : "Courier"}` : "Select Provider first"}
               />
 
               {/* Courier Type */}

@@ -290,7 +290,7 @@ const NewOrders = (filterOrder) => {
 
       <div ref={tableRef} className="hidden md:block">
         <div style={{ height: tableHeight }} className="overflow-auto relative bg-white">
-          <OrdersTable
+        <OrdersTable
             orders={orders}
             loading={loading}
             selectedOrders={selectedOrders}
@@ -311,6 +311,7 @@ const NewOrders = (filterOrder) => {
             handleClone={handleClone}
             showShippingDetails={false}
             handleUpdateOrder={handleUpdateOrder}
+            isB2B={true}
           />
         </div>
       </div>
@@ -355,7 +356,7 @@ const NewOrders = (filterOrder) => {
             <div className="flex justify-center py-6"><ThreeDotLoader /></div>
           ) : orders.length > 0 ? (
             orders.map((order, index) => (
-              <MobileOrderCard
+            <MobileOrderCard
                 key={order._id}
                 order={order}
                 index={index}
@@ -374,6 +375,7 @@ const NewOrders = (filterOrder) => {
                 navigate={navigate}
                 showShippingDetails={false}
                 handleUpdateOrder={handleUpdateOrder}
+                isB2B={true}
               />
             ))
           ) : (

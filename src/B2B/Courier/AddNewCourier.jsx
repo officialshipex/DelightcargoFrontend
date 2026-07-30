@@ -203,6 +203,7 @@ const AddNewCourier = ({ isSidebarAdmin }) => {
         provider={selectedOption}
         onCourierSaved={handleCourierSaved}
         canAction={canAction}
+        isB2B={true}
       />
     );
   };

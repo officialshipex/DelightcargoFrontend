@@ -38,6 +38,7 @@ const MobileOrderCard = ({
     onVerifyOrder,
     aiVerifyEnabled = false,
     verifyingOrders = new Set(),
+    isB2B = false, // force B2B courier selection routing
 }) => {
     const [openPopup, setOpenPopup] = useState(null);
     const [popupPosition, setPopupPosition] = useState("right");
@@ -164,6 +165,7 @@ const MobileOrderCard = ({
                         handleScheduledPickup={handleScheduledPickup}
                         handleUpdateOrder={order.status === "new" ? handleUpdateOrder : undefined}
                         renderOnly="dropdown"
+                        isB2B={isB2B}
                     />
                 )}
             </div>
@@ -446,6 +448,7 @@ const MobileOrderCard = ({
                             aiVerifyEnabled={aiVerifyEnabled}
                             verifyingOrders={verifyingOrders}
                             renderOnly="action"
+                            isB2B={isB2B}
                         />
                     </div>
                 )

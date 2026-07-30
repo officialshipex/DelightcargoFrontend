@@ -250,6 +250,7 @@ const AllOrders = () => {
             setRefresh={setRefresh}
             showShippingDetails={true}
             handleUpdateOrder={handleUpdateOrder}
+            isB2B={true}
           />
         </div>
       </div>
@@ -308,6 +309,7 @@ const AllOrders = () => {
                 navigate={navigate}
                 showShippingDetails={true}
                 handleUpdateOrder={handleUpdateOrder}
+                isB2B={true}
               />
             ))
           ) : (

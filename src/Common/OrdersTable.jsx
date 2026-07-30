@@ -42,6 +42,7 @@ const OrdersTable = ({
     onVerifyOrder,
     aiVerifyEnabled = false,
     verifyingOrders = new Set(),
+    isB2B = false, // force B2B courier selection routing
 }) => {
 
     const truncateText = (text, limit = 30) => {
@@ -629,6 +630,7 @@ const OrdersTable = ({
                                             onVerifyOrder={onVerifyOrder}
                                             aiVerifyEnabled={aiVerifyEnabled}
                                             verifyingOrders={verifyingOrders}
+                                            isB2B={isB2B}
                                         />
                                         </div>
                                     </div>

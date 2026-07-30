@@ -24,7 +24,8 @@ const OrderRowActions = ({
     aiVerifyEnabled,
     verifyingOrders,
     setDropdownOpen = () => { },
-    renderOnly = "both" // "both", "action", "dropdown"
+    renderOnly = "both", // "both", "action", "dropdown"
+    isB2B = false // force B2B courier selection routing
 }) => {
     const navigate = useNavigate();
     const [position, setPosition] = useState(null);
@@ -46,7 +47,7 @@ const OrderRowActions = ({
             label: "Ship Now",
             className: "sm:bg-[#0192ED] bg-white text-[#0192ED] sm:text-white sm:border-0 border border-[#0192ED]",
             onClick: () =>
-                navigate(order.orderType === "B2B"
+                navigate((isB2B || order.orderType?.toUpperCase() === "B2B")
                     ? `/dashboard/order/b2b/courierSelection/${order._id}`
                     : `/dashboard/order/courierSelection/${order._id}`
                 ),
