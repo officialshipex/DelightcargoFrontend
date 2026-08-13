@@ -151,6 +151,14 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers, isB
       { name: "username", label: "Username", placeholder: "Enter B2B Username", type: "text" },
       { name: "password", label: "Password", placeholder: "Enter B2B Password", type: "password" },
     ];
+  } else if (isB2B && provider.toLowerCase() === "shiprocket") {
+    // Shiprocket Cargo has no email/password login — auth is entirely via a
+    // pre-issued client ID + refresh token + access token from Shiprocket.
+    fields = [
+      { name: "clientId", label: "Client ID", placeholder: "Enter Shiprocket Cargo Client ID", type: "text" },
+      { name: "refreshToken", label: "Refresh Token", placeholder: "Enter Refresh Token", type: "text" },
+      { name: "authToken", label: "Auth Token", placeholder: "Enter Auth Token", type: "text" },
+    ];
   }
 
   // Reset fields when provider changes

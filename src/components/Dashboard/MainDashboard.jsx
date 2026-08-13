@@ -12,6 +12,7 @@ import { FiAlertCircle } from "react-icons/fi";
 import DateFilter from "../../filter/DateFilter";
 import UserFilter from "../../filter/UserFilter";
 import { FiBell, FiX } from "react-icons/fi";
+import { FaCalculator } from "react-icons/fa";
 
 const AnnouncementItem = ({ ann, idx, setAnnouncements, announcements }) => {
     const textRef = useRef(null);
@@ -233,6 +234,14 @@ const Dashboard = () => {
                                 <UserFilter onUserSelect={setSelectedUserId} clearTrigger={refresh} />
                             </div>
                         )}
+                        <Link
+                            to="/dashboard/tools/Cost_Estimation/b2c"
+                            className="flex items-center gap-1 text-[#0192ED] bg-white hover:bg-blue-50 border border-[#0192ED] px-3 py-2 rounded-lg text-[12px] font-[600] transition-all duration-300 ease-in-out whitespace-nowrap"
+                            title="Rate Calculator"
+                        >
+                            <FaCalculator className="text-[14px]" />
+                            Rate Calculator
+                        </Link>
                         <button
                             onClick={handleRefresh}
                             className="text-white bg-[#0192ED] hover:opacity-90 border px-3 py-2 rounded-lg transition-all duration-300 ease-in-out"

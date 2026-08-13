@@ -55,7 +55,11 @@ const ShopifyIntegration = () => {
 
   const handleSave = async (e) => {
     const token = Cookies.get("session");
-    // console.log("hi",token)
+
+    const cleanedStoreDetails = {
+      ...storeDetails,
+      storeURL: storeDetails.storeURL ? storeDetails.storeURL.replace(/^https?:\/\//i, "").replace(/\/+$/, "").trim() : "",
+    };
 
     try {
 
@@ -65,7 +69,7 @@ const ShopifyIntegration = () => {
 
       const method = id ? "put" : "post";
 
-      const response = await axios[method](endpoint, storeDetails, {
+      const response = await axios[method](endpoint, cleanedStoreDetails, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

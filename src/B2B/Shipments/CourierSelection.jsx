@@ -193,13 +193,31 @@ const CarrierSelection = () => {
   }, [id, REACT_APP_BACKEND_URL]);
 
 
+  // Returns a brand logo image when we actually have one for the specific
+  // carrier, or null when we don't (renderer falls back to a generic courier
+  // icon — see <CarrierLogo>). Shiprocket Cargo auto-assigns from a pool of
+  // sub-carriers (e.g. "Smart Cargo Advantage") we don't have brand assets
+  // for, and Shiprocket itself is an aggregator, not the actual courier, so
+  // its logo doesn't belong here either — showing either would misrepresent
+  // who's actually handling the shipment.
   const getCarrierLogo = (courierServiceName) => {
     const lowerName = courierServiceName?.toLowerCase() || "";
-    // Find a carrierLogo key that's included in the courierServiceName
     const foundKey = Object.keys(carrierLogos).find(key =>
       lowerName.includes(key.toLowerCase())
     );
-    return foundKey ? carrierLogos[foundKey] : Shadowfax;
+    return foundKey ? carrierLogos[foundKey] : null;
+  };
+
+  const CarrierLogo = ({ courierServiceName, className }) => {
+    const logo = getCarrierLogo(courierServiceName);
+    if (logo) {
+      return <img src={logo} alt={courierServiceName} className={className} />;
+    }
+    return (
+      <div className={`${className} flex items-center justify-center bg-gray-50 text-gray-400`}>
+        <FaTruck className="text-[18px]" />
+      </div>
+    );
   };
 
 
@@ -313,9 +331,8 @@ const CarrierSelection = () => {
 
                     <div className="flex justify-between items-center gap-4 w-full mb-2">
                       <div className="flex justify-center gap-4 w-full">
-                        <img
-                          src={getCarrierLogo(item.courierServiceName)}
-                          alt={item.courierServiceName}
+                        <CarrierLogo
+                          courierServiceName={item.courierServiceName}
                           className="w-10 h-10 rounded-md border"
                         />
                         <div className="flex justify-between w-full">
@@ -421,9 +438,8 @@ const CarrierSelection = () => {
                     {plan.map((item) => (
                       <tr key={item._id} className={`${item.isRecommended ? "bg-[#e9fff6]" : "bg-white"} border-b last:border-b-0`}>
                         <td className="flex text-[12px] items-center gap-3 py-4 pl-3">
-                          <img
-                            src={getCarrierLogo(item.courierServiceName)}
-                            alt={item.courierServiceName}
+                          <CarrierLogo
+                            courierServiceName={item.courierServiceName}
                             className="w-11 h-11 rounded-md border"
                           />
                           <div>
