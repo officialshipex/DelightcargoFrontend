@@ -160,11 +160,13 @@ export const handleInvoice = async (id) => {
   }
 };
 
-export const handleLabel = async (id) => {
+export const handleLabel = async (id, orderType) => {
   try {
-    const response = await fetch(
-      `${REACT_APP_BACKEND_URL}/printlabel/generate-pdf/${id}`,
-    );
+    const isB2B = orderType?.toUpperCase() === "B2B";
+    const endpoint = isB2B
+      ? `${REACT_APP_BACKEND_URL}/b2b/generate-label/${id}`
+      : `${REACT_APP_BACKEND_URL}/printlabel/generate-pdf/${id}`;
+    const response = await fetch(endpoint);
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");

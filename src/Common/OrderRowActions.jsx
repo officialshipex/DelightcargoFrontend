@@ -75,10 +75,18 @@ const OrderRowActions = ({
     const action = getStatusAction(order)[order.status];
 
     // Status-based visibility logic
-    const showCancel = ["Ready To Ship", "Booked", "Not Picked"].includes(order.status);
+    const isB2BOrder = isB2B || order.orderType?.toUpperCase() === "B2B";
+    // B2B Shiprocket Cargo has no cancel-shipment API today — the booked-order
+    // cancel path would currently fall through to the B2C Shiprocket cancel
+    // endpoint (wrong API for a Cargo AWB) and fail. Deleting an unshipped
+    // ("new") B2B order is unaffected — that's a local delete, no courier call.
+    const showCancel = !isB2BOrder && ["Ready To Ship", "Booked", "Not Picked"].includes(order.status);
     const cancelLabel = isNewOrder ? "Delete Order" : "Cancel Order";
     const restrictedForManifest = ["new", "Cancelled"];
-    const showDownloadManifest = !restrictedForManifest.includes(order.status);
+    // Manifest and invoice aren't a B2B concept in this app (no B2B manifest
+    // generator, and invoices aren't produced for B2B shipments) — only label
+    // download applies to B2B, routed to its own endpoint below.
+    const showDownloadManifest = !isB2BOrder && !restrictedForManifest.includes(order.status);
     const restrictedForLabel = ["new",  "Cancelled"];
     const showDownloadLabel = !restrictedForLabel.includes(order.status);
 
@@ -183,7 +191,7 @@ const OrderRowActions = ({
                                             <li
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    if (handleLabel) handleLabel(order._id);
+                                                    if (handleLabel) handleLabel(order._id, order.orderType);
                                                     setDropdownOpen(null);
                                                 }}
                                                 className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors"
@@ -193,7 +201,8 @@ const OrderRowActions = ({
                                         )
                                     )}
 
-                                    {/* Invoice logic */}
+                                    {/* Invoice logic (B2C only — B2B doesn't generate invoices) */}
+                                    {!isB2BOrder && (
                                     <li
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -204,6 +213,7 @@ const OrderRowActions = ({
                                     >
                                         Download Invoice
                                     </li>
+                                    )}
 
                                     {/* Manifest logic */}
                                     {showDownloadManifest && (

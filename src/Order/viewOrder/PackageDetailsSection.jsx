@@ -114,6 +114,31 @@ const PackageDetailsSection = ({ order, onUpdate }) => {
                         </>
                     )}
                 </div>
+
+                {isB2B && order.B2BPackageDetails?.packages?.length > 0 && (
+                    <div className="mt-3 overflow-x-auto">
+                        <table className="w-full text-left text-[10px] sm:text-[12px]">
+                            <thead>
+                                <tr className="text-gray-700 font-[600] border-b">
+                                    <th className="py-2 px-3">Package</th>
+                                    <th className="py-2 px-3 whitespace-nowrap">No. of Boxes</th>
+                                    <th className="py-2 px-3 whitespace-nowrap">Weight/Box</th>
+                                    <th className="py-2 px-3 whitespace-nowrap">Dimensions (L×W×H)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {order.B2BPackageDetails.packages.map((pkg, index) => (
+                                    <tr key={pkg.id ?? index} className="font-[600] text-gray-500 border-b last:border-0">
+                                        <td className="py-2 px-3">{index + 1}</td>
+                                        <td className="py-2 px-3">{pkg.noOfBox || 0}</td>
+                                        <td className="py-2 px-3">{pkg.weightPerBox || 0} KG</td>
+                                        <td className="py-2 px-3">{pkg.length || 0} × {pkg.width || 0} × {pkg.height || 0} cm</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
             </div>
 
             {isEditOpen && !isB2B && (

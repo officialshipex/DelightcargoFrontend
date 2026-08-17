@@ -286,7 +286,7 @@ const PaymentDetails = ({ packageData, initialData, userId, updateId }) => {
           }
         );
         Notification("Order updated successfully", "success");
-        navigate("/dashboard/b2c/order");
+        navigate(orderData.orderType === "B2B" ? "/dashboard/b2b/order" : "/dashboard/b2c/order");
       } else {
         // Create new order
         await axios.post(`${REACT_APP_BACKEND_URL}/order/neworder`, data, {
@@ -295,7 +295,7 @@ const PaymentDetails = ({ packageData, initialData, userId, updateId }) => {
           },
         });
         Notification("Order created successfully", "success");
-        navigate("/dashboard/b2c/order");
+        navigate(orderData.orderType === "B2B" ? "/dashboard/b2b/order" : "/dashboard/b2c/order");
       }
     } catch (error) {
       console.log("error", error);

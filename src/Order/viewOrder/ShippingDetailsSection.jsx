@@ -128,7 +128,13 @@ const ShippingDetailsSection = ({ order }) => {
                     </div>
                 )}
 
-
+                {/* Child AWB Numbers (multi-box B2B shipments) */}
+                {order.child_awb_numbers && order.child_awb_numbers.length > 0 && (
+                    <div>
+                        <span className="font-[600] text-gray-700">Child AWB Numbers:</span>
+                        <p className="text-gray-500">{order.child_awb_numbers.join(", ")}</p>
+                    </div>
+                )}
 
                 <div>
                     <span className="font-[600] text-gray-700">Mode:</span>
