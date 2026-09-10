@@ -33,8 +33,10 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
   const [selectedProvider, setSelectedProvider] = useState("");
   const [refresh, setRefresh] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [loadingServices, setLoadingServices] = useState(false);
 
   const fetchServicesForProvider = async (providerName, list = courierProviders) => {
+    setLoadingServices(true);
     try {
       const matched = list.find(c => c.courierName === providerName);
       const actualProvider = matched ? matched.courierProvider : providerName;
@@ -42,7 +44,7 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
       switch (actualProvider) {
         case "NimbusPost":
           const nimbusRes = await axios.get(`${REACT_APP_BACKEND_URL}/NimbusPost/getCourierServices`);
-          services = nimbusRes.data.map((item) => item.service);
+          services = nimbusRes.data; // Store full objects [{service, provider_courier_id}] — was discarding provider_courier_id here, which is why courier_id never got saved and NimbusPost bookings had to fall back to their auto-allocation engine.
           break;
         case "Xpressbees":
           const xpressRes = await axios.get(`${REACT_APP_BACKEND_URL}/Xpressbees/getCourierList`);
@@ -51,6 +53,10 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
         case "Shiprocket":
           const shipRes = await axios.get(`${REACT_APP_BACKEND_URL}/Shiprocket/getAllActiveCourierServices`);
           services = shipRes.data; // Store full objects [{service, provider_courier_id}]
+          break;
+        case "BigShip":
+          const bigshipRes = await axios.get(`${REACT_APP_BACKEND_URL}/BigShip/getAllActiveCourierServices`);
+          services = bigshipRes.data; // Plain array of live BigShip courier names
           break;
         case "Dtdc":
           services = ["B2C SMART EXPRESS", "B2C PRIORITY", "B2C GROUND ECONOMY"];
@@ -110,6 +116,8 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
     } catch (error) {
       console.error(`Error fetching ${providerName} services:`, error);
       setProviderServices([]);
+    } finally {
+      setLoadingServices(false);
     }
   };
 
@@ -205,6 +213,11 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
         const selectedService = providerServices.find(s => s.service === value);
         if (selectedService) {
           setFormData(prev => ({ ...prev, courier_id: selectedService.courier_id }));
+        }
+      } else if (actualProvider === "NimbusPost") {
+        const selectedService = providerServices.find(s => s.service === value);
+        if (selectedService) {
+          setFormData(prev => ({ ...prev, courier_id: selectedService.provider_courier_id }));
         }
       } else if (actualProvider === "ShipexIndia") {
         const courierLower = value.toLowerCase();
@@ -311,7 +324,7 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
               />
 
               {/* Courier / Service ID */}
-              {(providerServices.length > 0 || selectedProvider === "BoxdLogistics") && (
+              {(providerServices.length > 0 || selectedProvider === "BoxdLogistics" || loadingServices) && (
                 selectedProvider === "BoxdLogistics" ? (
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10px] sm:text-[12px] font-[600] text-gray-700">Courier Service ID</label>
@@ -331,6 +344,7 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
                     value={formData.courier}
                     onChange={handleChange}
                     options={providerServices.map(s => typeof s === 'string' ? s : s.service)}
+                    loading={loadingServices}
                     placeholder={selectedProvider ? `Select ${selectedProvider === "Dtdc" ? "Service Type" : "Courier"}` : "Select Provider first"}
                   />
                 )

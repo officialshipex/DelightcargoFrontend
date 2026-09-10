@@ -19,6 +19,14 @@ const courierConfigs = {
       { name: "password", label: "Password", placeholder: "Password", type: "password" },
     ],
   },
+  BigShip: {
+    endpoint: "/BigShip/getAuthToken",
+    fields: [
+      { name: "username", label: "User/Email", placeholder: "Username", type: "text" },
+      { name: "password", label: "Password", placeholder: "Password", type: "password" },
+      { name: "accessKey", label: "Access Key", placeholder: "Enter Access Key", type: "text" },
+    ],
+  },
   Dtdc: {
     endpoint: "/DTDC/getToken",
     provider: "DTDC",
@@ -139,6 +147,11 @@ const CourierAdd = ({ provider, onCourierSaved, canAction, existingCouriers, isB
       endpoint = "/b2b/delhivery/getToken";
     } else if (provider.toLowerCase() === "shiprocket") {
       endpoint = "/b2b/shiprocket/getToken";
+    } else if (provider.toLowerCase() === "bigship") {
+      // BigShip is one account for both B2C and B2B (segment_type
+      // differentiates per-call) — same credentials, just a separate
+      // save route so the B2B "Add Courier" panel works like the others.
+      endpoint = "/b2b/bigship/getToken";
     } else {
       endpoint = `/b2b${config.endpoint}`;
     }

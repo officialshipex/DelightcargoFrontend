@@ -111,7 +111,12 @@ const CarrierSelection = () => {
       navigate("/dashboard/b2b/order");
     } catch (error) {
       Notification(error.response?.data?.message || "Something went wrong", "error");
-      console.log("service error", error);
+      // console.log("service error", error) only ever printed the AxiosError
+      // itself — its .message is always the generic "Request failed with
+      // status code 400", never the real backend reason. That's in
+      // error.response.data, which is what the Notification above already
+      // reads from — log it too so it shows up in devtools, not just the toast.
+      console.error("service error:", error.response?.data || error.message, error);
     } finally {
       setLoadingButtons((prev) => ({ ...prev, [courierServiceName]: false }));
       setIsAnyShipmentProcessing(false);

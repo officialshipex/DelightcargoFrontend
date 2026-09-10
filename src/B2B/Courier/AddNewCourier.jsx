@@ -14,6 +14,7 @@ const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const courierOptions = [
   { value: "NimbusPost", label: "NimbusPost" },
   { value: "Shiprocket", label: "Shiprocket" },
+  { value: "BigShip", label: "BigShip" },
   { value: "Dtdc", label: "Dtdc" },
   { value: "Delhivery", label: "Delhivery" },
   { value: "ShreeMaruti", label: "Shree Maruti" },

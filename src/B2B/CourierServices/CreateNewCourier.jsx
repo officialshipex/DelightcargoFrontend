@@ -32,8 +32,10 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
   const [providerServices, setProviderServices] = useState([]);
   const [selectedProvider, setSelectedProvider] = useState("");
   const [refresh, setRefresh] = useState(false);
+  const [loadingServices, setLoadingServices] = useState(false);
 
   const fetchServicesForProvider = async (providerName) => {
+    setLoadingServices(true);
     try {
       let services = [];
       switch (providerName?.toLowerCase()) {
@@ -49,6 +51,10 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
           const shipRes = await axios.get(`${REACT_APP_BACKEND_URL}/b2b/couriers/getShiprocketCourierServices`);
           services = shipRes?.data?.data?.flatMap((item) => item.service) || [];
           break;
+        case "bigship":
+          const bigshipRes = await axios.get(`${REACT_APP_BACKEND_URL}/b2b/couriers/getBigShipCourierServices`);
+          services = bigshipRes?.data?.data?.flatMap((item) => item.service) || [];
+          break;
         case "dtdc":
           services = ["B2C SMART EXPRESS", "B2C PRIORITY", "B2C GROUND ECONOMY"];
           break;
@@ -63,6 +69,8 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
     } catch (error) {
       console.error(`Error fetching ${providerName} services:`, error);
       setProviderServices([]);
+    } finally {
+      setLoadingServices(false);
     }
   };
 
@@ -226,6 +234,7 @@ export default function CreateNewCourier({ isSidebarAdmin }) {
                 value={formData.courier}
                 onChange={handleChange}
                 options={providerServices}
+                loading={loadingServices}
                 placeholder={selectedProvider ? `Select ${selectedProvider?.toLowerCase() === "dtdc" ? "Service Type" : "Courier"}` : "Select Provider first"}
               />
 
