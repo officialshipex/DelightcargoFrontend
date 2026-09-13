@@ -167,6 +167,13 @@ export const handleLabel = async (id, orderType) => {
       ? `${REACT_APP_BACKEND_URL}/b2b/generate-label/${id}`
       : `${REACT_APP_BACKEND_URL}/printlabel/generate-pdf/${id}`;
     const response = await fetch(endpoint);
+    if (!response.ok) {
+      // e.g. the 409 "Original Amazon label not available yet" guard —
+      // never force-download an error body as if it were a PDF.
+      const errBody = await response.json().catch(() => null);
+      Notification(errBody?.error || "Failed to download label.", "error");
+      return;
+    }
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -266,9 +273,26 @@ export const handleBulkDownloadLabel = async ({ selectedOrders }) => {
     );
 
     // ── 3. Download and assemble each label ──────────────────────────────
+    // Any Amazon-fulfilled service (regardless of which aggregator booked it
+    // — direct Amazon, NimbusPost, ShipexIndia, BigShip, etc. all phrase the
+    // provider/service name differently, e.g. "Amazon Shipping" vs "Amazon
+    // 0.5KG") must use Amazon's own original label — our generated PDF has
+    // the wrong barcode and won't scan in Amazon's delivery network.
+    const skippedAmazonOrders = [];
     for (const orderData of orderResponses) {
+      const isAmazonService =
+        /amazon/i.test(orderData.provider || "") ||
+        /amazon/i.test(orderData.courierServiceName || "");
+
+      if (isAmazonService && !orderData.label) {
+        // No original label captured for this order yet — skip it rather
+        // than merging in a fake, non-scannable label.
+        skippedAmazonOrders.push(orderData.orderId || orderData._id);
+        continue;
+      }
+
       let response;
-      if (orderData.provider === "Amazon Shipping" && orderData.label) {
+      if (isAmazonService) {
         response = await fetch(
           `${REACT_APP_BACKEND_URL}/printlabel/proxy-label?url=${encodeURIComponent(orderData.label)}`,
         );
@@ -311,11 +335,26 @@ export const handleBulkDownloadLabel = async ({ selectedOrders }) => {
       }
     }
 
+    if (mergedPdf.getPageCount() === 0) {
+      Notification(
+        `Original Amazon label${skippedAmazonOrders.length > 1 ? "s" : ""} not available yet for order(s): ${skippedAmazonOrders.join(", ")}`,
+        "error",
+      );
+      return;
+    }
+
     const mergedPdfBytes = await mergedPdf.save();
     const mergedBlob = new Blob([mergedPdfBytes], { type: "application/pdf" });
     saveAs(mergedBlob, `bulk-labels${isThermal ? "-thermal" : ""}.pdf`);
 
-    Notification("Labels downloaded successfully!", "success");
+    if (skippedAmazonOrders.length > 0) {
+      Notification(
+        `Labels downloaded — skipped order(s) with no original Amazon label yet: ${skippedAmazonOrders.join(", ")}`,
+        "info",
+      );
+    } else {
+      Notification("Labels downloaded successfully!", "success");
+    }
   } catch (error) {
     console.error("Error downloading Label:", error);
     Notification("Failed to download Labels.", "error");

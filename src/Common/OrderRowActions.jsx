@@ -89,6 +89,12 @@ const OrderRowActions = ({
     const showDownloadManifest = !isB2BOrder && !restrictedForManifest.includes(order.status);
     const restrictedForLabel = ["new",  "Cancelled"];
     const showDownloadLabel = !restrictedForLabel.includes(order.status);
+    // Any Amazon-fulfilled service (regardless of which aggregator booked it —
+    // direct Amazon, NimbusPost, ShipexIndia, BigShip, etc. all phrase the
+    // provider/service name differently, e.g. "Amazon Shipping" vs "Amazon
+    // 0.5KG") must use Amazon's own original label — our generated PDF has
+    // the wrong barcode and won't scan in Amazon's delivery network.
+    const isAmazonService = /amazon/i.test(order.provider || "") || /amazon/i.test(order.courierServiceName || "");
 
     // Calculate position whenever we open
     useLayoutEffect(() => {
@@ -174,19 +180,28 @@ const OrderRowActions = ({
 
                                     {/* Label logic */}
                                     {showDownloadLabel && (
-                                        order.provider === "Amazon Shipping" ? (
-                                            <li className="hover:bg-blue-50 transition-colors">
-                                                <a
-                                                    href={order.label}
-                                                    download
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="block px-3 py-2 text-gray-700"
-                                                    onClick={() => setDropdownOpen(null)}
+                                        isAmazonService ? (
+                                            order.label ? (
+                                                <li className="hover:bg-blue-50 transition-colors">
+                                                    <a
+                                                        href={order.label}
+                                                        download
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="block px-3 py-2 text-gray-700"
+                                                        onClick={() => setDropdownOpen(null)}
+                                                    >
+                                                        Download Label
+                                                    </a>
+                                                </li>
+                                            ) : (
+                                                <li
+                                                    title="Amazon's original label isn't available for this order yet"
+                                                    className="px-3 py-2 text-gray-400 cursor-not-allowed"
                                                 >
                                                     Download Label
-                                                </a>
-                                            </li>
+                                                </li>
+                                            )
                                         ) : (
                                             <li
                                                 onClick={(e) => {
