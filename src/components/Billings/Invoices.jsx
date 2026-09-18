@@ -10,6 +10,8 @@ import NotFound from "../../assets/nodatafound.png";
 import PaginationFooter from "../../Common/PaginationFooter";
 import InvoicesFilterPanel from "../../Common/InvoicesFilterPanel";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 import { FiCopy, FiCheck } from "react-icons/fi";
 import { Notification } from "../../Notification";
 
@@ -352,14 +354,14 @@ const Invoices = ({
                     </td>
                     <td className="px-3 py-2">
                       <p className="text-gray-700 whitespace-nowrap">
-                        {dayjs(inv.invoiceDate || inv.createdAt).format(
+                        {dayjs.utc(inv.invoiceDate || inv.createdAt).format(
                           "DD MMM YYYY"
                         )}
                       </p>
                     </td>
                     <td className="px-3 py-2">
                       <p className="text-gray-700 whitespace-nowrap">
-                        {dayjs(inv.periodEnd).format("MMMM YYYY")}
+                        {dayjs.utc(inv.periodEnd).format("MMMM YYYY")}
                       </p>
                     </td>
                     <td className="px-3 py-2">
@@ -500,7 +502,7 @@ const Invoices = ({
                       </div>
                       <p className="text-gray-500 text-[10px]">
                         Created At:{" "}
-                        {dayjs(inv.invoiceDate || inv.createdAt).format(
+                        {dayjs.utc(inv.invoiceDate || inv.createdAt).format(
                           "DD MMM YYYY"
                         )}
                       </p>
@@ -534,7 +536,7 @@ const Invoices = ({
                       Period
                     </p>
                     <p className="text-gray-700 font-[600] text-[10px]">
-                      {dayjs(inv.periodEnd).format("MMMM YYYY")}
+                      {dayjs.utc(inv.periodEnd).format("MMMM YYYY")}
                     </p>
                   </div>
                 </div>

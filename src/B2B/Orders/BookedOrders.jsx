@@ -17,7 +17,7 @@ import {
     cancelOrder,
     handleLabel,
     handleBulkDownloadLabel,
-    BulkCancel
+    BulkCancelB2B
 } from "../../Common/orderActions";
 import OrdersTable from "../../Common/OrdersTable";
 import MobileOrderCard from "../../Common/MobileOrderCard";
@@ -255,7 +255,7 @@ const BookedOrders = (filterOrder) => {
                                         Download Invoices
                                     </li>
                                     <li className="px-3 py-2 text-red-600 hover:bg-red-50 cursor-pointer flex items-center gap-2"
-                                        onClick={() => { BulkCancel({ selectedOrders, setRefresh }); setDesktopDropdownOpen(false); }}>
+                                        onClick={() => { BulkCancelB2B({ selectedOrders, setRefresh }); setDesktopDropdownOpen(false); }}>
                                         Bulk Delete
                                     </li>
                                 </ul>
@@ -316,7 +316,7 @@ const BookedOrders = (filterOrder) => {
                                     <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { handleBulkGeneratePickup(); setMobileDropdownOpen(false); }}>Generate Pickup Request</li>
                                     <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { ExportExcel({ selectedOrders, orders }); setMobileDropdownOpen(false); }}>Export Excel</li>
                                     <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { handleBulkDownloadInvoice({ selectedOrders }); setMobileDropdownOpen(false); }}>Download Invoices</li>
-                                    <li className="px-3 py-2 text-red-600 hover:bg-red-100 cursor-pointer" onClick={() => { BulkCancel({ selectedOrders, setRefresh }); setMobileDropdownOpen(false); }}>Bulk Delete</li>
+                                    <li className="px-3 py-2 text-red-600 hover:bg-red-100 cursor-pointer" onClick={() => { BulkCancelB2B({ selectedOrders, setRefresh }); setMobileDropdownOpen(false); }}>Bulk Delete</li>
                                 </ul>
                             </div>
                         )}

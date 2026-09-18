@@ -17,7 +17,7 @@ import {
   handleInvoice,
   handleBulkDownloadInvoice,
   SavePackageDetails,
-  BulkCancel,
+  BulkCancelB2B,
   cancelOrder,
   handleClone
 } from "../../Common/orderActions";
@@ -278,7 +278,7 @@ const NewOrders = (filterOrder) => {
                     Download Invoices
                   </li>
                   <li className="px-3 py-2 text-red-600 hover:bg-red-50 cursor-pointer flex items-center gap-2"
-                    onClick={() => { BulkCancel({ selectedOrders, setRefresh }); setDesktopDropdownOpen(false); }}>
+                    onClick={() => { BulkCancelB2B({ selectedOrders, setRefresh }); setDesktopDropdownOpen(false); }}>
                     Bulk Delete
                   </li>
                 </ul>
@@ -344,7 +344,7 @@ const NewOrders = (filterOrder) => {
                   <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { setTitle("Update Address"); setShowBulkShipModal(true); setMobileDropdownOpen(false); }}>Update Pickup Address</li>
                   <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { ExportExcel({ selectedOrders, orders }); setMobileDropdownOpen(false); }}>Export Excel</li>
                   <li className="px-3 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer" onClick={() => { handleBulkDownloadInvoice({ selectedOrders }); setMobileDropdownOpen(false); }}>Download Invoices</li>
-                  <li className="px-3 py-2 text-red-600 hover:bg-red-100 cursor-pointer" onClick={() => { BulkCancel({ selectedOrders, setRefresh }); setMobileDropdownOpen(false); }}>Bulk Delete</li>
+                  <li className="px-3 py-2 text-red-600 hover:bg-red-100 cursor-pointer" onClick={() => { BulkCancelB2B({ selectedOrders, setRefresh }); setMobileDropdownOpen(false); }}>Bulk Delete</li>
                 </ul>
               </div>
             )}

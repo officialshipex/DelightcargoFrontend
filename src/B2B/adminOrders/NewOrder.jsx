@@ -22,7 +22,7 @@ import {
   handleManifest,
   SavePackageDetails,
   cancelOrder,
-  BulkCancel
+  BulkCancelB2B
 } from "../../Common/orderActions";
 import OrdersTable from "../../Common/OrdersTable";
 import MobileOrderCard from "../../Common/MobileOrderCard";
@@ -261,7 +261,7 @@ const NewOrder = ({ userId: initialUserId }) => {
   };
 
   const handleBulkDelete = () => {
-    BulkCancel({ selectedOrders, setRefresh });
+    BulkCancelB2B({ selectedOrders, setRefresh });
   };
 
   const handleCancel = (orderId) => {

@@ -56,15 +56,13 @@ const PackageDetailsSection = ({ order, onUpdate }) => {
                         <span className="font-[600] text-gray-700">Order Type:</span>
                         <p className="text-gray-500">{order.orderType || "B2C"}</p>
                     </div>
-                    <div>
-                        <span className="font-[600] text-gray-700">Dead Weight:</span>
-                        <p className="text-gray-500">{order.packageDetails?.deadWeight || "B2C"} KG</p>
-                    </div>
-
-
-
                     {!isB2B && (
                         <>
+                            <div>
+                                <span className="font-[600] text-gray-700">Dead Weight:</span>
+                                <p className="text-gray-500">{order.packageDetails?.deadWeight || 0} KG</p>
+                            </div>
+
                             <div>
                                 <span className="font-[600] text-gray-700">Dimensions (L×W×H):</span>
                                 <p className="text-gray-500">

@@ -9,6 +9,8 @@ import NotFound from "../../assets/nodatafound.png"
 import PaginationFooter from "../../Common/PaginationFooter"
 import InvoicesFilterPanel from "../../Common/InvoicesFilterPanel";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 import { FiCopy, FiCheck } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
 
@@ -345,10 +347,10 @@ const Invoices = () => {
                       <span className="font-medium text-gray-700">₹{inv.amount}</span>
                     </td>
                     <td className="px-3 py-2">
-                      <p className="text-gray-700 whitespace-nowrap">{dayjs(inv.invoiceDate || inv.createdAt).format("DD MMM YYYY")}</p>
+                      <p className="text-gray-700 whitespace-nowrap">{dayjs.utc(inv.invoiceDate || inv.createdAt).format("DD MMM YYYY")}</p>
                     </td>
                     <td className="px-3 py-2">
-                      <p className="text-gray-700 whitespace-nowrap">{dayjs(inv.periodEnd).format("MMMM YYYY")}</p>
+                      <p className="text-gray-700 whitespace-nowrap">{dayjs.utc(inv.periodEnd).format("MMMM YYYY")}</p>
                     </td>
                     <td className="px-3 py-2">
                       <span className={`px-2 py-0.5 rounded text-[10px] ${getStatusColor(inv.status)}`}>
@@ -462,7 +464,7 @@ const Invoices = () => {
                           </button>
                         </div>
                         <span className="text-[10px] text-gray-400 tracking-tighter">
-                          Created At: {dayjs(inv.invoiceDate || inv.createdAt).format("DD MMM YYYY")}
+                          Created At: {dayjs.utc(inv.invoiceDate || inv.createdAt).format("DD MMM YYYY")}
                         </span>
                       </div>
                     </div>
@@ -481,7 +483,7 @@ const Invoices = () => {
                     </div>
                     <div className="text-right space-y-0.5">
                       <p className="text-gray-700 text-[10px] tracking-tight">Period</p>
-                      <p className="text-gray-700 font-bold text-[10px]">{dayjs(inv.periodEnd).format("MMMM YYYY")}</p>
+                      <p className="text-gray-700 font-bold text-[10px]">{dayjs.utc(inv.periodEnd).format("MMMM YYYY")}</p>
                     </div>
                   </div>
 

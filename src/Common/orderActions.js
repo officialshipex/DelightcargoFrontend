@@ -482,3 +482,75 @@ export const handleCancelOrderAtBooked = async (orderData, setRefresh) => {
   } finally {
   }
 };
+
+// B2B orders (any status — new, Booked, Ready To Ship, Not Picked) go
+// through their own dedicated endpoint, which handles the courier cancel
+// call and wallet refund itself; unlike the B2C cancel* functions above,
+// there's a single endpoint for every cancellable B2B status.
+export const cancelB2BOrderAction = async ({ orderId, refresh, setRefresh }) => {
+  try {
+    Notification("Cancelling order, please wait...", "info");
+    const token = Cookies.get("session");
+    const response = await axios.post(
+      `${REACT_APP_BACKEND_URL}/b2b/cancelOrder/${orderId}`,
+      {},
+      {
+        headers: { authorization: `Bearer ${token}` },
+      }
+    );
+    Notification(response.data.message || "Order cancelled successfully", "success");
+    if (setRefresh) setRefresh(!refresh);
+  } catch (error) {
+    Notification(
+      error?.response?.data?.message || "Failed to cancel order. Please try again.",
+      "error"
+    );
+  }
+};
+
+// B2B's bulk "Bulk Delete" action must NOT reuse the B2C BulkCancel above —
+// that one calls /order/cancelOrdersAtNotShipped, which does
+// Order.findByIdAndDelete (a hard delete) unconditionally, regardless of
+// status. For a B2B order that's already Booked/Ready To Ship/Not Picked,
+// that would permanently delete the order record without ever cancelling
+// the real Delhivery shipment or refunding the wallet — real money and a
+// live shipment both orphaned with no record left to reconcile from. This
+// goes through cancelB2BOrder for every selected order instead, which
+// handles every cancellable B2B status correctly (courier cancel + wallet
+// refund for booked orders, plain status flip for "new" ones) exactly like
+// the single-order cancel action above.
+export const BulkCancelB2B = async ({ selectedOrders, setRefresh }) => {
+  if (!selectedOrders || selectedOrders.length === 0) return;
+
+  Notification("Cancelling selected orders, please wait...", "info");
+
+  let allSuccess = true;
+  const token = Cookies.get("session");
+
+  try {
+    await Promise.all(
+      selectedOrders.map((orderId) =>
+        axios.post(
+          `${REACT_APP_BACKEND_URL}/b2b/cancelOrder/${orderId}`,
+          {},
+          {
+            headers: { authorization: `Bearer ${token}` },
+          }
+        )
+      )
+    );
+  } catch (error) {
+    allSuccess = false;
+  }
+
+  setRefresh((prev) => !prev);
+
+  if (allSuccess) {
+    Notification("All selected orders cancelled successfully.", "success");
+  } else {
+    Notification(
+      "Some orders could not be cancelled. Please try again.",
+      "error",
+    );
+  }
+};

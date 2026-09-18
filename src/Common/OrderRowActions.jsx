@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { cancelB2BOrderAction } from "./orderActions";
 
 const OrderRowActions = ({
     index,
@@ -30,11 +31,18 @@ const OrderRowActions = ({
     const navigate = useNavigate();
     const [position, setPosition] = useState(null);
     const isNewOrder = order.status === "new";
+    const isB2BOrder = isB2B || order.orderType?.toUpperCase() === "B2B";
 
-    // Unified cancel handler
+    // Unified cancel handler — B2B orders (any cancellable status) always go
+    // through their own dedicated endpoint, which knows how to cancel with
+    // the right courier and refund the wallet; the B2C cancelOrder/
+    // handleCancelOrder props point at B2C-only endpoints and would either
+    // fail outright or run the wrong cancellation logic against a B2B order.
     const onCancel = (e) => {
         e.stopPropagation();
-        if (cancelOrder) {
+        if (isB2BOrder) {
+            cancelB2BOrderAction({ orderId: order._id, refresh, setRefresh });
+        } else if (cancelOrder) {
             cancelOrder({ orderId: order._id, refresh, setRefresh });
         } else if (handleCancelOrder) {
             handleCancelOrder(order, setRefresh);
@@ -75,12 +83,11 @@ const OrderRowActions = ({
     const action = getStatusAction(order)[order.status];
 
     // Status-based visibility logic
-    const isB2BOrder = isB2B || order.orderType?.toUpperCase() === "B2B";
-    // B2B Shiprocket Cargo has no cancel-shipment API today — the booked-order
-    // cancel path would currently fall through to the B2C Shiprocket cancel
-    // endpoint (wrong API for a Cargo AWB) and fail. Deleting an unshipped
-    // ("new") B2B order is unaffected — that's a local delete, no courier call.
-    const showCancel = !isB2BOrder && ["Ready To Ship", "Booked", "Not Picked"].includes(order.status);
+    // B2B orders now have a real cancel endpoint (cancelB2BOrder /
+    // POST /b2b/cancelOrder/:id, dispatched to above in onCancel) that
+    // handles the courier cancel call and wallet refund itself, so this no
+    // longer needs to be excluded for B2B the way it used to be.
+    const showCancel = ["Ready To Ship", "Booked", "Not Picked"].includes(order.status);
     const cancelLabel = isNewOrder ? "Delete Order" : "Cancel Order";
     const restrictedForManifest = ["new", "Cancelled"];
     // Manifest and invoice aren't a B2B concept in this app (no B2B manifest
