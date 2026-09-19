@@ -6,6 +6,15 @@ import { Truck } from "lucide-react";
 
 const ShippingDetailsSection = ({ order }) => {
     const [copiedAwb, setCopiedAwb] = useState(false);
+    const [copiedLr, setCopiedLr] = useState(false);
+
+    const handleCopyLr = () => {
+        if (order.lrn) {
+            navigator.clipboard.writeText(order.lrn);
+            setCopiedLr(true);
+            setTimeout(() => setCopiedLr(false), 1500);
+        }
+    };
 
     const handleCopyAwb = () => {
         if (order.awb_number) {
@@ -128,11 +137,42 @@ const ShippingDetailsSection = ({ order }) => {
                     </div>
                 )}
 
-                {/* Child AWB Numbers (multi-box B2B shipments) */}
+                {/* LR Number with Copy Functionality (B2B / LTL shipments) */}
+                {order.lrn && (
+                    <div className="group">
+                        <span className="font-[600] text-gray-700">LR Number:</span>
+                        <div className="flex items-center gap-2">
+                            <p className="text-[#0192ED]">{order.lrn}</p>
+
+                            <div
+                                onClick={handleCopyLr}
+                                className="md:opacity-0 md:group-hover:opacity-100 cursor-pointer transition-opacity"
+                            >
+                                <div className="relative flex items-center justify-center text-gray-500 hover:text-[#0192ED]">
+                                    {copiedLr ? (
+                                        <FiCheck className="w-3 h-3 text-[#0192ED]" />
+                                    ) : (
+                                        <FiCopy className="w-3 h-3" />
+                                    )}
+
+                                    {/* Tooltip */}
+                                    <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 scale-95 opacity-0 group-hover:opacity-100 transition-all duration-150 bg-gray-500 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap z-10">
+                                        {copiedLr ? "Copied!" : "Click to copy"}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Child AWB Numbers (multi-box B2B shipments) — one per line so
+                    each box's AWB is easy to read/copy instead of a comma run-on */}
                 {order.child_awb_numbers && order.child_awb_numbers.length > 0 && (
                     <div>
                         <span className="font-[600] text-gray-700">Child AWB Numbers:</span>
-                        <p className="text-gray-500">{order.child_awb_numbers.join(", ")}</p>
+                        {order.child_awb_numbers.map((childAwb) => (
+                            <p key={childAwb} className="text-gray-500 break-all">{childAwb}</p>
+                        ))}
                     </div>
                 )}
 

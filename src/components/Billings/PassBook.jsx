@@ -8,6 +8,7 @@ import ThreeDotLoader from "../../Loader";
 import Cookies from "js-cookie";
 import { Notification } from "../../Notification";
 import PaginationFooter from "../../Common/PaginationFooter";
+import B2BRateBreakup from "../../Common/B2BRateBreakup";
 import DateFilter from "../../filter/DateFilter";
 import { getCarrierLogo } from "../../Common/getCarrierLogo";
 import NotFound from "../../assets/nodatafound.png";
@@ -635,43 +636,31 @@ const Passbooks = ({
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-white rounded-xl shadow-2xl p-4 w-full max-w-xs relative z-10"
+              className="bg-white rounded-xl shadow-2xl w-full max-w-xs relative z-10 flex flex-col max-h-[85vh] overflow-hidden"
             >
-              <div className="flex justify-between items-center mb-3">
+              <div className="flex justify-between items-center px-4 pt-4 pb-3 shrink-0">
                 <h3 className="font-bold text-gray-800 text-[12px] uppercase">Price Breakup</h3>
                 <X className="w-4 h-4 text-gray-400 cursor-pointer" onClick={() => setMobilePricePopupId(null)} />
               </div>
-              <div className="space-y-2 text-[12px]">
-                {(() => {
-                  const row = transactions.find(t => (t.id || t._id) === mobilePricePopupId);
-                  if (!row) return null;
-                  if (row.orderType === "B2C") {
-                    return (
-                      <div className="space-y-1.5">
-                        <div className="flex justify-between"><span className="text-gray-500">Freight</span><span className="font-bold">₹ {Number(row.priceBreakup?.freight ?? 0).toFixed(2)}</span></div>
-                        <div className="flex justify-between"><span className="text-gray-500">COD</span><span className="font-bold">₹ {Number(row.priceBreakup?.cod ?? 0).toFixed(2)}</span></div>
-                        <div className="flex justify-between"><span className="text-gray-500">GST</span><span className="font-bold">₹ {Number(row.priceBreakup?.gst ?? 0).toFixed(2)}</span></div>
-                        <div className="flex justify-between border-t pt-2 mt-1"><span className="font-bold text-gray-800">Total</span><span className="font-bold text-[#0192ED]">₹ {Number(row.priceBreakup?.total ?? row.amount ?? 0).toFixed(2)}</span></div>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="space-y-1.5">
-                        {row.rateBreakup && Object.keys(row.rateBreakup).length > 0
-                          ? Object.entries(row.rateBreakup).map(([key, val]) => (
-                            <div key={key} className="flex justify-between">
-                              <span className="text-gray-500 capitalize">{key}</span>
-                              <span className="font-bold">{typeof val === "number" ? `₹ ${val.toFixed(2)}` : val}</span>
-                            </div>
-                          ))
-                          : <p className="text-gray-400 italic text-center py-2">No breakup available</p>
-                        }
-                        <div className="flex justify-between border-t border-dashed pt-2 mt-1"><span className="font-bold text-gray-800">Total</span><span className="font-bold text-[#0192ED]">₹ {Number(row.amount || 0).toFixed(2)}</span></div>
-                      </div>
-                    );
-                  }
-                })()}
-              </div>
+              {(() => {
+                const row = transactions.find(t => (t.id || t._id) === mobilePricePopupId);
+                if (!row) return null;
+                if (row.orderType === "B2C") {
+                  return (
+                    <div className="space-y-1.5 text-[12px] px-4 pb-4">
+                      <div className="flex justify-between"><span className="text-gray-500">Freight</span><span className="font-bold">₹ {Number(row.priceBreakup?.freight ?? 0).toFixed(2)}</span></div>
+                      <div className="flex justify-between"><span className="text-gray-500">COD</span><span className="font-bold">₹ {Number(row.priceBreakup?.cod ?? 0).toFixed(2)}</span></div>
+                      <div className="flex justify-between"><span className="text-gray-500">GST</span><span className="font-bold">₹ {Number(row.priceBreakup?.gst ?? 0).toFixed(2)}</span></div>
+                      <div className="flex justify-between border-t pt-2 mt-1"><span className="font-bold text-gray-800">Total</span><span className="font-bold text-[#0192ED]">₹ {Number(row.priceBreakup?.total ?? row.amount ?? 0).toFixed(2)}</span></div>
+                    </div>
+                  );
+                }
+                return (
+                  <div className="text-[12px] flex flex-col min-h-0 flex-1">
+                    <B2BRateBreakup rateBreakup={row.rateBreakup} total={row.amount} padX="px-4" />
+                  </div>
+                );
+              })()}
             </motion.div>
           </div>
         )}
@@ -690,7 +679,7 @@ const Passbooks = ({
             transform: "translateX(-50%)",
             pointerEvents: "auto",
           }}
-          className="bg-white border shadow-2xl rounded-lg p-3 w-60 text-[10px] text-gray-700 whitespace-normal max-h-[300px] overflow-y-auto custom-scrollbar"
+          className="bg-white border shadow-2xl rounded-lg w-60 text-[10px] text-gray-700 whitespace-normal max-h-[320px] flex flex-col overflow-hidden"
           onMouseEnter={() => {
             if (pricePopupTimerRef.current) clearTimeout(pricePopupTimerRef.current);
           }}
@@ -700,29 +689,18 @@ const Passbooks = ({
             }, 150);
           }}
         >
-          <div className="sticky top-0 bg-white pb-1 mb-2 border-b z-10">
+          <div className="px-3 pt-3 pb-1 mb-2 border-b shrink-0">
             <p className="font-[700] text-gray-800">Price Breakup</p>
           </div>
           {pricePopupPos.order.orderType === "B2C" ? (
-            <div className="space-y-1">
+            <div className="space-y-1 px-3 pb-3">
               <div className="flex justify-between"><span className="text-gray-500">Freight</span><span className="font-[600]">₹ {Number(pricePopupPos.order.priceBreakup?.freight ?? 0).toFixed(2)}</span></div>
               <div className="flex justify-between"><span className="text-gray-500">COD</span><span className="font-[600]">₹ {Number(pricePopupPos.order.priceBreakup?.cod ?? 0).toFixed(2)}</span></div>
               <div className="flex justify-between"><span className="text-gray-500">GST</span><span className="font-[600]">₹ {Number(pricePopupPos.order.priceBreakup?.gst ?? 0).toFixed(2)}</span></div>
               <div className="flex justify-between border-t pt-1 mt-1"><span className="font-[700] text-gray-800">Total</span><span className="font-[700] text-[#0192ED]">₹ {Number(pricePopupPos.order.priceBreakup?.total ?? pricePopupPos.order.amount ?? 0).toFixed(2)}</span></div>
             </div>
           ) : (
-            <div className="space-y-1">
-              {pricePopupPos.order.rateBreakup && Object.keys(pricePopupPos.order.rateBreakup).length > 0
-                ? Object.entries(pricePopupPos.order.rateBreakup).map(([key, val]) => (
-                  <div key={key} className="flex justify-between">
-                    <span className="text-gray-500 capitalize">{key}</span>
-                    <span className="font-[600]">{typeof val === "number" ? `₹ ${val.toFixed(2)}` : val}</span>
-                  </div>
-                ))
-                : <p className="text-gray-400 italic">No breakup available</p>
-              }
-              <div className="flex justify-between border-t pt-1 mt-1"><span className="font-[700] text-gray-800">Total</span><span className="font-[700] text-[#0192ED]">₹ {Number(pricePopupPos.order.amount ?? 0).toFixed(2)}</span></div>
-            </div>
+            <B2BRateBreakup rateBreakup={pricePopupPos.order.rateBreakup} total={pricePopupPos.order.amount} />
           )}
         </div>
       )}

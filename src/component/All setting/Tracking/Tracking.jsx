@@ -308,6 +308,19 @@ function TrackingCard({ trackingAwb, statusSteps, CopyableText }) {
             <CopyableText label="Channel ID" text={trackingAwb.channelId} copyKey="channelId" />
           )}
           <CopyableText label="AWB Number" text={trackingAwb.awb_number} copyKey="trackingId" />
+          {/* B2B (LTL) shipments: LR number and one AWB per box */}
+          {trackingAwb.lrn && (
+            <CopyableText label="LR Number" text={trackingAwb.lrn} copyKey={`lrn-${trackingAwb.awb_number}`} />
+          )}
+          {trackingAwb.child_awb_numbers?.length > 0 &&
+            trackingAwb.child_awb_numbers.map((childAwb, i) => (
+              <CopyableText
+                key={childAwb}
+                label={`Child AWB ${i + 1}`}
+                text={childAwb}
+                copyKey={`childAwb-${trackingAwb.awb_number}-${i}`}
+              />
+            ))}
           {(trackingAwb.status === "RTO" || trackingAwb.status === "RTO In-transit" || trackingAwb.status === "RTO Delivered") && (
             <CopyableText label="RTO AWB Number" text={trackingAwb.awb_number} copyKey="rtoTrackingId" />
           )}
