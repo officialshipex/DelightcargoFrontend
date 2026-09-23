@@ -35,3 +35,6 @@ export const deleteZone = (id) =>
 
 export const lookupPincode = (pincode) =>
   api.get(`/lookup/pincode?pincode=${pincode}`);
+
+export const searchLocations = (q) =>
+  api.get(`/search`, { params: { q } });
