@@ -11,9 +11,9 @@ import PaginationFooter from "../../Common/PaginationFooter";
 import InvoicesFilterPanel from "../../Common/InvoicesFilterPanel";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-dayjs.extend(utc);
 import { FiCopy, FiCheck } from "react-icons/fi";
 import { Notification } from "../../Notification";
+dayjs.extend(utc);
 
 const MONTHS = [
   { label: "January", value: "01" },
