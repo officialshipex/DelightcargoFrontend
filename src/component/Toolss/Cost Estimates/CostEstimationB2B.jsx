@@ -389,7 +389,7 @@ const CostEstimationB2B = () => {
                 )}
 
                 {!loading && isDataFetched && (
-                    <CourierSelectionRate plan={rates} loading={loading} />
+                    <CourierSelectionRate plan={rates} loading={loading} hasFetched={true} />
                 )}
             </div>
 

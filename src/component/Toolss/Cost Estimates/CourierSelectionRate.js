@@ -33,11 +33,15 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [ratePopup]);
-  if (hasFetched && (!Array.isArray(plan) || plan.length === 0)) {
+
+  const displayPlan = Array.isArray(plan) ? plan : [];
+
+  if (hasFetched && displayPlan.length === 0) {
     return <p className="text-center py-4 text-gray-600">No Data Found</p>;
   }
 
   const openRatePopup = (e, working) => {
+    if (!working) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const popupWidth = 220;
     const screenPadding = 10;
@@ -66,7 +70,7 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
     setRatePopup(null);
   };
 
-  if (hasFetched && loading) {
+  if (loading) {
     return (
       <div className="flex justify-center items-center h-40">
         <ThreeDotLoader />
@@ -74,9 +78,20 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
     );
   }
 
+  const getItemPrice = (item) => {
+    if (item?.orderType === "B2B" || item?.working) {
+      return Number(item?.working?.grand_total || 0);
+    }
+    return Number(item?.forward?.finalCharges || 0);
+  };
+
+  const sortedPlan = [...displayPlan].sort(
+    (a, b) => getItemPrice(a) - getItemPrice(b)
+  );
+
   return (
     <>
-      {!hasFetched && plan.length > 0 && (
+      {sortedPlan.length > 0 && (
         <div className="">
           {/* Desktop View */}
           <div className="hidden md:block bg-white shadow rounded-lg p-4">
@@ -91,56 +106,53 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {plan
-                    .sort(
-                      (a, b) => a.forward.finalCharges - b.forward.finalCharges
-                    )
-                    .map((item) => (
-                      <tr
-                        key={item._id}
-                        className="border-b text-gray-700 text-[12px]"
-                      >
-                        <td className="flex items-center space-x-4 px-3 py-2">
-                          <img
-                            src={getCarrierLogo(item.courierServiceName)}
-                            alt={item.courierServiceName}
-                            className="w-8 h-8"
-                          />
-                          <span>{item.courierServiceName}</span>
+                  {sortedPlan.map((item, index) => (
+                    <tr
+                      key={item._id || item.id || index}
+                      className="border-b text-gray-700 text-[12px]"
+                    >
+                      <td className="flex items-center space-x-4 px-3 py-2">
+                        <img
+                          src={getCarrierLogo(item.courierServiceName)}
+                          alt={item.courierServiceName || "Courier"}
+                          className="w-8 h-8"
+                        />
+                        <span>{item.courierServiceName}</span>
+                      </td>
+
+                      {item.orderType === "B2C" && (
+                        <td className="text-center px-3 py-2">
+                          <div className="flex justify-center">
+                            {item.courierType === "Domestic (Air)" ? (
+                              <FaPlane className="text-gray-500" />
+                            ) : (
+                              <FaTruck className="text-gray-500" />
+                            )}
+                          </div>
                         </td>
+                      )}
 
-                        {item.orderType === "B2C" && (
-                          <td className="text-center px-3 py-2">
-                            <div className="flex justify-center">
-                              {item.courierType === "Domestic (Air)" ? (
-                                <FaPlane className="text-gray-500" />
-                              ) : (
-                                <FaTruck className="text-gray-500" />
-                              )}
-                            </div>
-                          </td>
-                        )}
+                      {item.orderType === "B2B" && (
+                        <td className="text-center px-3 py-2">
+                          <div className="flex justify-center">
+                            {item.mode_name === "air" ? (
+                              <FaPlane className="text-gray-500" />
+                            ) : (
+                              <FaTruck className="text-gray-500" />
+                            )}
+                          </div>
+                        </td>
+                      )}
 
-                        {item.orderType === "B2B" && (
-                          <td className="text-center px-3 py-2">
-                            <div className="flex justify-center">
-                              {item.mode_name === "air" ? (
-                                <FaPlane className="text-gray-500" />
-                              ) : (
-                                <FaTruck className="text-gray-500" />
-                              )}
-                            </div>
-                          </td>
-                        )}
-
-                        {item.orderType === "B2C" && (
-                          <td className="text-center px-3 py-2 text-gray-700 font-[600]">
-                            ₹{item.forward.finalCharges}
-                          </td>
-                        )}
-                        {item.orderType === "B2B" && (
-                          <td className="text-center font-[600] px-3 py-2 text-gray-500">
-                            ₹{item.working.grand_total}
+                      {item.orderType === "B2C" && (
+                        <td className="text-center px-3 py-2 text-gray-700 font-[600]">
+                          ₹{item.forward?.finalCharges ?? 0}
+                        </td>
+                      )}
+                      {item.orderType === "B2B" && (
+                        <td className="text-center font-[600] px-3 py-2 text-gray-500">
+                          ₹{item.working?.grand_total ?? 0}
+                          {item.working && (
                             <FaInfoCircle
                               className="rate-info-icon inline ml-1 mb-0.5 text-[#0192ED] cursor-pointer"
                               onMouseEnter={(e) =>
@@ -153,26 +165,27 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
                                 openRatePopup(e, item.working);
                               }}
                             />
-                          </td>
-                        )}
-                        <td className="text-center px-3 py-2">
-                          {item.orderType === "B2C" && (
-                            <Link to="/dashboard/b2c/order">
-                              <button className="px-3 py-2 bg-[#0192ED] text-white rounded-lg text-[12px] font-[600] hover:opacity-90 transition-all">
-                                + Create Shipment
-                              </button>
-                            </Link>
-                          )}
-                          {item.orderType === "B2B" && (
-                            <Link to="/dashboard/b2b/order">
-                              <button className="px-3 py-2 bg-[#0192ED] text-white rounded-lg text-[12px] font-[600] hover:opacity-90 transition-all">
-                                + Create Shipment
-                              </button>
-                            </Link>
                           )}
                         </td>
-                      </tr>
-                    ))}
+                      )}
+                      <td className="text-center px-3 py-2">
+                        {item.orderType === "B2C" && (
+                          <Link to="/dashboard/b2c/order">
+                            <button className="px-3 py-2 bg-[#0192ED] text-white rounded-lg text-[12px] font-[600] hover:opacity-90 transition-all">
+                              + Create Shipment
+                            </button>
+                          </Link>
+                        )}
+                        {item.orderType === "B2B" && (
+                          <Link to="/dashboard/b2b/order">
+                            <button className="px-3 py-2 bg-[#0192ED] text-white rounded-lg text-[12px] font-[600] hover:opacity-90 transition-all">
+                              + Create Shipment
+                            </button>
+                          </Link>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -180,15 +193,15 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
 
           {/* Mobile View */}
           <div className="md:hidden bg-white rounded-lg mt-[-20px] sm:p-4">
-            {plan.map((item) => (
+            {sortedPlan.map((item, index) => (
               <div
-                key={item._id}
+                key={item._id || item.id || index}
                 className="bg-white shadow-md rounded-lg p-4 mb-4"
               >
                 <div className="flex items-center space-x-4">
                   <img
                     src={getCarrierLogo(item.courierServiceName)}
-                    alt={item.courierServiceName}
+                    alt={item.courierServiceName || "Courier"}
                     className="w-12 h-12"
                   />
                   <div>
@@ -233,7 +246,7 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
                     <div className="flex justify-between font-[600] text-[10px] text-gray-500">
                       <span>Charges:</span>
                       <span className="font-[600] text-gray-500">
-                        ₹{item.forward.finalCharges}
+                        ₹{item.forward?.finalCharges ?? 0}
                       </span>
                     </div>
                   )}
@@ -242,17 +255,19 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
                     <div className="flex justify-between font-[600] text-[10px] text-gray-500">
                       <span>Charges:</span>
                       <div className="text-gray-700">
-                        ₹{item.working.grand_total}
-                        <FaInfoCircle
-                          className="rate-info-icon inline ml-1 mb-0.5 text-[#0192ED] cursor-pointer"
-                          onMouseEnter={(e) => showRatePopup(e, item.working)}
-                          onMouseLeave={hideRatePopup}
-                          onClick={(e) => {
-                            if (!isTouchDevice()) return;
-                            e.stopPropagation();
-                            openRatePopup(e, item.working);
-                          }}
-                        />
+                        ₹{item.working?.grand_total ?? 0}
+                        {item.working && (
+                          <FaInfoCircle
+                            className="rate-info-icon inline ml-1 mb-0.5 text-[#0192ED] cursor-pointer"
+                            onMouseEnter={(e) => showRatePopup(e, item.working)}
+                            onMouseLeave={hideRatePopup}
+                            onClick={(e) => {
+                              if (!isTouchDevice()) return;
+                              e.stopPropagation();
+                              openRatePopup(e, item.working);
+                            }}
+                          />
+                        )}
                       </div>
                     </div>
                   )}
@@ -282,17 +297,17 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
               style={{ top: popupPos.top, left: popupPos.left, width: "220px" }}
             >
               {[
-                ["Freight", `₹${ratePopup.freight}`],
-                ["Docket Charges", `₹${ratePopup.docket_charges}`],
-                ["Pickup Charges", `₹${ratePopup.pickup_charge}`],
-                ["Handling Charges", `₹${ratePopup.handling_charge}`],
-                ["Appointment Charges", `₹${ratePopup.appointment_charge}`],
-                ["COD Charges", `₹${ratePopup.cod_charges}`],
-                ["ROV", `₹${ratePopup.rov}`],
-                ["FSC", `₹${ratePopup.fsc}`],
-                ["ODA", `₹${ratePopup.oda}`],
-                ["Green Tax", `₹${ratePopup.green_tax}`],
-                ["GST", `₹${ratePopup.gst}`],
+                ["Freight", `₹${ratePopup.freight ?? 0}`],
+                ["Docket Charges", `₹${ratePopup.docket_charges ?? 0}`],
+                ["Pickup Charges", `₹${ratePopup.pickup_charge ?? 0}`],
+                ["Handling Charges", `₹${ratePopup.handling_charge ?? 0}`],
+                ["Appointment Charges", `₹${ratePopup.appointment_charge ?? 0}`],
+                ["COD Charges", `₹${ratePopup.cod_charges ?? 0}`],
+                ["ROV", `₹${ratePopup.rov ?? 0}`],
+                ["FSC", `₹${ratePopup.fsc ?? 0}`],
+                ["ODA", `₹${ratePopup.oda ?? 0}`],
+                ["Green Tax", `₹${ratePopup.green_tax ?? 0}`],
+                ["GST", `₹${ratePopup.gst ?? 0}`],
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between py-[2px]">
                   <span className="text-gray-500 font-[600]">{k}</span>
@@ -302,7 +317,7 @@ const CourierSelectionRate = ({ plan, loading, hasFetched }) => {
 
               <div className="border-t mt-2 pt-1 flex text-gray-700 justify-between font-[700]">
                 <span>Total</span>
-                <span>₹{ratePopup.grand_total}</span>
+                <span>₹{ratePopup.grand_total ?? 0}</span>
               </div>
             </div>
           )}

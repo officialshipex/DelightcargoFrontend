@@ -246,12 +246,18 @@ export default function ProfileCard() {
   }, [id, rateCardType]);
 
   useEffect(() => {
-    if (userData?.rateCard) {
-      setCurrentRatePlan(userData.rateCard);
-      setRateCardType("B2C");
-    } else if (userData?.b2bRateCard) {
-      setCurrentRatePlan(userData.b2bRateCard);
-      setRateCardType("B2B");
+    if (userData) {
+      if (rateCardType === "B2B" && userData.b2bRateCard) {
+        setCurrentRatePlan(userData.b2bRateCard);
+      } else if (rateCardType === "B2C" && userData.rateCard) {
+        setCurrentRatePlan(userData.rateCard);
+      } else if (userData.rateCard) {
+        setCurrentRatePlan(userData.rateCard);
+        setRateCardType("B2C");
+      } else if (userData.b2bRateCard) {
+        setCurrentRatePlan(userData.b2bRateCard);
+        setRateCardType("B2B");
+      }
     }
   }, [userData]);
 
@@ -290,62 +296,117 @@ export default function ProfileCard() {
     }
   };
 
-
-
   const renderRateTable = () => (
     <div className="overflow-auto bg-white mt-2 max-h-[535px]">
+      <div className="flex items-center gap-2 mb-3">
+        <button
+          onClick={() => setRateCardType("B2C")}
+          className={`px-3 py-1.5 text-[11px] font-[600] rounded-lg transition-colors ${rateCardType === "B2C" ? "bg-[#0192ED] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+        >
+          B2C Rate Cards
+        </button>
+        <button
+          onClick={() => setRateCardType("B2B")}
+          className={`px-3 py-1.5 text-[11px] font-[600] rounded-lg transition-colors ${rateCardType === "B2B" ? "bg-[#0192ED] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+        >
+          B2B Rate Cards
+        </button>
+      </div>
       <table className="w-full text-center border-collapse">
         <thead className="sticky top-0 z-10 bg-[#0192ED] text-[10px] sm:text-[11px] text-white">
-          <tr>
-            <th className="px-2 py-2 font-bold">Provider</th>
-            <th className="px-2 py-2 font-bold">Service</th>
-            <th className="px-2 py-2 font-bold">Mode</th>
-            <th className="px-2 py-2 font-bold">Weight</th>
-            <th className="px-2 py-2 font-bold">Zone A</th>
-            <th className="px-2 py-2 font-bold">Zone B</th>
-            <th className="px-2 py-2 font-bold">Zone C</th>
-            <th className="px-2 py-2 font-bold">Zone D</th>
-            <th className="px-2 py-2 font-bold">Zone E</th>
-            <th className="px-2 py-2 font-bold">COD</th>
-            <th className="px-2 py-2 font-bold">Action</th>
-          </tr>
+          {rateCardType === "B2B" ? (
+            <tr>
+              <th className="px-2 py-2 font-bold">Provider</th>
+              <th className="px-2 py-2 font-bold">Service</th>
+              <th className="px-2 py-2 font-bold">Mode</th>
+              <th className="px-2 py-2 font-bold">Rates / Pricing</th>
+              <th className="px-2 py-2 font-bold">COD Charge</th>
+              <th className="px-2 py-2 font-bold">Action</th>
+            </tr>
+          ) : (
+            <tr>
+              <th className="px-2 py-2 font-bold">Provider</th>
+              <th className="px-2 py-2 font-bold">Service</th>
+              <th className="px-2 py-2 font-bold">Mode</th>
+              <th className="px-2 py-2 font-bold">Weight</th>
+              <th className="px-2 py-2 font-bold">Zone A</th>
+              <th className="px-2 py-2 font-bold">Zone B</th>
+              <th className="px-2 py-2 font-bold">Zone C</th>
+              <th className="px-2 py-2 font-bold">Zone D</th>
+              <th className="px-2 py-2 font-bold">Zone E</th>
+              <th className="px-2 py-2 font-bold">COD</th>
+              <th className="px-2 py-2 font-bold">Action</th>
+            </tr>
+          )}
         </thead>
         <tbody>
           {rateLoading ? (
-            <tr><td colSpan="11" className="py-10"><Loader /></td></tr>
+            <tr><td colSpan={rateCardType === "B2B" ? "6" : "11"} className="py-10"><Loader /></td></tr>
           ) : filteredUserRates.length > 0 ? (
-            filteredUserRates.map((card, index) => (
-              <React.Fragment key={index}>
-                <tr className="border-b border-gray-50 text-[10px] sm:text-[11px] text-gray-700">
-                  <td className="px-2 py-1.5" rowSpan={2}>{card.courierProviderName}</td>
-                  <td className="px-2 py-1.5" rowSpan={2}>{card.courierServiceName}</td>
-                  <td className="px-2 py-1.5" rowSpan={2}>{card.mode}</td>
-                  <td className="px-2 py-1.5 text-gray-400">Basic: {card.weightPriceBasic[0]?.weight}gm</td>
-                  <td className="px-2 py-1.5 font-medium">₹{card.weightPriceBasic[0]?.zoneA}</td>
-                  <td className="px-2 py-1.5 font-medium">₹{card.weightPriceBasic[0]?.zoneB}</td>
-                  <td className="px-2 py-1.5 font-medium">₹{card.weightPriceBasic[0]?.zoneC}</td>
-                  <td className="px-2 py-1.5 font-medium">₹{card.weightPriceBasic[0]?.zoneD}</td>
-                  <td className="px-2 py-1.5 font-medium">₹{card.weightPriceBasic[0]?.zoneE}</td>
-                  <td className="px-2 py-1.5 font-medium" rowSpan={2}>₹{card.codCharge} / {card.codPercent}%</td>
-                  <td className="px-2 py-1.5" rowSpan={2}>
-                    <div className="flex justify-center gap-1.5">
-                      <button onClick={() => navigate(`/dashboard/ratecard/update/${card._id}?userId=${id}`)} className="text-[#0192ED]"><FaEdit size={12} /></button>
-                      <button onClick={() => handleDeleteRateCard(card._id)} className="text-red-500"><FaTrash size={12} /></button>
-                    </div>
-                  </td>
-                </tr>
-                <tr className="border-b border-gray-50 text-[10px] sm:text-[11px] text-gray-700">
-                  <td className="px-2 py-1.5 text-gray-400">Addl: {card.weightPriceAdditional[0]?.weight}gm</td>
-                  <td className="px-2 py-1.5">₹{card.weightPriceAdditional[0]?.zoneA}</td>
-                  <td className="px-2 py-1.5">₹{card.weightPriceAdditional[0]?.zoneB}</td>
-                  <td className="px-2 py-1.5">₹{card.weightPriceAdditional[0]?.zoneC}</td>
-                  <td className="px-2 py-1.5">₹{card.weightPriceAdditional[0]?.zoneD}</td>
-                  <td className="px-2 py-1.5">₹{card.weightPriceAdditional[0]?.zoneE}</td>
-                </tr>
-              </React.Fragment>
-            ))
+            filteredUserRates.map((card, index) => {
+              if (rateCardType === "B2B" || !card.weightPriceBasic) {
+                const provider = card.courierProviderName || card.provider || "B2B";
+                const serviceName = card.courierServiceName || card.service || card.name || "N/A";
+                const mode = card.mode || "Surface";
+                const cod = card.overheadCharges?.codCharges?.value ? `${card.overheadCharges.codCharges.value}%` : "N/A";
+                const ratesText = Array.isArray(card.rates) && card.rates.length > 0
+                  ? card.rates.map(r => `${r.fromZone || ''}->${r.toZone || ''}: ₹${r.price || 0}`).join(", ")
+                  : `Min Weight: ${card.minWeight || 0}kg | Rate: ₹${card.flatRate || card.ratePerKg || 0}`;
+
+                return (
+                  <tr key={card._id || index} className="border-b border-gray-100 text-[10px] sm:text-[11px] text-gray-700">
+                    <td className="px-2 py-2">{provider}</td>
+                    <td className="px-2 py-2">{serviceName}</td>
+                    <td className="px-2 py-2">{mode}</td>
+                    <td className="px-2 py-2 font-medium">{ratesText}</td>
+                    <td className="px-2 py-2">{cod}</td>
+                    <td className="px-2 py-2">
+                      <div className="flex justify-center gap-1.5">
+                        <button onClick={() => handleDeleteRateCard(card._id)} className="text-red-500"><FaTrash size={12} /></button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              }
+
+              const basic = card.weightPriceBasic?.[0] || {};
+              const addl = card.weightPriceAdditional?.[0] || {};
+
+              return (
+                <React.Fragment key={card._id || index}>
+                  <tr className="border-b border-gray-50 text-[10px] sm:text-[11px] text-gray-700">
+                    <td className="px-2 py-1.5" rowSpan={2}>{card.courierProviderName || "N/A"}</td>
+                    <td className="px-2 py-1.5" rowSpan={2}>{card.courierServiceName || "N/A"}</td>
+                    <td className="px-2 py-1.5" rowSpan={2}>{card.mode || "Surface"}</td>
+                    <td className="px-2 py-1.5 text-gray-400">Basic: {basic.weight || 0}gm</td>
+                    <td className="px-2 py-1.5 font-medium">₹{basic.zoneA ?? 0}</td>
+                    <td className="px-2 py-1.5 font-medium">₹{basic.zoneB ?? 0}</td>
+                    <td className="px-2 py-1.5 font-medium">₹{basic.zoneC ?? 0}</td>
+                    <td className="px-2 py-1.5 font-medium">₹{basic.zoneD ?? 0}</td>
+                    <td className="px-2 py-1.5 font-medium">₹{basic.zoneE ?? 0}</td>
+                    <td className="px-2 py-1.5 font-medium" rowSpan={2}>₹{card.codCharge ?? 0} / {card.codPercent ?? 0}%</td>
+                    <td className="px-2 py-1.5" rowSpan={2}>
+                      <div className="flex justify-center gap-1.5">
+                        <button onClick={() => navigate(`/dashboard/ratecard/update/${card._id}?userId=${id}`)} className="text-[#0192ED]"><FaEdit size={12} /></button>
+                        <button onClick={() => handleDeleteRateCard(card._id)} className="text-red-500"><FaTrash size={12} /></button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-50 text-[10px] sm:text-[11px] text-gray-700">
+                    <td className="px-2 py-1.5 text-gray-400">Addl: {addl.weight || 0}gm</td>
+                    <td className="px-2 py-1.5">₹{addl.zoneA ?? 0}</td>
+                    <td className="px-2 py-1.5">₹{addl.zoneB ?? 0}</td>
+                    <td className="px-2 py-1.5">₹{addl.zoneC ?? 0}</td>
+                    <td className="px-2 py-1.5">₹{addl.zoneD ?? 0}</td>
+                    <td className="px-2 py-1.5">₹{addl.zoneE ?? 0}</td>
+                  </tr>
+                </React.Fragment>
+              );
+            })
           ) : (
-            <tr><td colSpan="11" className="py-10 text-gray-400">No rates found for this plan</td></tr>
+            <tr><td colSpan={rateCardType === "B2B" ? "6" : "11"} className="py-10 text-gray-400">No rates found for this plan</td></tr>
           )}
         </tbody>
       </table>
@@ -1348,7 +1409,7 @@ export default function ProfileCard() {
         <UpdateRateCardPopup
           id={id}
           userName={userData?.fullname}
-          selectedRateCardValue={userData?.rateCard}
+          selectedRateCardValue={rateCardType === "B2B" ? (userData?.b2bRateCard || "Basic Plan") : (userData?.rateCard || "Basic Plan")}
           isOpen={showRateCardModal}
           onClose={() => {
             setShowRateCardModal(false);

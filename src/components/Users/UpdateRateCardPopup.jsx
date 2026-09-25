@@ -123,11 +123,14 @@ const UpdateRateCardPopup = ({ id, userName, selectedRateCardValue, onClose, onS
             }
             if (response.status >= 200 && response.status < 300) {
                 Notification("Assigned Successfully", "success");
-                onClose();
+                if (onSubmit) {
+                    onSubmit();
+                } else if (onClose) {
+                    onClose();
+                }
             } else {
                 Notification(`Unexpected response: ${response.status}`, "error");
             }
-            onClose();
         } catch (error) {
             console.error("Error assigning plan:", error);
             Notification(`An error occurred: ${error.response?.data?.error || error.message}`, "error");
